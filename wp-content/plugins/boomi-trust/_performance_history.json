@@ -1,0 +1,46 @@
+{
+	"entries" : [{
+		"date": "2017-05-02",
+		"SystemStatus": {
+			"AtomSpherePlatform": "informational_message",
+			"AtomCloud": "operating_normally",
+			"MDMCloud": "operating_normally"
+		},
+		"DailyMetrics": {
+			"IntegrationProcesses": "19,801,700"
+		}
+	},
+	{
+		"date": "2017-05-01",
+		"SystemStatus": {
+			"AtomSpherePlatform": "informational_message",
+			"AtomCloud": "operating_normally",
+			"MDMCloud": "operating_normally"
+		},
+		"DailyMetrics": {
+			"IntegrationProcesses": "19,243,468"
+		}
+	},
+	{
+		"date": "2017-04-30",
+		"SystemStatus": {
+			"AtomSpherePlatform": "operating_normally",
+			"AtomCloud": "operating_normally",
+			"MDMCloud": "operating_normally"
+		},
+		"DailyMetrics": {
+			"IntegrationProcesses": "19,243,468"
+		}
+	},
+	{
+		"date": "2017-04-29",
+		"SystemStatus": {
+			"AtomSpherePlatform": "operating_normally",
+			"AtomCloud": "yellow",
+			"MDMCloud": "operating_normally"
+		},
+		"DailyMetrics": {
+			"IntegrationProcesses": "19,243,468"
+		}
+	}]
+}

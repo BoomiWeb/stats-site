@@ -1,0 +1,50 @@
+.trust-cal-icon-wrap {
+    display:inline-block;
+    font-size: 35px;
+    line-height: 35px;
+    color:white;
+    width: 100%;
+    //height: 50px;
+    text-align: center;
+    vertical-align: bottom;	
+    margin-top: -17px;
+}
+.trust-cal-icon {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-color: #0087cc;
+	border-radius: 50%;
+}
+.trust-cal-icon.orange {
+	background-color: #f6ba00;
+}
+.trust-cal-icon.aqua {
+	background-color: #0a7ab2;
+}
+.trust-cal-icon.purple {
+	background-color: rgb(110,37,133);
+}
+/* */
+.col-xs-12.trust-calendar-key {
+	padding: 10px 0 5px 0;
+	font-size: 11px;
+}
+.trust-calendar-key .cal-key-term {
+	border-right: 1px solid #000;
+	width: 30%;
+	float: left;
+	padding-right: 4%;
+	margin-right: 4%;
+	text-align: center;
+}
+.trust-calendar-key .cal-key-term:last-child {
+	padding-right: 0;
+	margin-right: 0;
+	border-right-width: 0;
+}
+.trust-calendar-key .cal-key-term > i {
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+}

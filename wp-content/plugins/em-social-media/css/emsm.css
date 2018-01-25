@@ -1,0 +1,21 @@
+.emsm-display-wrap {
+	overflow: hidden;
+}
+.emsm-social-media-list {
+	overflow: hidden;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	font-size: 24px;
+}
+.emsm-social-media-list li {
+	float: left;
+	margin-right: 5px;
+}
+.emsm-social-media-list li a {
+	text-decoration: none;
+	box-shadow: none;
+}
+.emsm-social-media-list li a:hover {
+	text-decoration: none;
+}

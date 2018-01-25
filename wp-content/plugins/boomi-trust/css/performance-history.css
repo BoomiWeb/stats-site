@@ -1,0 +1,25 @@
+.performance .circle,
+.performance .sub-header,
+.performance .header,
+.performance .daily-metrics {
+	text-align: center;
+}
+.performance .status-circle {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	border-radius: 50%;
+	font-size: 24px;
+}
+.performance .status-circle.operating_normally {
+	background-color: #4ab756;
+    border: 1px solid #24882f;
+}
+.performance .status-circle.yellow {
+    background-color: #f3bf0f;
+    border: 1px solid #e2b416;
+}
+.performance .status-circle.info {
+    color: #1588c9;
+    margin-top: -1px;
+}
