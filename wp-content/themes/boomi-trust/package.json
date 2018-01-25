@@ -1,0 +1,25 @@
+{
+  "name": "boomi-sales",
+  "version": "1.0.0",
+  "description": "A robust theme for the Boomi sales portal",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Boomi 4 Life\" && exit 1"
+  },
+  "author": "Erik Mitchell",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.7.0",
+    "css-declaration-sorter": "^1.6.0",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8"
+  }
+}
