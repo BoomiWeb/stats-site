@@ -226,4 +226,9 @@ function boomi_trust_cloud_services() {
 	
 	return $post_ids;
 }
-?>
+
+function boomi_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'boomi_mime_types');
