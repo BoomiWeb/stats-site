@@ -233,13 +233,3 @@ function boomi_mime_types($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'boomi_mime_types');
-
-function boomi_fix_svg_thumb_display() {
-    echo '
-        td.media-icon img[src$=".svg"], img[src$=".svg"].attachment-post-thumbnail { 
-            width: 100% !important; 
-            height: auto !important; 
-        }
-    ';
-}
-add_action('admin_head', 'boomi_fix_svg_thumb_display');
