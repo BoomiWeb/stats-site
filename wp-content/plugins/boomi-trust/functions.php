@@ -161,8 +161,8 @@ add_action('init', 'boomi_trust_load_files', 1);
  * @return void
  */
 function boomi_trust_cloud_statuses() {
-	$cloud_status=new Boomi_Trust_Cloud_Status();
-	$posts=$cloud_status->statuses();
+	$cloud_status = new Boomi_Trust_Cloud_Status();
+	$posts = $cloud_status->statuses();
 	
 	return $posts;
 }
