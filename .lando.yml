@@ -1,0 +1,6 @@
+name: boomi-trust
+recipe: pantheon
+config:
+  framework: wordpress
+  site: boomi-trust
+  id: d3d9b5ee-562a-4ea2-a7ce-780b96e7be36
