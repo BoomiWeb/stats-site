@@ -1,0 +1,38 @@
+{
+  "name": "boomi-trust",
+  "version": "0.2.0",
+  "description": "Boomi Trust.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Boomi Trust\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Erik Mitchell",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",      
+    "gulp-autoprefixer": "^5.0.0", 
+    "gulp-cache": "^1.0.2",
+    "gulp-concat": "^2.6.1", 
+    "gulp-filter": "^5.1.0",
+    "gulp-ignore": "^2.0.2",
+    "gulp-imagemin": "",
+    "gulp-jshint": "^2.0.4",    
+    "gulp-load-plugins": "",
+    "gulp-newer": "",
+    "gulp-notify": "",
+    "gulp-phpcs": "^2.1.0",    
+    "gulp-plumber": "^1.1.0",
+    "gulp-phpcbf": "^0.1.2", 
+    "gulp-rename": "^1.2.2", 
+    "gulp-run-sequence": "",
+    "gulp-sass": "^3.1.0", 
+    "gulp-sourcemaps": "",
+    "gulp-stylelint": "^5.0.0",    
+    "gulp-uglify": "^3.0.0", 
+    "gulp-uglifycss": "",
+    "gulp-util": "",
+    "jshint-stylish": "",
+    "jshint": ""      
+  }
+}
