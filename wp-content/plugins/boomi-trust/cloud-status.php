@@ -82,4 +82,3 @@ class Boomi_Trust_Cloud_Status {
 	}
 	
 }
-?>
