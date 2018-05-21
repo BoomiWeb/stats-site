@@ -58,6 +58,9 @@ class Pickle_Calendar_Event_Details {
      * @return void
      */
     public function add_metabox() {
+        if (!picklecalendar()->settings['include_details'])
+            return;
+            
         add_meta_box(
             'event-details',
             __( 'Event Details', 'pickle-calendar' ),
@@ -87,18 +90,26 @@ class Pickle_Calendar_Event_Details {
         $event_dates = picklecalendar()->calendar->get_event_dates( $post->ID );
         $dates = $this->_wp_parse_args( $event_dates, $default_dates );
 
+        // bail if no start/end date in settings.
+        if (!picklecalendar()->settings['detail_options']['start_date'] && !picklecalendar()->settings['detail_options']['end_date'])
+            return;
+
         $html .= wp_nonce_field( 'update_settings', 'boomi_trust_admin', true, false );
 
         foreach ( $dates as $key => $date ) :
 
             $html .= '<div class="event-date-wrap" data-row-id="' . $key . '">';
 
-                    $html .= '<label for="start_date">Start Date</label>';
-                    $html .= '<input type="text" name="details[dates][' . $key . '][start_date]" id="" class="pcdetail-pickr start-date" value="' . $date['start_date'] . '" />';
+                    if (picklecalendar()->settings['detail_options']['start_date']) :
+                        $html .= '<label for="start_date">Start Date</label>';
+                        $html .= '<input type="text" name="details[dates][' . $key . '][start_date]" id="" class="pcdetail-pickr start-date" value="' . $date['start_date'] . '" />';
+                    endif;
 
-                    $html .= '<label for="end_date">End Date</label>';
-                    $html .= '<input type="text" name="details[dates][' . $key . '][end_date]" id="" class="pcdetail-pickr end-date" value="' . $date['end_date'] . '" />';
-
+                    if (picklecalendar()->settings['detail_options']['end_date']) :                    
+                        $html .= '<label for="end_date">End Date</label>';
+                        $html .= '<input type="text" name="details[dates][' . $key . '][end_date]" id="" class="pcdetail-pickr end-date" value="' . $date['end_date'] . '" />';
+                    endif;
+                    
                     $html .= '<button class="pc-remove-row">-</button>';
 
             $html .= '</div>';
