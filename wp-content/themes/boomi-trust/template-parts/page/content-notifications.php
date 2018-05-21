@@ -9,8 +9,8 @@
 ?>
 
 <?php
-$release_control=new EventTypeQuery(array('type' => 'control_date'));
-$release_dates=new EventTypeQuery(array('type' => 'release_date'));
+$release_control_dates = boomi_pc_get_rcd_dates();
+$release_dates = boomi_pc_get_rd();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -20,34 +20,34 @@ $release_dates=new EventTypeQuery(array('type' => 'release_date'));
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'boomi-trust' ) ); ?>
 		
 		<div class="row release-dates-wrap">
-
-			<?php if ($release_control->have_posts()) : ?>
 			
-				<div class="col-xs-12 col-sm-3 release-control-dates">
-					<div class="col-title">Release Control Date</div>
-					
-					<div class="row dates">
-						
-						<div class="col-xs-12">
-							<div class="dates-wrap">
-							
-								<?php while ($release_control->have_posts()) : $release_control->the_post(); ?>
-
-									<div class="col-xs-12">
-										<?php echo date('F d, Y', strtotime(get_field('control_date', get_event_type_ID()))); ?>
-									</div>
-								
-								<?php endwhile; ?>
-							
-							</div>
-						</div>
-						
-					</div>
-				</div>
+			<?php if (!empty($release_control_dates)) : ?>
+			
+    			<div class="col-xs-12 col-sm-3 release-control-dates">
+    				<div class="col-title">Release Control Date</div>
+    				
+    				<div class="row dates">
+    					
+    					<div class="col-xs-12">
+    						<div class="dates-wrap">
+    						
+    							<?php foreach ($release_control_dates as $rcd) : ?>
+    
+    								<div class="col-xs-12">
+    									<?php echo date('F d, Y', strtotime($rcd)); ?>
+    								</div>
+    							
+    							<?php endforeach; ?>
+    						
+    						</div>
+    					</div>
+    					
+    				</div>
+    			</div>
+			
+			<?php endif; ?>	
 				
-			<?php endif; ?>
-
-			<?php if ($release_dates->have_posts()) : ?>
+			<?php if (!empty($release_dates)) : ?>
 			
 				<div class="col-xs-12 col-sm-3 release-dates">
 					<div class="col-title">Release Date</div>
@@ -57,13 +57,13 @@ $release_dates=new EventTypeQuery(array('type' => 'release_date'));
 						<div class="col-xs-12">
 							<div class="dates-wrap">
 							
-								<?php while ($release_dates->have_posts()) : $release_dates->the_post(); ?>
+								<?php foreach ($release_dates as $rd) : ?>
 								
 									<div class="col-xs-12">
-										<?php echo date('F d, Y', strtotime(get_field('release_date', get_event_type_ID()))); ?>
+										<?php echo date('F d, Y', strtotime($rd)); ?>
 									</div>
 								
-								<?php endwhile; ?>
+								<?php endforeach; ?>
 							
 							</div>
 						</div>

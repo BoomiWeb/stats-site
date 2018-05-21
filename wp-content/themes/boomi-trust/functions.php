@@ -592,4 +592,3 @@ function boomi_trust_get_page_hero($post_id=0) {
 		echo get_stylesheet_directory_uri().'/inc/images/hero.png';
 	endif;
 }
-?>
