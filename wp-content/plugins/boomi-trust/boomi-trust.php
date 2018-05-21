@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Plugin Name: Boomi Trust CMS
  * Plugin URI: 
@@ -14,32 +15,15 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+    die;
 }
 
-define('BOOMI_TRUST_PATH', plugin_dir_path(__FILE__));
-define('BOOMI_TRUST_URL', plugin_dir_url(__FILE__));
-
-include_once(BOOMI_TRUST_PATH.'admin/admin.php');
-include_once(BOOMI_TRUST_PATH.'performance-history.php');
-include_once(BOOMI_TRUST_PATH.'calendar/calendar.php');
-include_once(BOOMI_TRUST_PATH.'functions.php');
-include_once(BOOMI_TRUST_PATH.'cloud-status.php');
-include_once(BOOMI_TRUST_PATH.'init.php');
-include_once(BOOMI_TRUST_PATH.'logger.php');
-include_once(BOOMI_TRUST_PATH.'cron.php');
-
-function boomi_trust_activate_plugin() {
-	$tomorrow=strtotime('tomorrow');
-	
-	if (!wp_next_scheduled('boomi_trust_status_cron_run')) :
-		wp_schedule_event($tomorrow, 'daily', 'boomi_trust_status_cron_run');
-	endif;
+// Define BOOMI_TRUST_PLUGIN_FILE.
+if ( ! defined( 'BOOMI_TRUST_PLUGIN_FILE' ) ) {
+    define( 'BOOMI_TRUST_PLUGIN_FILE', __FILE__ );
 }
-register_activation_hook(__FILE__, 'boomi_trust_activate_plugin');
 
-function boomi_trust_deactivate_plugin() {
-	wp_clear_scheduled_hook('boomi_trust_status_cron_run');
+// Include the main Boomi_Trust class.
+if ( ! class_exists( 'Boomi_Trust' ) ) {
+    include_once dirname( __FILE__ ) . '/class-boomi-trust.php';
 }
-register_deactivation_hook(__FILE__, 'boomi_trust_deactivate_plugin');
-?>
