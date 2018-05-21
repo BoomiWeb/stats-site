@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 	var fpConf={
 		changeMonth: true,
 		changeYear: true,
-		dateFormat: 'yy-mm-dd',
+		dateFormat: 'yy-mm-dd'	
 	};
 
 	$('.pcdetail-pickr').datepicker(fpConf);
