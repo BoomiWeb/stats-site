@@ -1,6 +1,4 @@
 <div class="container">
-	
-	
 	<div class="row">
 		<div class="col-md-7">
 			
@@ -26,11 +24,7 @@
 		</div>
 		
 		<div class="col-md-5">
-			<?php
-			global $simcoe_calendar;
-			
-			$simcoe_calendar->calendar();
-			?>
+			<?php echo do_shortcode('[pickle_calendar]'); ?>
 		</div>
 	</div>
 </div><!-- .container -->

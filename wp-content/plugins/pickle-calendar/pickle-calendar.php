@@ -27,5 +27,5 @@ if ( ! defined( 'PICKLE_CALENDAR_PLUGIN_FILE' ) ) {
 
 // Include the main PickleCalendar class.
 if ( ! class_exists( 'PickleCalendar' ) ) {
-    include_once dirname( __FILE__ ) . 'class-picklecalendar.php';
+    include_once dirname( __FILE__ ) . '/class-picklecalendar.php';
 }
