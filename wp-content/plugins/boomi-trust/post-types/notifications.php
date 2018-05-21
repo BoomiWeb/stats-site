@@ -7,7 +7,7 @@
  * @return void
  */
 function notifications_init() {
-	register_post_type( 'notifications', array(
+	register_post_type( 'notification', array(
 		'labels'            => array(
 			'name'                => __( 'Notifications', 'boomi-trust' ),
 			'singular_name'       => __( 'Notification', 'boomi-trust' ),
@@ -33,7 +33,7 @@ function notifications_init() {
 		'query_var'         => true,
 		'menu_icon'         => 'dashicons-testimonial',
 		'show_in_rest'      => true,
-		'rest_base'         => 'scevents',
+		'rest_base'         => 'notification',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
 	) );
 
