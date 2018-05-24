@@ -13,43 +13,56 @@ class Boomi_Trust_Performance {
 	
 	public function shortcode($atts) {
 		$html='';
-		$data=$this->get_statuses();
+		$statuses=$this->get_statuses();
+/*
 echo '<pre>';		
-print_r($data);	
+print_r($statuses);	
 echo '</pre>';
+*/
+/* 
+we need to:
+    group by timestamp
+    get service, then status
+*/
 		$html.='<div class="container performance">';
-			//$html.='<div class="performance">';
-				$html.='<div class="row header">';
-					$html.='<div class="col-sm-9 status">System Status</div>';
-					$html.='<div class="col-sm-3 daily-metrics">Daily Metrics</div>';
-				$html.='</div>';
 
-				$html.='<div class="row sub-header">';
-					$html.='<div class="col-sm-offset-2 col-sm-3 atomsphere">AtomSphere Platform</div>';
-					$html.='<div class="col-sm-2 atom-cloud">Atom Cloud</div>';
-					$html.='<div class="col-sm-2 mdm-cloud">MDM Cloud</div>';
-					$html.='<div class="col-sm-3 daily-metrics integration">Integration Processes</div>';
-				$html.='</div>';
+			$html.='<div class="row header">';
+				$html.='<div class="col-sm-9 status">System Status</div>';
+				$html.='<div class="col-sm-3 daily-metrics">Daily Metrics</div>';
+			$html.='</div>';
+
+			$html.='<div class="row sub-header">';
+				$html.='<div class="col-sm-offset-2 col-sm-3 atomsphere">AtomSphere Platform</div>';
+				$html.='<div class="col-sm-2 atom-cloud">Atom Cloud</div>';
+				$html.='<div class="col-sm-2 mdm-cloud">MDM Cloud</div>';
+				$html.='<div class="col-sm-3 daily-metrics integration">Integration Processes</div>';
+			$html.='</div>';
+		//update_post_meta($post_id, '_service', $service->ID);
+		//update_post_meta($post_id, '_statustype', $statustype->ID);
+		//update_post_meta($post_id, '_outageminutes', $row['outageminutes']);
+		//update_post_meta($post_id, '_date_and_time_of_occurance', $row['date']);			
+			if (!empty($statuses)) :				
+				foreach ($statuses as $status) :
+				    $service = get_post_meta($status->ID, '_service', true); // this is the type
+				    $date = get_post_meta($status->ID, '_date_and_time_of_occurance', true);
+				    
+					$html.='<div class="row">';
+						$html.='<div class="col-sm-2 date">'.date('M. d, Y', strtotime($date)).'</div>';
+						//$html.='<div class="col-sm-3 circle"><span class="status-circle '.$this->get_status_circle_class($status->SystemStatus->AtomSpherePlatform).'"></span></div>';
+						//$html.='<div class="col-sm-2 circle"><span class="status-circle '.$this->get_status_circle_class($status->SystemStatus->AtomCloud).'"></span></div>';
+						//$html.='<div class="col-sm-2 cirlce"><span class="status-circle '.$this->get_status_circle_class($status->SystemStatus->MDMCloud).'"></span></div>';
+						//$html.='<div class="col-sm-3 daily-metrics dm-number">'.$status->DailyMetrics->IntegrationProcesses.'</div>';
+					$html.='</div>';
+				endforeach;
+			endif;
 				
-				if (!empty($data)) :				
-    				foreach ($data->entries as $arr) :
-    					$html.='<div class="row">';
-    						$html.='<div class="col-sm-2 date">'.date('M. d, Y', strtotime($arr->date)).'</div>';
-    						$html.='<div class="col-sm-3 circle"><span class="status-circle '.$this->get_status_circle_class($arr->SystemStatus->AtomSpherePlatform).'"></span></div>';
-    						$html.='<div class="col-sm-2 circle"><span class="status-circle '.$this->get_status_circle_class($arr->SystemStatus->AtomCloud).'"></span></div>';
-    						$html.='<div class="col-sm-2 cirlce"><span class="status-circle '.$this->get_status_circle_class($arr->SystemStatus->MDMCloud).'"></span></div>';
-    						$html.='<div class="col-sm-3 daily-metrics dm-number">'.$arr->DailyMetrics->IntegrationProcesses.'</div>';
-    					$html.='</div>';
-    				endforeach;
-				endif;
-				
-			//$html.='</div>';
 		$html.='</div>';
 		
 		return $html;
 	}
 	
     protected function get_statuses() {
+        // this will most likely be private and a wpdb call
         $statuses = get_posts(array(
             'posts_per_page' => 5,
             'post_type' => 'cloudstatuses', 
