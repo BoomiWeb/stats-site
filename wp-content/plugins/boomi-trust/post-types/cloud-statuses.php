@@ -87,17 +87,20 @@ function cloudstatuses_update_title($post_id) {
     if (get_post_type($post_id)!='cloudstatuses')
     	return $post_id;
 
-	// unhook this function so it doesn't loop infinitely
+	// unhook this function so it doesn't loop infinitely.
 	remove_action('save_post', 'cloudstatuses_update_title');
 	
-	// update the post, which calls save_post again
+	// update the post, which calls save_post again.
 	$service=get_the_title(get_post_meta($post_id, '_service', true));
 
-	wp_update_post(array(
-		'ID' => $post_id,
-		'post_title' => $service.' - '.get_field('date_and_time_of_occurance', $post_id),
-		'post_name' => sanitize_title($service.' '.get_field('date_and_time_of_occurance', $post_id)),
-	));
+    // prevents overwriting title on import.
+    if (!empty($service)) :
+    	wp_update_post(array(
+    		'ID' => $post_id,
+    		'post_title' => $service.' - '.get_post_meta($post_id, '_date_and_time_of_occurance', true),
+    		'post_name' => sanitize_title($service.' '.get_post_meta($post_id, '_date_and_time_of_occurance', true)),
+    	));
+	endif;
 
 	// re-hook this function
 	add_action('save_post', 'cloudstatuses_update_title');	
@@ -144,7 +147,7 @@ function cloudstatuses_rows($column, $post_id) {
 	switch ($column) :
 		case 'last_updated':
 			echo '<div class="locked-info"><span class="locked-avatar"></span> <span class="locked-text"></span></div>';
-			echo '<strong><a href="'.get_edit_post_link($post_id).'">'.date('F j, Y g:i a', strtotime(get_field('date_and_time_of_occurance', $post_id))).'</a></strong>';
+			echo '<strong><a href="'.get_edit_post_link($post_id).'">'.date('F j, Y g:i a', strtotime(get_post_meta($post_id, '_date_and_time_of_occurance', true))).'</a></strong>';
 			echo '<div class="row-actions">
 					<span class="edit"><a href="'.get_edit_post_link($post_id).'" aria-label="Edit">Edit</a> | </span>
 					<span class="inline hide-if-no-js"><a href="#" class="editinline" aria-label="Quick edit inline">Quick Edit</a> | </span>
