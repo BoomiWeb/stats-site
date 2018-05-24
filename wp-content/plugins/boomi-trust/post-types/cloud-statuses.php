@@ -107,7 +107,7 @@ function cloudstatuses_update_title($post_id) {
 
 	return $post_id;
 }
-add_action('save_post', 'cloudstatuses_update_title');
+//add_action('save_post', 'cloudstatuses_update_title');
 
 if (is_admin()) :    
 	add_filter('manage_edit-cloudstatuses_columns', 'cloudstatuses_columns');
@@ -127,10 +127,10 @@ function cloudstatuses_columns($columns) {
 	unset($columns['title']);
 	unset($columns['date']);
 	
-	$columns['last_updated']=esc_html__('Last Updated', '');
-	$columns['status']=esc_html__('Status', '');
-	$columns['service']=esc_html__('Service', '');
-	$columns['details']=esc_html__('Details', '');
+	$columns['last_updated']=esc_html__('Date', '');
+	//$columns['status']=esc_html__('Status', '');
+	//$columns['service']=esc_html__('Service', '');
+	//$columns['details']=esc_html__('Details', '');
 	
 	return $columns;
 }
@@ -147,7 +147,7 @@ function cloudstatuses_rows($column, $post_id) {
 	switch ($column) :
 		case 'last_updated':
 			echo '<div class="locked-info"><span class="locked-avatar"></span> <span class="locked-text"></span></div>';
-			echo '<strong><a href="'.get_edit_post_link($post_id).'">'.date('F j, Y g:i a', strtotime(get_post_meta($post_id, '_date_and_time_of_occurance', true))).'</a></strong>';
+			echo '<strong><a href="'.get_edit_post_link($post_id).'">'.get_the_title($post_id).'</a></strong>';
 			echo '<div class="row-actions">
 					<span class="edit"><a href="'.get_edit_post_link($post_id).'" aria-label="Edit">Edit</a> | </span>
 					<span class="inline hide-if-no-js"><a href="#" class="editinline" aria-label="Quick edit inline">Quick Edit</a> | </span>

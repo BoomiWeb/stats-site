@@ -59,7 +59,9 @@ class Boomi_Trust_Cloud_Statuses_Meta_Box {
         $html='';
         
         $html.='<div class="boomi-trust-metabox">';
-        
+
+            $html .= 'Because this is legacy, we are removing this box.';        
+/*
 	        $html.='<div class="mb-row">';
 	        	$html.='<div class="mb-label">';
 	        		$html.='<label for="services">Service Affected</label>';
@@ -90,6 +92,7 @@ class Boomi_Trust_Cloud_Statuses_Meta_Box {
 	        		$html.= '<input type="text" class="" disabled="disabled" value="'.get_post_meta($post->ID, '_date_and_time_of_occurance', true).'" />';
 	        	$html.='</div>';
 	        $html.='</div>';
+*/
         
         $html.='</div>';
         
