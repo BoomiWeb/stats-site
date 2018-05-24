@@ -73,7 +73,7 @@ class Boomi_Trust_Importer {
 	
 	public function process_csv() {
 		$row_separator="\n";
-		$col_separator='*';
+		$col_separator=',';
 		$data=array();
 		$row_counter=1;
 		$headers=array();
@@ -89,16 +89,18 @@ class Boomi_Trust_Importer {
 		endif;		
 		
 		while (($row = fgetcsv($handle, 0, $col_separator)) !== FALSE) :
-			if ($row_counter==1) :
+			if ($row_counter==1) :			
 				$headers=array_map('sanitize_key', $row);				
-			else :
+			else :;
 				$data[]=array_combine($headers, $row);
 			endif;
 
 			$row_counter++;	
 		endwhile;
 		
-		foreach ($data as $row) :
+		// remove empty columns
+		
+		foreach ($data as $row) :		
 			$this->import_row($row);
 		endforeach;
 		
@@ -107,10 +109,10 @@ class Boomi_Trust_Importer {
 		echo '<h3>'.__('All Done.', 'boomi-trust-importer').'</h3>';
 	}
 	
-	protected function import_row($row=array()) {
-		$service=get_page_by_title($row['servicename'], 'object', 'services');
+	protected function import_row($row=array()) {	
+        $service=get_page_by_title($row['servicename'], 'object', 'services');
 		$statustype=get_page_by_title($row['statustype'], 'object', 'statustypes');
-
+		
 		$post_id=wp_insert_post(array(
 			'post_title' => $service->post_title.' - '.$row['date'],
 			'post_name' => sanitize_title($service->post_title.' '.$row['date']),
@@ -125,8 +127,8 @@ class Boomi_Trust_Importer {
 		update_post_meta($post_id, '_service', $service->ID);
 		update_post_meta($post_id, '_statustype', $statustype->ID);
 		update_post_meta($post_id, '_outageminutes', $row['outageminutes']);
-		update_field('date_and_time_of_occurance', $row['date'], $post_id);
-		
+		update_post_meta($post_id, '_date_and_time_of_occurance', $row['date']);
+
 		return true;
 	}
 	
