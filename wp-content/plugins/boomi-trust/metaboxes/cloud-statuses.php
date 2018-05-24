@@ -79,6 +79,17 @@ class Boomi_Trust_Cloud_Statuses_Meta_Box {
 	        		$html.=$this->posts_dropdown('statustypes', 'statustypes', 'Status Type', get_post_meta($post->ID, '_statustype', true));
 	        	$html.='</div>';
 	        $html.='</div>';
+
+
+	        $html.='<div class="mb-row">';
+	        	$html.='<div class="mb-label">';
+	        		$html.='<label for="">Timestamp</label>';
+	        	$html.='</div>';
+	
+	        	$html.='<div class="mb-input">';
+	        		$html.= '<input type="text" class="" disabled="disabled" value="'.get_post_meta($post->ID, '_date_and_time_of_occurance', true).'" />';
+	        	$html.='</div>';
+	        $html.='</div>';
         
         $html.='</div>';
         
