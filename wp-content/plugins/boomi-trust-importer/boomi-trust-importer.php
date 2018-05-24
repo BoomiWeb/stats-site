@@ -5,7 +5,7 @@ Plugin URI:
 Description: Import statuses from the old trust site.
 Author: Erik Mitchell
 Author URI: 
-Version: 0.1.0
+Version: 0.2.0
 Text Domain: boomi-trust-importer
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
@@ -97,39 +97,64 @@ class Boomi_Trust_Importer {
 
 			$row_counter++;	
 		endwhile;
-		
-		// remove empty columns
-		
-		foreach ($data as $row) :		
-			$this->import_row($row);
-		endforeach;
+
+		$this->import_data($data);
 		
 		wp_import_cleanup($this->id);
 		
 		echo '<h3>'.__('All Done.', 'boomi-trust-importer').'</h3>';
 	}
 	
-	protected function import_row($row=array()) {	
-        $service=get_page_by_title($row['servicename'], 'object', 'services');
-		$statustype=get_page_by_title($row['statustype'], 'object', 'statustypes');
+	private function import_data( $data = array() ) {	
+        $day_data = array();
+        
+		foreach ($data as $row) :
+            $service=get_page_by_title($row['servicename'], 'object', 'services');
+            $statustype=get_page_by_title($row['statustype'], 'object', 'statustypes');
+				
+		    $day_data[sanitize_title(date('Y-m-d', strtotime($row['date'])))][$service->post_name][sanitize_title($row['date'])] = array(
+                'timestamp' => date('Y-m-d h:i:s', strtotime($row['date'])),
+                'status' => $statustype->post_name,
+                'details' => $row['details'],
+                'outageminutes' => $row['outageminutes'],
+		    );
+		endforeach;
 		
-		$post_id=wp_insert_post(array(
-			'post_title' => $service->post_title.' - '.$row['date'],
-			'post_name' => sanitize_title($service->post_title.' '.$row['date']),
-			'post_content' => $row['details'],
-			'post_type' => 'cloudstatuses',
-			'post_status' => 'publish',
-		));
-		
-		if (is_wp_error($post_id))
-			return false;
-		
-		update_post_meta($post_id, '_service', $service->ID);
-		update_post_meta($post_id, '_statustype', $statustype->ID);
-		update_post_meta($post_id, '_outageminutes', $row['outageminutes']);
-		update_post_meta($post_id, '_date_and_time_of_occurance', $row['date']);
+		foreach ($day_data as $date => $details) :
+		    $this->import_day( $date, $details );
+		endforeach;
 
-		return true;
+        return true;
+	}
+	
+	private function import_day( $date = '', $details = array() ) {
+    	$title = date('M. d, Y', strtotime($date));
+        $timestamp_slugs = array();
+    	$post_data = array(
+			'post_title' => $title,
+			'post_name' => sanitize_title($title),
+			'post_content' => '',
+			'post_type' => 'cloudstatuses',
+			'post_status' => 'publish',        	
+    	);
+    	$post_id = wp_insert_post($post_data);
+
+    	if (is_wp_error($post_id) || $post_id == 0)
+    	    return false; 	
+    	    
+        foreach ($details as $service => $entries) :      
+            foreach ($entries as $timestamp_slug => $entry) :
+                $timestamp_slugs[$service] = $timestamp_slug;
+                
+                foreach ($entry as $key => $value) :               
+                    update_post_meta($post_id, "_{$service}_{$timestamp_slug}-{$key}", $value);
+                endforeach;    
+            endforeach;
+        endforeach;
+        
+        update_post_meta($post_id, '_timestamp_slugs', $timestamp_slugs);
+        
+        return true;
 	}
 	
 }
