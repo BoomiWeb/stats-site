@@ -11,13 +11,17 @@
 	border-radius: 50%;
 	font-size: 24px;
 }
-.performance .status-circle.operating_normally {
+.performance .status-circle.operating-normally {
 	background-color: #4ab756;
     border: 1px solid #24882f;
 }
-.performance .status-circle.yellow {
+.performance .status-circle.performance-issues {
     background-color: #f3bf0f;
     border: 1px solid #e2b416;
+}
+.performance .status-circle.service-disruption {
+    background-color: #ff0000;
+    border: 1px solid #9c0000;
 }
 .performance .status-circle.info {
     color: #1588c9;

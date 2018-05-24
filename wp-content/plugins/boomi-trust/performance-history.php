@@ -14,16 +14,7 @@ class Boomi_Trust_Performance {
 	public function shortcode($atts) {
 		$html='';
 		$statuses=$this->get_statuses();
-/*
-echo '<pre>';		
-print_r($statuses);	
-echo '</pre>';
-*/
-/* 
-we need to:
-    group by timestamp
-    get service, then status
-*/
+
 		$html.='<div class="container performance">';
 
 			$html.='<div class="row header">';
@@ -37,21 +28,15 @@ we need to:
 				$html.='<div class="col-sm-2 mdm-cloud">MDM Cloud</div>';
 				$html.='<div class="col-sm-3 daily-metrics integration">Integration Processes</div>';
 			$html.='</div>';
-		//update_post_meta($post_id, '_service', $service->ID);
-		//update_post_meta($post_id, '_statustype', $statustype->ID);
-		//update_post_meta($post_id, '_outageminutes', $row['outageminutes']);
-		//update_post_meta($post_id, '_date_and_time_of_occurance', $row['date']);			
+			
 			if (!empty($statuses)) :				
-				foreach ($statuses as $status) :
-				    $service = get_post_meta($status->ID, '_service', true); // this is the type
-				    $date = get_post_meta($status->ID, '_date_and_time_of_occurance', true);
-				    
+				foreach ($statuses as $timestamp => $service) :
 					$html.='<div class="row">';
-						$html.='<div class="col-sm-2 date">'.date('M. d, Y', strtotime($date)).'</div>';
-						//$html.='<div class="col-sm-3 circle"><span class="status-circle '.$this->get_status_circle_class($status->SystemStatus->AtomSpherePlatform).'"></span></div>';
-						//$html.='<div class="col-sm-2 circle"><span class="status-circle '.$this->get_status_circle_class($status->SystemStatus->AtomCloud).'"></span></div>';
-						//$html.='<div class="col-sm-2 cirlce"><span class="status-circle '.$this->get_status_circle_class($status->SystemStatus->MDMCloud).'"></span></div>';
-						//$html.='<div class="col-sm-3 daily-metrics dm-number">'.$status->DailyMetrics->IntegrationProcesses.'</div>';
+						$html.='<div class="col-sm-2 date">'.date('M. d, Y', strtotime($timestamp)).'</div>';
+						$html.='<div class="col-sm-3 circle"><span class="status-circle '.$this->get_status_circle_class($service['atomsphere-platform']).'"></span></div>';
+						$html.='<div class="col-sm-2 circle"><span class="status-circle '.$this->get_status_circle_class($service['atom-cloud']).'"></span></div>';
+						$html.='<div class="col-sm-2 cirlce"><span class="status-circle '.$this->get_status_circle_class($service['mdm-cloud']).'"></span></div>';
+						$html.='<div class="col-sm-3 daily-metrics dm-number"></div>';
 					$html.='</div>';
 				endforeach;
 			endif;
@@ -62,25 +47,52 @@ we need to:
 	}
 	
     protected function get_statuses() {
-        // this will most likely be private and a wpdb call
-        $statuses = get_posts(array(
-            'posts_per_page' => 5,
-            'post_type' => 'cloudstatuses', 
-            'meta_key' => '_date_and_time_of_occurance',
-            'orderby' => 'meta_value',           
-        ));
+        global $wpdb;
         
+        $statuses = array();
+        $service_order = array('atomsphere-platform', 'atom-cloud', 'mdm-cloud');        
+        $db_statuses = $wpdb->get_results("
+            SELECT $wpdb->posts.ID, pm.meta_value AS timestamp, pm1.meta_value AS service, pm2.meta_value AS status
+            FROM $wpdb->posts 
+            INNER JOIN $wpdb->postmeta AS pm ON ($wpdb->posts.ID = pm.post_id)
+            INNER JOIN $wpdb->postmeta AS pm1 ON ($wpdb->posts.ID = pm1.post_id)
+            INNER JOIN $wpdb->postmeta AS pm2 ON ($wpdb->posts.ID = pm2.post_id)
+            WHERE $wpdb->posts.post_type = 'cloudstatuses'
+            AND pm.meta_key = '_date_and_time_of_occurance'
+            AND pm1.meta_key = '_service'
+            AND pm2.meta_key = '_statustype'
+            ORDER BY pm.meta_value DESC   
+        ");
+        
+        // sertup statuses.
+        foreach ($db_statuses as $status) :
+            $service = get_post($status->service);
+            $status_post = get_post($status->status);
+            
+            $statuses[sanitize_title($status->timestamp)][$service->post_name] = $status_post->post_name;
+        endforeach;
+        
+        // update statuses order.
+        foreach ($statuses as $timestamp => $services) :
+            $statuses[$timestamp] = array_merge(array_flip($service_order), $services);
+        endforeach;
+
         return $statuses;
 	}
 	
 	protected function get_status_circle_class($status='') {
 		$class='';
 		
-		if ($status=='informational_message') :
-			$class='glyphicon glyphicon-info-sign info';
-		else :
-			$class=$status;
-		endif;
+		switch ($status) :
+		    case 'informational-message':
+		        $class='glyphicon glyphicon-info-sign info';
+		        break;
+            case 1:
+                $class = 'operating-normally';
+                break;
+		    default:
+		        $class = $status;
+		endswitch;
 		
 		return $class;
 	}
