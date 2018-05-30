@@ -111,9 +111,10 @@ class Boomi_Trust_Importer {
 		foreach ($data as $row) :
             $service=get_page_by_title($row['servicename'], 'object', 'services');
             $statustype=get_page_by_title($row['statustype'], 'object', 'statustypes');
+            $datestr = strtotime($row['date']);
 				
-		    $day_data[sanitize_title(date('Y-m-d', strtotime($row['date'])))][$service->post_name][sanitize_title($row['date'])] = array(
-                'timestamp' => date('Y-m-d h:i:s', strtotime($row['date'])),
+		    $day_data[sanitize_title(date('Y-m-d', $datestr))][$service->post_name][sanitize_title($row['date'])] = array(
+                'timestamp' => date('Y-m-d h:i:s', $datestr),
                 'status' => $statustype->post_name,
                 'details' => $row['details'],
                 'outageminutes' => $row['outageminutes'],
@@ -144,14 +145,14 @@ class Boomi_Trust_Importer {
     	    
         foreach ($details as $service => $entries) :      
             foreach ($entries as $timestamp_slug => $entry) :
-                $timestamp_slugs[$service] = $timestamp_slug;
+                $timestamp_slugs[$service][] = $timestamp_slug;
                 
                 foreach ($entry as $key => $value) :               
                     update_post_meta($post_id, "_{$service}_{$timestamp_slug}-{$key}", $value);
                 endforeach;    
             endforeach;
         endforeach;
-        
+       
         update_post_meta($post_id, '_timestamp_slugs', $timestamp_slugs);
         
         return true;
