@@ -129,7 +129,8 @@ class Boomi_Trust_Importer {
 	}
 	
 	private function import_day( $date = '', $details = array() ) {
-    	$title = date('M. d, Y', strtotime($date));
+    	$datestr = strtotime($date);
+    	$title = date('M. d, Y', $datestr);
         $timestamp_slugs = array();
     	$post_data = array(
 			'post_title' => $title,
@@ -154,6 +155,7 @@ class Boomi_Trust_Importer {
         endforeach;
        
         update_post_meta($post_id, '_timestamp_slugs', $timestamp_slugs);
+        update_post_meta($post_id, '_status_timestamp', date('Ymd', $datestr));
         
         return true;
 	}
