@@ -18,7 +18,7 @@ function boomi_trust_daily_integrations($atts) {
         $html.='</div>';
 
         $html .= '<div class="row header">';
-			$html .= '<div class="col-xs-5 col-xs-offset-1 col-md-4 col-md-offset-2 process-date">';
+			$html .= '<div class="col-xs-5 col-md-4 process-date">';
                 $html.='Date';
             $html .= '</div>';
 
@@ -29,7 +29,7 @@ function boomi_trust_daily_integrations($atts) {
 	
 		foreach ($process_count as $arr) :
 		    $html.='<div class="row process-row">';
-    			$html .= '<div class="col-xs-5 col-xs-offset-1 col-md-4 col-md-offset-2 process-date">';
+    			$html .= '<div class="col-xs-5 col-md-4 process-date">';
                     $html.=date('M j, Y', strtotime($arr['process_date']));
                 $html .= '</div>';
     

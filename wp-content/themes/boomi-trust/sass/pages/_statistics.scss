@@ -1,41 +1,33 @@
 .statistics {
-    
-    .stat {
-        //display: flex;
-        
-    	.stat-wrap {
-    		padding: 15px;
-    		
-    		.stat-number {
-    			font-size: 2em;
-    			background-color: $dell-blue;
-    			border-color: $dell-blue;
-    			color: $white;
-    			div {
-    				padding-top: 10px;
-    				padding-bottom: 10px;
-    				text-align: center;
-                }
-            }
-    		
-    		.stat-title {
-    			font-weight: bold;
-    			border-style: solid;
-    			border-width: 1px 1px 0 1px;
-    			border-color: $dell-gray;
-    			background: $quartz;
-    			padding-top: 10px;
-    			padding-bottom: 5px;
-    			font-size: 1.25em;
-            }
-    						
-    		.stat-description {
-    			border-style: solid;
-    			border-width: 0 1px 1px 1px;
-    			border-color: $dell-gray;
-    			background: $quartz;
-    			padding-bottom: 10px;
-            }
+	.stat-wrap {
+		padding: 15px;
+		
+		.stat-number {
+			font-size: 2em;
+			background-color: $dell-blue;
+			border-color: $dell-blue;
+			color: $white;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			text-align: center;
+        }
+		
+		.stat-title {
+			font-weight: bold;
+			border-style: solid;
+			border-width: 1px 1px 0 1px;
+			border-color: $dell-gray;
+			background: $quartz;
+			padding: 10px 15px;
+			font-size: 1.25em;
+        }
+						
+		.stat-description {
+			border-style: solid;
+			border-width: 0 1px 1px 1px;
+			border-color: $dell-gray;
+			background: $quartz;
+			padding: 0 15px 10px;
         }
     }
 }

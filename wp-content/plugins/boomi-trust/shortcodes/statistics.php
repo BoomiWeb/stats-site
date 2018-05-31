@@ -23,24 +23,24 @@ function boomi_trust_statistics($atts) {
         ),
     );
 		
-	$html .= '<div class="row statistics">';
+	$html .= '<div class="row row-eq-height statistics">';
 		
 		if ( !empty(get_option('_trust_statistic_updated')) ) :
 		
 			foreach ($statistic_types as $slug => $arr) :
 			
-				$html .= '<div class="col-xs-12 col-sm-6 col-md-3 stat">';
-					$html .= '<div class="stat-wrap">';
-						$html .= '<div class="row stat-number">';
-							$html .= '<div class="col-xs-12">'.number_format(get_option('_trust_statistic_' . $slug, 0)).'</div>';
+				$html .= '<div class="col-xs-12 col-sm-6 col-md-3">';
+					$html .= '<div class="row stat-wrap">';
+						$html .= '<div class="stat-number">';
+							$html .= number_format(get_option('_trust_statistic_' . $slug, 0));
 						$html .= '</div>';
 
-						$html .= '<div class="row stat-title">';
-							$html .= '<div class="col-xs-12">'.$arr['title'].'</div>';
+						$html .= '<div class="stat-title">';
+							$html .= $arr['title'];
 						$html .= '</div>';
 						
-						$html .= '<div class="row stat-description">';
-							$html .= '<div class="col-xs-12">'.$arr['description'].'</div>';
+						$html .= '<div class="stat-description">';
+							$html .= $arr['description'];
 						$html .= '</div>';
 					$html .= '</div>';
 				$html .= '</div>';

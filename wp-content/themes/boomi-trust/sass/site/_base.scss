@@ -16,3 +16,12 @@ body, input, textarea, select {
 .container-fluid {
 	padding: 0;
 }
+
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row-eq-height > [class*='col-'] {
+    display: flex;
+    flex-direction: column;    
+}
