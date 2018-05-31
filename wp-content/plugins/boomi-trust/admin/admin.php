@@ -14,6 +14,7 @@ class Boomi_Trust_Admin {
 	
 	protected function includes() {
 		include_once(BOOMI_TRUST_ADMIN_PATH.'update-statistics.php');
+		include_once(BOOMI_TRUST_ADMIN_PATH.'update-daily-integrations.php');
 	}
 	
 	protected function init() {
