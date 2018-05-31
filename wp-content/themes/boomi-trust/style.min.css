@@ -74,10 +74,12 @@ body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-seri
 .performance .row .date,.performance .row .dm-number{padding-top:21px;padding-bottom:21px}
 .performance .row.header{background-color:#007db8;color:#fff;font-size:18px}.performance .row.sub-header{background-color:#aaa;color:#fff;font-size:16px}
 .performance-single .row{line-height:1}.performance-single .row div{padding-top:15px;padding-bottom:15px}
-.performance-single .row .date,.performance-single .row .dm-number{padding-top:21px;padding-bottom:21px}
-.performance-single .row.header{background-color:#007db8;color:#fff;font-size:18px}
-.performance-single .row.sub-header{background-color:#aaa;color:#fff;font-size:16px}
-.statistics .stat-wrap{padding:15px}.statistics .stat-wrap .stat-number{font-size:24px;background-color:#007db8;border-color:#007db8;color:#fff}
+.performance-single .row.header{background-color:#007db8;color:#fff;font-size:2em;margin-bottom:30px}
+.performance-single .row.status-wrap{margin-bottom:15px}.performance-single .row .platform{background-color:#aaa;color:#fff;font-size:1.5em}
+.performance-single .row .date{font-size:1.15em}.performance-single .row .status{font-weight:bold;padding-top:0;padding-bottom:5px}
+@media only screen and (min-width:768px){.performance-single .row .status{padding-top:15px}
+}.performance-single .row .message{padding-top:0}.statistics .stat-wrap{padding:15px}
+.statistics .stat-wrap .stat-number{font-size:24px;background-color:#007db8;border-color:#007db8;color:#fff}
 .statistics .stat-wrap .stat-number div{padding-top:10px;padding-bottom:10px;text-align:center}
 .statistics .stat-wrap .stat-title{font-weight:bold;border-style:solid;border-width:1px 1px 0 1px;border-color:gray;background:#eee;padding-top:10px;padding-bottom:5px;font-size:16px}
 .statistics .stat-wrap .stat-description{border-style:solid;border-width:0 1px 1px 1px;border-color:gray;background:#eee}

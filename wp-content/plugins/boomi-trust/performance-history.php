@@ -81,16 +81,13 @@ class Boomi_Trust_Performance {
                 $html.='</div>';
                 
                 foreach ($timestamps as $timestamp) :
-        			$html.='<div class="row">';
-    	    			$html.='<div class="col-sm-12 date">'.date('m/d/Y h:i:s A', strtotime($timestamp)).'</div>';
-                    $html.='</div>';  
+                    $status_slug = get_post_meta($status->ID, "_{$platform_slug}_{$timestamp}-status", true);
+                    $status_page = get_page_by_path($status_slug, 'OBJECT', 'statustypes');
                     
-                    $html.='<div class="row">';
-    	    			$html.='<div class="col-sm-12">'.get_post_meta($status->ID, "_{$platform_slug}_{$timestamp}-status", true).'</div>';
-                    $html.='</div>';
-                    
-                    $html.='<div class="row">';
-    	    			$html.='<div class="col-sm-12">'.get_post_meta($status->ID, "_{$platform_slug}_{$timestamp}-details", true).'</div>';
+        			$html.='<div class="row status-wrap">';
+    	    			$html.='<div class="col-sm-12 col-sm-4 date">'.date('m/d/Y h:i:s A', strtotime($timestamp)).'</div>';  
+    	    			$html.='<div class="col-sm-12 col-sm-8 status">'.$status_page->post_title.'</div>';
+    	    			$html.='<div class="col-sm-12 col-sm-8 col-sm-offset-4 message">'.get_post_meta($status->ID, "_{$platform_slug}_{$timestamp}-details", true).'</div>';
                     $html.='</div>';
                 endforeach;
             endforeach;
