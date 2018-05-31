@@ -84,12 +84,15 @@ var gulp = require('gulp'),
  
 // compile sass
 gulp.task('sass', function () {
-    gulp.src('**/sass/*.scss')
+    gulp.src('./sass/*.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
+            //outputStyle: 'compressed',
+            //outputStyle: 'compact',
             outputStyle: 'nested',
+            // outputStyle: 'expanded',
             precision: 10
         }))
         .pipe(sourcemaps.write({
@@ -101,7 +104,15 @@ gulp.task('sass', function () {
         .pipe(autoprefixer('last 2 version', '> 1%', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(sourcemaps.write('.'))
         .pipe(plumber.stop())
-        .pipe(gulp.dest('../'))
+        .pipe(gulp.dest('./'))
+        .pipe(filter('**/*.css')) // Filtering stream to only css files
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(minifycss({
+            maxLineLen: 80
+        }))
+        .pipe(gulp.dest('./'))
 });
 
 // minify all css
