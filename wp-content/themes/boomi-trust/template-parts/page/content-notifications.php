@@ -23,24 +23,22 @@ $release_dates = boomi_pc_get_rd();
 			
 			<?php if (!empty($release_control_dates)) : ?>
 			
-    			<div class="col-xs-12 col-sm-3 release-control-dates">
-    				<div class="col-title">Release Control Date</div>
+    			<div class="col-xs-12 col-sm-6 release-control-dates">
+    				<div class="title">Release Control Date</div>
     				
-    				<div class="row dates">
-    					
-    					<div class="col-xs-12">
-    						<div class="dates-wrap">
-    						
-    							<?php foreach ($release_control_dates as $rcd) : ?>
-    
-    								<div class="col-xs-12">
-    									<?php echo date('F d, Y', strtotime($rcd)); ?>
-    								</div>
-    							
-    							<?php endforeach; ?>
-    						
-    						</div>
-    					</div>
+    				<div class="dates">
+
+						<div class="dates-wrap">
+						
+							<?php foreach ($release_control_dates as $rcd) : ?>
+
+								<div class="col-xs-12">
+									<?php echo date('F d, Y', strtotime($rcd)); ?>
+								</div>
+							
+							<?php endforeach; ?>
+						
+						</div>
     					
     				</div>
     			</div>
@@ -49,23 +47,21 @@ $release_dates = boomi_pc_get_rd();
 				
 			<?php if (!empty($release_dates)) : ?>
 			
-				<div class="col-xs-12 col-sm-3 release-dates">
-					<div class="col-title">Release Date</div>
+				<div class="col-xs-12 col-sm-6 release-dates">
+					<div class="title">Release Date</div>
 					
-					<div class="row dates">
+					<div class="dates">
+
+						<div class="dates-wrap">
 						
-						<div class="col-xs-12">
-							<div class="dates-wrap">
+							<?php foreach ($release_dates as $rd) : ?>
 							
-								<?php foreach ($release_dates as $rd) : ?>
-								
-									<div class="col-xs-12">
-										<?php echo date('F d, Y', strtotime($rd)); ?>
-									</div>
-								
-								<?php endforeach; ?>
+								<div class="col-xs-12">
+									<?php echo date('F d, Y', strtotime($rd)); ?>
+								</div>
 							
-							</div>
+							<?php endforeach; ?>
+						
 						</div>
 						
 					</div>
