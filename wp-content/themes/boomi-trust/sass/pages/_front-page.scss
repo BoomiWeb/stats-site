@@ -17,3 +17,22 @@
         }
     }
 }
+
+// calendar.
+.home .pickle-calendar {
+    .pickle-calendar-event {
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        text-indent: -9999px;
+        margin: -8px auto 0;
+        
+        &.release-date {
+            background: $navy;
+        }
+        
+        &.release-control-date {
+            background: $steel;
+        }
+    }
+}

@@ -66,6 +66,8 @@ body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-seri
 .no-padding{padding:0}.banner-image{position:relative;width:100%;height:auto}.row.content{padding:10px 0}
 .container-fluid{padding:0}.cloud-statuses{margin-bottom:15px}.cloud-statuses .cloud-status{padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center;border-radius:15px}
 .cloud-statuses .cloud-status .service{margin-bottom:5px}.cloud-statuses .cloud-status.operating-normally{background-color:#6ea204;color:#fff}
+.home .pickle-calendar .pickle-calendar-event{border-radius:50%;width:20px;height:20px;text-indent:-9999px;margin:-8px auto 0}
+.home .pickle-calendar .pickle-calendar-event.release-date{background:#003851}.home .pickle-calendar .pickle-calendar-event.release-control-date{background:#657792}
 .release-dates-wrap .col-title{font-size:18px;padding:10px;border-style:solid;border-width:1px 1px 0 1px;border-color:#d8d8d8;background:#f2f2f2}
 .release-dates-wrap .dates-wrap{overflow:hidden;border-style:solid;border-width:0 1px 1px 1px;border-color:#d8d8d8}
 .release-dates-wrap .dates-wrap div{padding:3px 10px}.release-dates-wrap .dates-wrap div:nth-child(even){background-color:#eee}
@@ -73,18 +75,18 @@ body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-seri
 .performance .row{line-height:1}.performance .row div{padding-top:15px;padding-bottom:15px}
 .performance .row .daily-metrics{border-left:1px solid #fff}.performance .row:nth-child(even){background-color:#eee}
 .performance .row .date,.performance .row .dm-number{padding-top:21px;padding-bottom:21px}
-.performance .row.header{background-color:#007db8;color:#fff;font-size:18px}.performance .row.sub-header{background-color:#aaa;color:#fff;font-size:16px}
+.performance .row.header{background-color:#0087cc;color:#fff;font-size:18px}.performance .row.sub-header{background-color:#aaa;color:#fff;font-size:16px}
 .performance-single .row{line-height:1}.performance-single .row div{padding-top:15px;padding-bottom:15px}
-.performance-single .row.header{background-color:#007db8;color:#fff;font-size:2em;margin-bottom:30px}
+.performance-single .row.header{background-color:#0087cc;color:#fff;font-size:2em;margin-bottom:30px}
 .performance-single .row.status-wrap{margin-bottom:15px}.performance-single .row .platform{background-color:#aaa;color:#fff;font-size:1.5em}
 .performance-single .row .date{font-size:1.15em}.performance-single .row .status{font-weight:bold;padding-top:0;padding-bottom:5px}
 @media only screen and (min-width:768px){.performance-single .row .status{padding-top:15px}
 }.performance-single .row .message{padding-top:0}.statistics .stat-wrap{padding:15px}
-.statistics .stat-wrap .stat-number{font-size:24px;background-color:#007db8;border-color:#007db8;color:#fff}
+.statistics .stat-wrap .stat-number{font-size:24px;background-color:#0087cc;border-color:#0087cc;color:#fff}
 .statistics .stat-wrap .stat-number div{padding-top:10px;padding-bottom:10px;text-align:center}
 .statistics .stat-wrap .stat-title{font-weight:bold;border-style:solid;border-width:1px 1px 0 1px;border-color:gray;background:#eee;padding-top:10px;padding-bottom:5px;font-size:16px}
 .statistics .stat-wrap .stat-description{border-style:solid;border-width:0 1px 1px 1px;border-color:gray;background:#eee;padding-bottom:10px}
-.statuses-single{font-size:16px}.statuses-single .date{background-color:#007db8;color:#fff;margin-bottom:15px}
+.statuses-single{font-size:16px}.statuses-single .date{background-color:#0087cc;color:#fff;margin-bottom:15px}
 .statuses-single .date .date-inner{padding:20px}.statuses-single .date .date-inner h2{margin:0;font-size:2.5em}
 .statuses-single .service{border-bottom:1px solid #aaa;margin-bottom:20px}.statuses-single .service h2{font-size:2em}
 .statuses-single .status{margin-bottom:15px}.statuses-single .status h3{font-size:1.5em;margin-top:0}
