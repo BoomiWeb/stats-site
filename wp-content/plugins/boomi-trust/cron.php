@@ -8,6 +8,5 @@
  */
 function boomi_trust_statistics_update() {
 	$update_statistics=new Boomi_Trust_Update_Statistics();
-	$update_statistics->run();
 }
 add_action('boomi_trust_statistics_cron_run', 'boomi_trust_statistics_update');	
