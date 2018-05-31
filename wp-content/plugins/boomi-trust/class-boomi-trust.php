@@ -67,13 +67,9 @@ final class Boomi_Trust {
      */
     public function includes() {
         include_once(BOOMI_TRUST_PATH.'admin/admin.php');
-        include_once(BOOMI_TRUST_PATH.'performance-history.php');
         include_once(BOOMI_TRUST_PATH.'functions.php');
-        include_once(BOOMI_TRUST_PATH.'cloud-status.php');
-        include_once(BOOMI_TRUST_PATH.'init.php');
         include_once(BOOMI_TRUST_PATH.'logger.php');
-        include_once(BOOMI_TRUST_PATH.'cron.php');
-        include_once(BOOMI_TRUST_PATH.'shortcodes/statistics.php');        
+        include_once(BOOMI_TRUST_PATH.'cron.php');       
     }
 
     /**

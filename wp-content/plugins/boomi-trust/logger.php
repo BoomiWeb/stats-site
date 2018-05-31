@@ -46,4 +46,3 @@ function boomi_trust_logger() {
 
 // Global for backwards compatibility.
 $GLOBALS['boomitrustlogger'] = boomi_trust_logger();
-?>
