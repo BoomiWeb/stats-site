@@ -1,0 +1,19 @@
+.cloud-statuses {
+    margin-bottom: 15px;
+	
+	.cloud-status {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 16px;
+		text-align: center;
+		border-radius: 15px;
+		.service {
+			margin-bottom: 5px;
+        }
+		.status {}
+		&.operating-normally {
+			background-color: $green;
+			color: $white;
+        }
+    }
+}
