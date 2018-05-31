@@ -1,28 +1,20 @@
 <?php
 class Boomi_Trust_Update_Statistics {
-    
-    protected $file = '';
 	
 	public function __construct() {
-		$this->get_file();
 		$this->process_file();
-	}
-	
-	private function get_file() {
-    	// this will be a curl or something.
-        $this->file = BOOMI_TRUST_PATH . 'performance-history.json';
 	}
 	
 	private function process_file() {
     	// get json and turn it into an array
-    	$file_contents = file_get_contents($this->file);
+    	$file_contents = file_get_contents('http://erikmitchell.net/_b00mI/performance-history.json');
         $json_arr = json_decode($file_contents, true);
         
         // json construction: array['trust'] => date, data => dataArray.
         $trust_arr = $json_arr['trust'];
         $date = str_replace(' ', '', $trust_arr['date']);
         $data = $trust_arr['data']['dataArray'];
-         
+       
         // check date against option '_trust_statistic_updated'
         $existing_date = get_option('_trust_statistic_updated', '');
       
