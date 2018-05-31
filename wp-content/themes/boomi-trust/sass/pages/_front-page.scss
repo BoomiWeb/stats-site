@@ -20,6 +20,8 @@
 
 // calendar.
 .home .pickle-calendar {
+    margin-bottom: 15px;
+    
     .pickle-calendar-event {
         border-radius: 50%;
         width: 20px;
@@ -33,6 +35,25 @@
         
         &.release-control-date {
             background: $steel;
+        }
+    }
+}
+
+.home .trust-pc-key {
+    .key-list {
+        margin: 0;
+        
+        .key {
+            float: left;
+            padding-right: 40px;
+            
+            &.rd {
+                color: $navy; 
+            }
+            
+            &.rcd {
+                color: $steel;
+            }
         }
     }
 }

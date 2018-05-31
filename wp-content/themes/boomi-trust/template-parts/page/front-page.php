@@ -12,6 +12,13 @@
 		
 		<div class="col-md-5">
 			<?php echo do_shortcode('[pickle_calendar]'); ?>
+			
+			<div class="trust-pc-key clearfix">
+    			<ul class="key-list clearfix">
+        			<li class="key rd">Release Date</li>
+                    <li class="key rcd">Release Control Date</li>
+    			</ul>
+			</div>
 		</div>
 	</div>
 </div><!-- .container -->

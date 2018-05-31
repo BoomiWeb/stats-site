@@ -66,8 +66,10 @@ body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-seri
 .no-padding{padding:0}.banner-image{position:relative;width:100%;height:auto}.row.content{padding:10px 0}
 .container-fluid{padding:0}.cloud-statuses{margin-bottom:15px}.cloud-statuses .cloud-status{padding-top:10px;padding-bottom:10px;font-size:16px;text-align:center;border-radius:15px}
 .cloud-statuses .cloud-status .service{margin-bottom:5px}.cloud-statuses .cloud-status.operating-normally{background-color:#6ea204;color:#fff}
-.home .pickle-calendar .pickle-calendar-event{border-radius:50%;width:20px;height:20px;text-indent:-9999px;margin:-8px auto 0}
+.home .pickle-calendar{margin-bottom:15px}.home .pickle-calendar .pickle-calendar-event{border-radius:50%;width:20px;height:20px;text-indent:-9999px;margin:-8px auto 0}
 .home .pickle-calendar .pickle-calendar-event.release-date{background:#003851}.home .pickle-calendar .pickle-calendar-event.release-control-date{background:#657792}
+.home .trust-pc-key .key-list{margin:0}.home .trust-pc-key .key-list .key{float:left;padding-right:40px}
+.home .trust-pc-key .key-list .key.rd{color:#003851}.home .trust-pc-key .key-list .key.rcd{color:#657792}
 .release-dates-wrap .col-title{font-size:18px;padding:10px;border-style:solid;border-width:1px 1px 0 1px;border-color:#d8d8d8;background:#f2f2f2}
 .release-dates-wrap .dates-wrap{overflow:hidden;border-style:solid;border-width:0 1px 1px 1px;border-color:#d8d8d8}
 .release-dates-wrap .dates-wrap div{padding:3px 10px}.release-dates-wrap .dates-wrap div:nth-child(even){background-color:#eee}
