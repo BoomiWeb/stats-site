@@ -3,7 +3,7 @@
  * Main Boomi Trust class
  *
  * @package Boomi_Trust
- * @since   1.0.0
+ * @since   0.2.0
  */
 
 /**
@@ -89,13 +89,13 @@ final class Boomi_Trust {
     public function boomi_trust_activate_plugin() {
     	$tomorrow=strtotime('tomorrow');
     	
-    	if (!wp_next_scheduled('boomi_trust_status_cron_run')) :
-    		wp_schedule_event($tomorrow, 'daily', 'boomi_trust_status_cron_run');
+    	if (!wp_next_scheduled('boomi_trust_statistics_cron_run')) :
+    		wp_schedule_event($tomorrow, 'daily', 'boomi_trust_statistics_cron_run');
     	endif;
     }
     
     public function boomi_trust_deactivate_plugin() {
-    	wp_clear_scheduled_hook('boomi_trust_status_cron_run');
+    	wp_clear_scheduled_hook('boomi_trust_statistics_cron_run');
     }
 
 }
