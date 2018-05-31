@@ -4,55 +4,43 @@ function boomi_trust_daily_integrations($atts) {
 	$atts = shortcode_atts( array(), $atts, 'trust-daily-integrations' ); 
 	
 	$html = '';
-	$statistic_types = array(
-    	'processes' => array(
-    	    'title' => 'Integrations Processed',
-    	    'description' => 'Total integrations that have been processed in the last 30 days.',
-        ),
-    	'atoms' => array(
-    	    'title' => 'Atoms Deployed',
-    	    'description' => 'Total Atoms deployed in the Cloud and on-premise.',
-        ),
-    	'total-mappings' => array(
-    	    'title' => 'Mappings Indexed',
-    	    'description' => 'Total number of mappings indexed by Boomi Suggest.',
-        ),
-    	'total-functions' => array(
-    	    'title' => 'Functions Indexed',
-    	    'description' => 'Total number of functions indexed by Boomi Suggest.',
-        ),
-    );
+    $process_count = get_option('_trust_process_count', '');
+    
+    if (empty($process_count))
+        return;
 		
-	$html .= '<div class="row statistics">';
-		
-		if ( !empty(get_option('_trust_statistic_updated')) ) :
-		
-			foreach ($statistic_types as $slug => $arr) :
-			
-				$html .= '<div class="col-xs-6 col-sm-3">';
-					$html .= '<div class="stat-wrap">';
-						$html .= '<div class="row stat-number">';
-							$html .= '<div class="col-xs-12">'.number_format(get_option('_trust_statistic_' . $slug, 0)).'</div>';
-						$html .= '</div>';
+	$html .= '<div class="process-count">';
 
-						$html .= '<div class="row stat-title">';
-							$html .= '<div class="col-xs-12">'.$arr['title'].'</div>';
-						$html .= '</div>';
-						
-						$html .= '<div class="row stat-description">';
-							$html .= '<div class="col-xs-12">'.$arr['description'].'</div>';
-						$html .= '</div>';
-					$html .= '</div>';
-				$html .= '</div>';
-				
-			endforeach;
-			
-		endif;
+        $html .= '<div class="row title">';
+			$html .= '<div class="col-xs-12">';
+                $html.='Daily Integration Count';
+            $html .= '</div>';
+        $html.='</div>';
+
+        $html .= '<div class="row header">';
+			$html .= '<div class="col-xs-5 col-xs-offset-1 col-md-4 col-md-offset-2 process-date">';
+                $html.='Date';
+            $html .= '</div>';
+
+			$html .= '<div class="col-xs-5 count">';
+                $html.='Count';
+            $html .= '</div>';
+        $html.='</div>';
+	
+		foreach ($process_count as $arr) :
+		    $html.='<div class="row process-row">';
+    			$html .= '<div class="col-xs-5 col-xs-offset-1 col-md-4 col-md-offset-2 process-date">';
+                    $html.=date('M j, Y', strtotime($arr['process_date']));
+                $html .= '</div>';
+    
+    			$html .= '<div class="col-xs-5 count">';
+                    $html.=$arr['count'];
+                $html .= '</div>';
+            $html .= '</div>';
+		endforeach;
 		
 	$html .= '</div>';
 		
-
-	
 	return $html;   
 }
 add_shortcode('trust-daily-integrations', 'boomi_trust_daily_integrations');

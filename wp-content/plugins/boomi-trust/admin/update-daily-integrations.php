@@ -7,36 +7,33 @@ class Boomi_Trust_Update_Daily_Integrations {
 	
 	private function process_file() {
     	// get json and turn it into an array
-    	$file_contents = file_get_contents('http://erikmitchell.net/_b00mI/performance-history.json');
+    	//$file_contents = file_get_contents('http://erikmitchell.net/_b00mI/statistics.json');
+    	$file_contents = file_get_contents(BOOMI_TRUST_PATH.'statistics.json');
         $json_arr = json_decode($file_contents, true);
-        
-        // json construction: array['trust'] => date, data => dataArray.
-        $trust_arr = $json_arr['trust'];
-        $date = str_replace(' ', '', $trust_arr['date']);
-        $data = $trust_arr['data']['dataArray'];
-       
-        // check date against option '_trust_statistic_updated'
-        $existing_date = get_option('_trust_statistic_updated', '');
       
-        if ($date > $existing_date) :
-            update_option('_trust_statistic_updated', $date);
-            
-            $this->update_data($data);
+        // json construction: array['Process Count'].
+        $process_count = array_map('boomi_trust_clean_json', $json_arr['Process Count']);
+       
+        // check date against option '_trust_process_count'
+        $existing_count = get_option('_trust_process_count', '');
+      
+        if (serialize($process_count) != serialize($existing_count)) :
+            update_option('_trust_process_count', $process_count);
         endif;
 
         return;
 	}
-
-    private function update_data($data = array()) {
-        if (empty($data))
-            return;
-            
-        foreach ($data as $arr) :
-            $slug = strtolower( str_replace(' ', '-', $arr['name']) );
-            update_option('_trust_statistic_' . $slug, $arr['value']);
-        endforeach;
-        
-        return;
-    }
 	
+}
+
+function boomi_trust_clean_json($arr) {
+    $arr_clean = array();
+    
+    foreach ($arr as $key => $value) :
+        $clean_key = trim(preg_replace('/\s+/', ' ', $key));
+        $clean_value = trim(preg_replace('/\s+/', ' ', $value));        
+        $arr_clean[$clean_key] = $clean_value;
+    endforeach;
+    
+    return $arr_clean;
 }

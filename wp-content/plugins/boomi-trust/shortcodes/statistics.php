@@ -29,7 +29,7 @@ function boomi_trust_statistics($atts) {
 		
 			foreach ($statistic_types as $slug => $arr) :
 			
-				$html .= '<div class="col-xs-6 col-sm-3">';
+				$html .= '<div class="col-xs-12 col-sm-6 col-md-3 stat">';
 					$html .= '<div class="stat-wrap">';
 						$html .= '<div class="row stat-number">';
 							$html .= '<div class="col-xs-12">'.number_format(get_option('_trust_statistic_' . $slug, 0)).'</div>';
