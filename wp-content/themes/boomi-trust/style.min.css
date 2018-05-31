@@ -82,7 +82,7 @@ body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-seri
 .statistics .stat-wrap .stat-number{font-size:24px;background-color:#007db8;border-color:#007db8;color:#fff}
 .statistics .stat-wrap .stat-number div{padding-top:10px;padding-bottom:10px;text-align:center}
 .statistics .stat-wrap .stat-title{font-weight:bold;border-style:solid;border-width:1px 1px 0 1px;border-color:gray;background:#eee;padding-top:10px;padding-bottom:5px;font-size:16px}
-.statistics .stat-wrap .stat-description{border-style:solid;border-width:0 1px 1px 1px;border-color:gray;background:#eee}
+.statistics .stat-wrap .stat-description{border-style:solid;border-width:0 1px 1px 1px;border-color:gray;background:#eee;padding-bottom:10px}
 .statuses-single{font-size:16px}.statuses-single .date{background-color:#007db8;color:#fff;margin-bottom:15px}
 .statuses-single .date .date-inner{padding:20px}.statuses-single .date .date-inner h2{margin:0;font-size:2.5em}
 .statuses-single .service{border-bottom:1px solid #aaa;margin-bottom:20px}.statuses-single .service h2{font-size:2em}
