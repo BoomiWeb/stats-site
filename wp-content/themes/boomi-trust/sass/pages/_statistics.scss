@@ -1,11 +1,10 @@
 .statistics {
 	.stat-wrap {
-		padding: 15px;
+		padding: 0 15px 15px;
 		
 		.stat-number {
 			font-size: 1.75em;
-			background-color: $dell-blue;
-			border-color: $dell-blue;
+			background-color: $steel;
 			color: $white;
 			padding-top: 10px;
 			padding-bottom: 10px;
@@ -16,8 +15,8 @@
 			font-weight: bold;
 			border-style: solid;
 			border-width: 1px 1px 0 1px;
-			border-color: $dell-gray;
-			background: $quartz;
+			border-color: $steel;
+			background: $row-bg;
 			padding: 10px 15px;
 			font-size: 1.25em;
         }
@@ -25,8 +24,8 @@
 		.stat-description {
 			border-style: solid;
 			border-width: 0 1px 1px 1px;
-			border-color: $dell-gray;
-			background: $quartz;
+			border-color: $steel;
+			background: $row-bg;
 			padding: 0 15px 10px;
         }
     }
@@ -36,7 +35,7 @@
     margin-top: 45px;
     
     .title {
-        background-color: $dell-blue;
+        background-color: $steel;
         padding: 15px;
         font-size: 1.25em;
         color: $white;
@@ -45,12 +44,12 @@
     .header,
     .process-row {
         border-style: solid;
-		border-width: 0 1px 1px 1px;
 		border-color: $dell-gray;       
     }
         
     .header {
         background-color: $quartz;
+        border-width: 0 1px 0 1px;
         padding: 15px;
         font-size: 1.15em;
         font-weight: bold;
@@ -61,10 +60,15 @@
     }
     
     .process-row {
+        border-width: 0 1px 0 1px;
         padding: 10px 15px;
         
         &:nth-child( even ) {
-            background: $light-gray;
+            background: $row-bg;
+        }
+        
+        &:last-child {
+            border-bottom-width: 1px;   
         }
     }
 }
