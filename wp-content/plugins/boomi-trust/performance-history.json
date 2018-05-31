@@ -1,0 +1,25 @@
+{
+  "trust": {
+    "date": "20180531 081513.481",
+    "data": {
+      "dataArray": [
+        {
+          "name": "Atoms",
+          "value": 6248
+        },
+        {
+          "name": "Total Mappings",
+          "value": 511424
+        },
+        {
+          "name": "Total Functions",
+          "value": 1160
+        },
+        {
+          "name": "Processes",
+          "value": 188157
+        }
+      ]
+    }
+  }
+}
