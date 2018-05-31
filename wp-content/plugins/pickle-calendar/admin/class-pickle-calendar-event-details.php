@@ -173,7 +173,15 @@ class Pickle_Calendar_Event_Details {
 
         foreach ( $_POST['details']['dates'] as $key => $dates ) :
             add_post_meta( $post_id, '_start_date_' . sanitize_key( $key ), $dates['start_date'] );
-            add_post_meta( $post_id, '_end_date_' . sanitize_key( $key ), $dates['end_date'] );
+            
+            // if we have a start date, but no end date, make end = start.
+            if (!empty($dates['start_date']) && empty($dates['end_date'])) :
+                $end_date = $dates['start_date'];
+            else :
+                $end_date = $dates['end_date'];  
+            endif;
+    
+            add_post_meta( $post_id, '_end_date_' . sanitize_key( $key ), $end_date );
         endforeach;
     }
 

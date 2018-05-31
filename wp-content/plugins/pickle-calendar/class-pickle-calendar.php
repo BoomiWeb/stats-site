@@ -325,8 +325,7 @@ class Pickle_Calendar {
     protected function add_date_info( $date = '' ) {
         $content = '';
         $events = $this->get_events( $date );
-echo "$date: <br>";
-print_r($events);
+
         if ( empty( $events ) ) {
             return;
         }
@@ -527,7 +526,7 @@ print_r($events);
                 $date
             )
         );
-print_r($post_ids);
+
         if ( empty( $post_ids ) ) {
             return;
         }
