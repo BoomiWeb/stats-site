@@ -1,25 +1,46 @@
 {
-  "name": "boomi-sales",
+  "name": "boomi-trust",
   "version": "1.0.0",
-  "description": "A robust theme for the Boomi sales portal",
+  "description": "Boomi Trust.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Boomi 4 Life\" && exit 1"
+    "test": "echo \"Trust the process\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
   "author": "Erik Mitchell",
-  "license": "ISC",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
   "devDependencies": {
-    "autoprefixer": "^6.7.0",
-    "css-declaration-sorter": "^1.6.0",
-    "cssnano": "^3.10.0",
-    "gulp": "^3.9.1",
-    "gulp-livereload": "^3.8.1",
+    "gulp": "^3.9.1",      
+    "gulp-autoprefixer": "^5.0.0", 
+    "gulp-cache": "^1.0.2",
+    "gulp-concat": "^2.6.1", 
+    "gulp-filter": "^5.1.0",
+    "gulp-ignore": "^2.0.2",
+    "gulp-imagemin": "",
+    "gulp-jshint": "^2.0.4",    
+    "gulp-load-plugins": "",
+    "gulp-newer": "",
+    "gulp-notify": "",
+    "gulp-phpcs": "^2.1.0",    
     "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.3.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.0",
-    "gulp-uglify": "^2.0.1",
-    "gulp-util": "^3.0.8"
+    "gulp-phpcbf": "^0.1.2", 
+    "gulp-rename": "^1.2.2", 
+    "gulp-run-sequence": "",
+    "gulp-sass": "^3.1.0", 
+    "gulp-sourcemaps": "",
+    "gulp-stylelint": "^5.0.0",    
+    "gulp-uglify": "^3.0.0", 
+    "gulp-uglifycss": "",
+    "gulp-util": "",
+    "jshint-stylish": "",
+    "jshint": ""      
   }
 }
