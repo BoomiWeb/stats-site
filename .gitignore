@@ -57,3 +57,4 @@ Thumbs.db
 ##########
 .sass-cache
 /wp-content/themes/boomi-trust/node_modules
+/wp-content/themes/boomi-trust/vendor
