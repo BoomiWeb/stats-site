@@ -13,7 +13,7 @@ class Boomi_Trust_Admin {
 	}
 	
 	protected function includes() {
-		include_once(BOOMI_TRUST_ADMIN_PATH.'update-statuses.php');
+		include_once(BOOMI_TRUST_ADMIN_PATH.'update-statistics.php');
 	}
 	
 	protected function init() {
@@ -27,4 +27,3 @@ class Boomi_Trust_Admin {
 }
 
 new Boomi_Trust_Admin();
-?>

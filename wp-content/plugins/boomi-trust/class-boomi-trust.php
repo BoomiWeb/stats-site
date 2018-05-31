@@ -73,6 +73,7 @@ final class Boomi_Trust {
         include_once(BOOMI_TRUST_PATH.'init.php');
         include_once(BOOMI_TRUST_PATH.'logger.php');
         include_once(BOOMI_TRUST_PATH.'cron.php');
+        include_once(BOOMI_TRUST_PATH.'shortcodes/statistics.php');        
     }
 
     /**
