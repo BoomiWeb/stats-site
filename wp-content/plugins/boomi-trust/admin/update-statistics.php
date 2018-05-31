@@ -26,7 +26,7 @@ class Boomi_Trust_Update_Statistics {
         // check date against option '_trust_statistic_updated'
         $existing_date = get_option('_trust_statistic_updated', '');
       
-        if ($date >= $existing_date) :
+        if ($date > $existing_date) :
             update_option('_trust_statistic_updated', $date);
             
             $this->update_data($data);
@@ -40,12 +40,11 @@ class Boomi_Trust_Update_Statistics {
             return;
             
         foreach ($data as $arr) :
-            update_option('_trust_statistic_' . $arr['name'], $arr['value']);
+            $slug = strtolower( str_replace(' ', '-', $arr['name']) );
+            update_option('_trust_statistic_' . $slug, $arr['value']);
         endforeach;
         
         return;
     }
 	
 }
-
-//new Boomi_Trust_Update_Statistics();
