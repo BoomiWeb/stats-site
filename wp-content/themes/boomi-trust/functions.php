@@ -577,18 +577,3 @@ function boomi_trust_page_slug($post_id=0) {
 	
 	return $post->post_name;
 }
-
-/**
- * boomi_trust_get_page_hero function.
- * 
- * @access public
- * @param int $post_id (default: 0)
- * @return void
- */
-function boomi_trust_get_page_hero($post_id=0) {
-	if (has_post_thumbnail($post_id)) :
-		echo get_the_post_thumbnail_url($post_id, 'full');
-	else :
-		echo get_stylesheet_directory_uri().'/inc/images/hero.png';
-	endif;
-}

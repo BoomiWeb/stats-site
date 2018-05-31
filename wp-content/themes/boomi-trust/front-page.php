@@ -7,8 +7,6 @@
 ?>
 
 <?php get_header(); ?>
-
-	<?php get_template_part('template-parts/page/hero', 'image'); ?>
 				
 	<?php get_template_part('template-parts/page/front', 'page'); ?>
 
