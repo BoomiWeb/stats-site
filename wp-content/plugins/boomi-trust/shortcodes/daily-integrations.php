@@ -11,32 +11,34 @@ function boomi_trust_daily_integrations($atts) {
 		
 	$html .= '<div class="process-count">';
 
-        $html .= '<div class="row title">';
-			$html .= '<div class="col-xs-12">';
-                $html.='Daily Integration Count';
-            $html .= '</div>';
+        $html .= '<div class="title">';
+            $html.='Daily Integration Count';
         $html.='</div>';
 
-        $html .= '<div class="row header">';
-			$html .= '<div class="col-xs-5 col-md-4 process-date">';
-                $html.='Date';
-            $html .= '</div>';
-
-			$html .= '<div class="col-xs-5 count">';
-                $html.='Count';
-            $html .= '</div>';
-        $html.='</div>';
-	
-		foreach ($process_count as $arr) :
-		    $html.='<div class="row process-row">';
+        $html.='<div class="col-xs-12">';
+            $html .= '<div class="row header">';
     			$html .= '<div class="col-xs-5 col-md-4 process-date">';
-                    $html.=date('M j, Y', strtotime($arr['process_date']));
+                    $html.='Date';
                 $html .= '</div>';
     
     			$html .= '<div class="col-xs-5 count">';
-                    $html.=$arr['count'];
+                    $html.='Count';
                 $html .= '</div>';
-            $html .= '</div>';
+            $html.='</div>';
+    	$html.='</div>';
+
+		foreach ($process_count as $arr) :
+    		$html.='<div class="col-xs-12 process-row">';
+    		    $html.='<div class="row">';
+        			$html .= '<div class="col-xs-5 col-md-4 process-date">';
+                        $html.=date('M j, Y', strtotime($arr['process_date']));
+                    $html .= '</div>';
+        
+        			$html .= '<div class="col-xs-5 count">';
+                        $html.=$arr['count'];
+                    $html .= '</div>';
+                $html .= '</div>';
+            $html .= '</div>';            
 		endforeach;
 		
 	$html .= '</div>';
