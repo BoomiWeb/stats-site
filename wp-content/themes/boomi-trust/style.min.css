@@ -36,6 +36,7 @@
 }.navbar{margin:36px 0;background-color:transparent;background-image:none;border:0;-webkit-box-shadow:none;box-shadow:none}
 .boomi-sales-header-image{padding-bottom:10px}.boomi-sales-header-text .site-title{font-size:18px;line-height:20px;color:#333}
 .boomi-sales-header-text .site-title:hover{color:#777;text-decoration:none}.boomi-sales-header-text .site-description{color:#777}
+.boomi-trust-header-wrap{width:20rem}.boomi-trust-header-wrap .boomi-trust-header-image{width:100%}
 .hero-wrap{margin-bottom:30px;text-align:center}.hero-image{background-repeat:no-repeat;background-position:center;background-size:100%;background-size:cover;padding:4% 0;position:relative;background-color:#fff}
 .hero-image .hero-title{color:#000}.post-navigation{overflow:hidden;padding:15px 0}
 .post-navigation .nav-links div{float:left;width:50%}.post-navigation .nav-links .next-post{text-align:right}

@@ -1,15 +1,7 @@
-<div class="boomi-trust-header-wrap ">
-	<?php boomi_trust_header_markup(); ?>
-	
-	<?php if (display_header_text()) : ?>
-		<div class="boomi-trust-header-text">
-			<a class="site-title" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-		
-			<?php $description = get_bloginfo( 'description', 'display' ); ?>
-			<?php if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; ?></p>
-			<?php endif; ?>
-		</div>
-	<?php endif; ?>
+<div class="boomi-trust-header-wrap">
+
+	<div class="boomi-trust-header-image">
+		<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/boomi-logo.svg" height="" width="" alt="boomi-logo" /></a>
+	</div>
 		
 </div>

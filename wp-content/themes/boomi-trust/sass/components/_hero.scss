@@ -1,0 +1,22 @@
+.hero-wrap {
+	margin-bottom: 30px;
+	text-align: center;
+}
+	
+.hero-image {
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: 100%;
+	-moz-background-size: cover;
+	background-size: 100%;
+	background-size: cover;
+	padding: 4% 0;
+	position: relative;
+	background-color: #fff;
+	
+	.hero-title {
+		color: #000;
+    }
+}
