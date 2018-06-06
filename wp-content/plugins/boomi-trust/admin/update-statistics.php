@@ -16,7 +16,7 @@ class Boomi_Trust_Update_Statistics {
         $data = $trust_arr['data']['dataArray'];
        
         // check date against option '_trust_statistic_updated'
-        echo $existing_date = get_option('_trust_statistic_updated', '');
+        $existing_date = get_option('_trust_statistic_updated', '');
              
         if ($date > $existing_date) :
             update_option('_trust_statistic_updated', $date);
