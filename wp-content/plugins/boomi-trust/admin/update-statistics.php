@@ -7,7 +7,7 @@ class Boomi_Trust_Update_Statistics {
 	
 	private function process_file() {
     	// get json and turn it into an array
-    	$file_contents = file_get_contents('http://erikmitchell.net/_b00mI/performance-history.json');
+    	$file_contents = file_get_contents('http://erikmitchell.net/_b00mI/trust-statistics.json');
         $json_arr = json_decode($file_contents, true);
         
         // json construction: array['trust'] => date, data => dataArray.
