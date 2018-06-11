@@ -35,7 +35,7 @@ function boomi_trust_daily_integrations($atts) {
                     $html .= '</div>';
         
         			$html .= '<div class="col-xs-5 count">';
-                        $html.=$arr['count'];
+                        $html.=number_format($arr['count']);
                     $html .= '</div>';
                 $html .= '</div>';
             $html .= '</div>';            
