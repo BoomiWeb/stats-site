@@ -7,8 +7,7 @@ class Boomi_Trust_Update_Daily_Integrations {
 	
 	private function process_file() {
     	// get json and turn it into an array
-    	//$file_contents = file_get_contents('http://erikmitchell.net/_b00mI/statistics.json');
-    	$file_contents = file_get_contents(BOOMI_TRUST_PATH.'statistics.json');
+    	$file_contents = file_get_contents('http://erikmitchell.net/_b00mI/trust-performance.json');
         $json_arr = json_decode($file_contents, true);
       
         // json construction: array['Process Count'].
