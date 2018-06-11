@@ -26,7 +26,7 @@
 					<div class="navbar-header">
 						<?php get_template_part('template-parts/navigation/navbar', 'button'); ?>
 						
-						<a href="<?php echo site_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/boomi-logo-white.svg" height="" width="" alt="boomi-logo" /></a>
+						<a href="https://status.boomi.com"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/boomi-logo-white.svg" height="" width="" alt="boomi-logo" /></a>
 					</div>
 					<?php get_template_part('template-parts/navigation/primary', 'menu'); ?>
 				</nav>
