@@ -4,10 +4,39 @@ footer {
 	margin-top: 30px;
 	color: $white;
 	font-size: 14px;
-	padding: 0.7rem;
+	padding: 0.8rem;
+	
+	.footer-menu {
+    	.menu {
+        	overflow: hidden;
+        	padding: 0;
+        	margin: 0;
+        	
+        	.menu-item {
+            	list-style-type: none;
+                float: left;
+                margin-right: 10px;
+                
+            	a {
+                	margin: 4px 16px 4px 0;
+                    color: $white;
+            	}
+            	
+            	&.twitter-btn {
+                	background: #1B95E0;
+                	
+                	a {
+                    	margin: 4px;
+                    	font-size: 12px;
+                    }
+            	}
+        	}
+    	}
+	}
         
     .copyright {
 	    padding: 10px 0;
-        text-align: center; 	
+        text-align: center;
+        display: none; 	
     }
 }

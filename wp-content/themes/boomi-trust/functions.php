@@ -131,11 +131,16 @@ function boomi_trust_theme_scripts() {
 
 	// enqueue font awesome and our main stylesheet
 	wp_enqueue_style('roboto-google-font', 'https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-	wp_enqueue_style('font-awesome-style', get_template_directory_uri().'/inc/css/font-awesome.min.css', array(), '4.7.0');
+	//wp_enqueue_style('font-awesome-style', get_template_directory_uri().'/inc/css/font-awesome.min.css', array(), '5.0.0');
 	wp_enqueue_style('bootstrap-style', get_template_directory_uri().'/inc/css/bootstrap.css', array(), '4.6.3');
 	wp_enqueue_style('boomi-trust-theme-style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts','boomi_trust_theme_scripts');
+
+function boomi_font_awesome() {
+    echo '<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>';
+}
+add_action('wp_head', 'boomi_font_awesome');
 
 /**
  * Display an optional post thumbnail.
