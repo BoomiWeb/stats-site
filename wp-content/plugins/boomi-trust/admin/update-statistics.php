@@ -40,5 +40,3 @@ class Boomi_Trust_Update_Statistics {
     }
 	
 }
-
-new Boomi_Trust_Update_Statistics();
