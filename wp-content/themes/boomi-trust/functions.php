@@ -88,7 +88,6 @@ function boomi_trust_theme_setup() {
 	// register our navigation area
 	register_nav_menus( array(
 		'primary' => __('Primary Menu','boomi-trust'),
-		'footer' => __('Footer Menu', 'boomi-trust'),
 	) );
 
 	/**
@@ -131,7 +130,6 @@ function boomi_trust_theme_scripts() {
 
 	// enqueue font awesome and our main stylesheet
 	wp_enqueue_style('roboto-google-font', 'https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-	//wp_enqueue_style('font-awesome-style', get_template_directory_uri().'/inc/css/font-awesome.min.css', array(), '5.0.0');
 	wp_enqueue_style('bootstrap-style', get_template_directory_uri().'/inc/css/bootstrap.css', array(), '4.6.3');
 	wp_enqueue_style('boomi-trust-theme-style', get_stylesheet_uri());
 }
