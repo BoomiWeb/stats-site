@@ -88,6 +88,7 @@ function boomi_trust_theme_setup() {
 	// register our navigation area
 	register_nav_menus( array(
 		'primary' => __('Primary Menu','boomi-trust'),
+		'footer' => __('Footer Menu', 'boomi-trust'),
 	) );
 
 	/**
