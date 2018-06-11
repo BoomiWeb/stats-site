@@ -87,7 +87,7 @@ final class Boomi_Trust {
     	$tomorrow=strtotime('tomorrow');
     	
     	if (!wp_next_scheduled('boomi_trust_statistics_cron_run')) :
-    		wp_schedule_event($tomorrow, 'daily', 'boomi_trust_statistics_cron_run');
+    		wp_schedule_event($tomorrow, 'twicedaily', 'boomi_trust_statistics_cron_run');
     	endif;
     }
     
