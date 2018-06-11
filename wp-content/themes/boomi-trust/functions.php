@@ -88,8 +88,6 @@ function boomi_trust_theme_setup() {
 	// register our navigation area
 	register_nav_menus( array(
 		'primary' => __('Primary Menu','boomi-trust'),
-		//'mobile' => __('Mobile Menu','boomi-trust'),
-		//'secondary' => __('Secondary Menu','boomi-trust'),
 	) );
 
 	/**
@@ -99,54 +97,6 @@ function boomi_trust_theme_setup() {
 
 }
 add_action('after_setup_theme','boomi_trust_theme_setup');
-
-/**
- * Register widget area.
- *
- * @since boomi-trust 1.0.0
- */
-function boomi_trust_theme_widgets_init() {
-
-	register_sidebar(array(
-		'name' => 'Sidebar',
-		'id' => 'sidebar',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-
-	register_sidebar(array(
-		'name' => 'Footer 1',
-		'id' => 'footer-1',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-
-	register_sidebar(array(
-		'name' => 'Footer 2',
-		'id' => 'footer-2',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-
-/*
-	register_sidebar(array(
-		'name' => 'Footer 3',
-		'id' => 'footer-3',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-*/
-
-}
-add_action('widgets_init','boomi_trust_theme_widgets_init');
 
 /**
  * Enqueue scripts and styles.
