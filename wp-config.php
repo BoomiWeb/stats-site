@@ -114,6 +114,15 @@ else:
   endif;
 endif;
 
+// Require HTTPS, non www. //
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') && (php_sapi_name() != "cli")) {
+  if ($_SERVER['HTTP_HOST'] != 'stats.boomi.com' || !isset($_SERVER['HTTP_X_SSL']) || $_SERVER['HTTP_X_SSL'] != 'ON' ) {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://stats.boomi.com'. $_SERVER['REQUEST_URI']);
+    exit();
+  }
+}
+
 /** Standard wp-config.php stuff from here on down. **/
 
 /**
