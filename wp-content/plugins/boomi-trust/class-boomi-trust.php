@@ -82,7 +82,7 @@ final class Boomi_Trust {
         register_activation_hook(BOOMI_TRUST_PLUGIN_FILE, array($this, 'boomi_trust_activate_plugin'));
         register_deactivation_hook(BOOMI_TRUST_PLUGIN_FILE, array($this, 'boomi_trust_deactivate_plugin'));
         
-        add_filter( 'cron_schedules', $this->add_cron_intervals );  
+        add_filter( 'cron_schedules', array($this, 'add_cron_intervals') );  
     }
 
     public function boomi_trust_activate_plugin() {
