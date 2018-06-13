@@ -86,10 +86,10 @@ final class Boomi_Trust {
     }
 
     public function boomi_trust_activate_plugin() {
-    	$tomorrow=strtotime('tomorrow');
+    	//$tomorrow=strtotime('tomorrow');
     	
     	if (!wp_next_scheduled('boomi_trust_statistics_cron_run')) :
-    		wp_schedule_event($tomorrow, 'fiveseconds', 'boomi_trust_statistics_cron_run');
+    		wp_schedule_event(time(), 'fiveseconds', 'boomi_trust_statistics_cron_run');
     	endif;
     }
     
