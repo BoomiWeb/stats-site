@@ -80,19 +80,30 @@ final class Boomi_Trust {
      */
     private function init_hooks() {
         register_activation_hook(BOOMI_TRUST_PLUGIN_FILE, array($this, 'boomi_trust_activate_plugin'));
-        register_deactivation_hook(BOOMI_TRUST_PLUGIN_FILE, array($this, 'boomi_trust_deactivate_plugin'));  
+        register_deactivation_hook(BOOMI_TRUST_PLUGIN_FILE, array($this, 'boomi_trust_deactivate_plugin'));
+        
+        add_filter( 'cron_schedules', $this->add_cron_intervals );  
     }
 
     public function boomi_trust_activate_plugin() {
     	$tomorrow=strtotime('tomorrow');
     	
     	if (!wp_next_scheduled('boomi_trust_statistics_cron_run')) :
-    		wp_schedule_event($tomorrow, 'twicedaily', 'boomi_trust_statistics_cron_run');
+    		wp_schedule_event($tomorrow, 'fiveseconds', 'boomi_trust_statistics_cron_run');
     	endif;
     }
     
     public function boomi_trust_deactivate_plugin() {
     	wp_clear_scheduled_hook('boomi_trust_statistics_cron_run');
+    }
+    
+    public function add_cron_intervals( $schedules ) {
+        $schedules['fiveseconds'] = array(
+            'interval' => 5, // Intervals are listed in seconds
+            'display' => __('Every 5 Seconds') // Easy to read display name
+        );
+    
+        return $schedules;
     }
 
 }
