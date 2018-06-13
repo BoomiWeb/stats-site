@@ -68,7 +68,7 @@ final class Boomi_Trust {
     public function includes() {
         include_once(BOOMI_TRUST_PATH.'admin/admin.php');
         include_once(BOOMI_TRUST_PATH.'functions.php');
-        include_once(BOOMI_TRUST_PATH.'logger.php');
+        include_once(BOOMI_TRUST_PATH.'php-custom-logger.php');
         include_once(BOOMI_TRUST_PATH.'cron.php');       
     }
 
