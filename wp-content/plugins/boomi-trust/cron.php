@@ -17,4 +17,4 @@ function boomi_trust_cron_jobs() {
 		
     php_custom_logger()->log('end trust cron jobs');
 }
-//add_action('boomi_trust_statistics_cron_run', 'boomi_trust_cron_jobs');	
+add_action('boomi_trust_statistics_cron_run', 'boomi_trust_cron_jobs');	
