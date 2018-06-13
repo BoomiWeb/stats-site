@@ -3,11 +3,16 @@
 if (!class_exists('PHP_Custom_Logger')) :
     
     final class PHP_Custom_Logger {
+            
+        protected $args = '';
     
-        protected $filename = 'php-custom-log.txt';
-    
-        public function __construct() {
-            // do nothing?
+        public function __construct($args = '') {
+            $default_args = array(
+                'path' => plugin_dir_path(__FILE__), 
+                'filename' => 'php-custom-log',
+                'file_extension' => '.txt';
+            );
+            $this->args = wp_parse_args($args, $default_args);            
         }
     
         public function log( $message = '' ) {
@@ -16,7 +21,7 @@ if (!class_exists('PHP_Custom_Logger')) :
     
         protected function write_to_log( $message = '' ) {
             $time = date( 'm-d-y H:i' );
-            $file = BSLI_PATH . $this->filename;
+            $file = $this->args['path'] . $this->args['filename'] . $args['file_extension'];
     
             $log_message = "\n#$time\n";
     
@@ -44,11 +49,11 @@ endif;
  */
 if (!function_exists('php_custom_logger')) :
 
-    function php_custom_logger() {
-        return new PHP_Custom_Logger();
+    function php_custom_logger($args = '') {
+        return new PHP_Custom_Logger($args);
     }
 
     // Global for backwards compatibility.
-    $GLOBALS['php_custom_logger'] = php_custom_logger();
+    $GLOBALS['php_custom_logger'] = php_custom_logger( $args = '' );
 
 endif;
