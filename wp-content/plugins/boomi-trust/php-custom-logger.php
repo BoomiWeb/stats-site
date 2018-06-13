@@ -21,7 +21,7 @@ if (!class_exists('PHP_Custom_Logger')) :
     
         protected function write_to_log( $message = '' ) {
             $time = date( 'm-d-y H:i' );
-            $file = $this->args['path'] . $this->args['filename'] . $args['file_extension'];
+            $file = $this->args['path'] . $this->args['filename'] . $this->args['file_extension'];
     
             $log_message = "\n#$time\n";
     
