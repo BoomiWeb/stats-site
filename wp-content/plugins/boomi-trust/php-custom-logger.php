@@ -10,7 +10,7 @@ if (!class_exists('PHP_Custom_Logger')) :
             $default_args = array(
                 'path' => plugin_dir_path(__FILE__), 
                 'filename' => 'php-custom-log',
-                'file_extension' => '.txt';
+                'file_extension' => '.txt',
             );
             $this->args = wp_parse_args($args, $default_args);            
         }
