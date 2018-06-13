@@ -85,6 +85,12 @@ final class Boomi_Trust {
         add_filter( 'cron_schedules', array( $this, 'add_cron_intervals' ) );
     }
 
+    /**
+     * Boomi_trust_activate_plugin function.
+     * 
+     * @access public
+     * @return void
+     */
     public function boomi_trust_activate_plugin() {
         // $tomorrow=strtotime('tomorrow');
         if ( ! wp_next_scheduled( 'boomi_trust_statistics_cron_run' ) ) :
@@ -92,14 +98,27 @@ final class Boomi_Trust {
         endif;
     }
 
+    /**
+     * Boomi_trust_deactivate_plugin function.
+     * 
+     * @access public
+     * @return void
+     */
     public function boomi_trust_deactivate_plugin() {
         wp_clear_scheduled_hook( 'boomi_trust_statistics_cron_run' );
     }
 
+    /**
+     * Add_cron_intervals function.
+     * 
+     * @access public
+     * @param mixed $schedules
+     * @return void
+     */
     public function add_cron_intervals( $schedules ) {
         $schedules['twohours'] = array(
-            'interval' => 7200, // Intervals are listed in seconds
-            'display' => __( 'Every 2 Hours' ), // Easy to read display name
+            'interval' => 7200,
+            'display' => __( 'Every 2 Hours' ),
         );
 
         return $schedules;
