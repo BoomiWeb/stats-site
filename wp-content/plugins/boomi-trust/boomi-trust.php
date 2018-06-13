@@ -1,8 +1,8 @@
 <?php
 
-/*
+/**
  * Plugin Name: Boomi Trust CMS
- * Plugin URI: 
+ * Plugin URI:
  * Description: Add ons for Boomi Trust.
  * Version: 0.2.0
  * Author: Boomi
@@ -11,7 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: boomi-trust
  * Domain Path: /languages
-*/
+ */
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

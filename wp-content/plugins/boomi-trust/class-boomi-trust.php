@@ -66,10 +66,10 @@ final class Boomi_Trust {
      * @return void
      */
     public function includes() {
-        include_once(BOOMI_TRUST_PATH.'admin/admin.php');
-        include_once(BOOMI_TRUST_PATH.'functions.php');
-        include_once(BOOMI_TRUST_PATH.'php-custom-logger.php');
-        include_once(BOOMI_TRUST_PATH.'cron.php');       
+        include_once( BOOMI_TRUST_PATH . 'admin/admin.php' );
+        include_once( BOOMI_TRUST_PATH . 'functions.php' );
+        include_once( BOOMI_TRUST_PATH . 'php-custom-logger.php' );
+        include_once( BOOMI_TRUST_PATH . 'cron.php' );
     }
 
     /**
@@ -79,30 +79,29 @@ final class Boomi_Trust {
      * @return void
      */
     private function init_hooks() {
-        register_activation_hook(BOOMI_TRUST_PLUGIN_FILE, array($this, 'boomi_trust_activate_plugin'));
-        register_deactivation_hook(BOOMI_TRUST_PLUGIN_FILE, array($this, 'boomi_trust_deactivate_plugin'));
-        
-        add_filter( 'cron_schedules', array($this, 'add_cron_intervals') );  
+        register_activation_hook( BOOMI_TRUST_PLUGIN_FILE, array( $this, 'boomi_trust_activate_plugin' ) );
+        register_deactivation_hook( BOOMI_TRUST_PLUGIN_FILE, array( $this, 'boomi_trust_deactivate_plugin' ) );
+
+        add_filter( 'cron_schedules', array( $this, 'add_cron_intervals' ) );
     }
 
     public function boomi_trust_activate_plugin() {
-    	//$tomorrow=strtotime('tomorrow');
-    	
-    	if (!wp_next_scheduled('boomi_trust_statistics_cron_run')) :
-    		wp_schedule_event(time(), 'twohours', 'boomi_trust_statistics_cron_run');
-    	endif;
+        // $tomorrow=strtotime('tomorrow');
+        if ( ! wp_next_scheduled( 'boomi_trust_statistics_cron_run' ) ) :
+            wp_schedule_event( time(), 'twohours', 'boomi_trust_statistics_cron_run' );
+        endif;
     }
-    
+
     public function boomi_trust_deactivate_plugin() {
-    	wp_clear_scheduled_hook('boomi_trust_statistics_cron_run');
+        wp_clear_scheduled_hook( 'boomi_trust_statistics_cron_run' );
     }
-    
+
     public function add_cron_intervals( $schedules ) {
         $schedules['twohours'] = array(
             'interval' => 7200, // Intervals are listed in seconds
-            'display' => __('Every 2 Hours') // Easy to read display name
+            'display' => __( 'Every 2 Hours' ), // Easy to read display name
         );
-    
+
         return $schedules;
     }
 
