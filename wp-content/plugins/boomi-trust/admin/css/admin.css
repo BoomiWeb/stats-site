@@ -1,38 +1,35 @@
-.boomi-trust-metabox {
-	
-}
 .boomi-trust-metabox .mb-row {
-	padding-bottom: 15px;
+    padding-bottom: 15px;
 }
 .boomi-trust-metabox .mb-row:last-child {
-	padding-bottom: 0;
+    padding-bottom: 0;
 }
 .boomi-trust-metabox .mb-row .mb-label {
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 .boomi-trust-metabox label {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 #cloud-statuses-metabox,
 #notifications-metabox {
-	border: none;
-	background: transparent;
-	box-shadow: none;
-	margin-bottom: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 0;
 }
 #cloud-statuses-metabox h2,
 #cloud-statuses-metabox .inside,
 #notifications-metabox h2,
 #notifications-metabox .inside {
-	padding-left: 0;
-	padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 #cloud-statuses-metabox h2,
 #notifications-metabox h2 {
-	display: none;
+    display: none;
 }
 
 #notificationtypediv {
-	display: none;
+    display: none;
 }
