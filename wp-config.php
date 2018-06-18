@@ -115,7 +115,6 @@ else:
 endif;
 
 // Require HTTPS, non www. //
-/*
 if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') && (php_sapi_name() != "cli")) {
   if ($_SERVER['HTTP_HOST'] != 'stats.boomi.com' || !isset($_SERVER['HTTP_X_SSL']) || $_SERVER['HTTP_X_SSL'] != 'ON' ) {
     header('HTTP/1.0 301 Moved Permanently');
@@ -123,18 +122,6 @@ if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && ($_SERVER['PANTHEON_ENVIRONMENT']
     exit();
   }
 }
-*/
-
-// Require HTTP. //
-/*
-if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') && (php_sapi_name() != "cli")) {
-  if ($_SERVER['HTTP_HOST'] != 'stats.boomi.com' || !isset($_SERVER['HTTP_X_SSL']) || $_SERVER['HTTP_X_SSL'] != 'ON' ) {
-    header('HTTP/1.0 301 Moved Permanently');
-    header('Location: http://stats.boomi.com'. $_SERVER['REQUEST_URI']);
-    exit();
-  }
-}
-*/
 
 if (isset($_ENV['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
   // Redirect to $primary_domain in the Live environment
