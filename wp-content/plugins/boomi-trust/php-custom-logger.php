@@ -9,8 +9,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         public function __construct( $args = '' ) {
             $default_args = array(
                 'path' => plugin_dir_path( __FILE__ ),
-                'filename' => 'php-custom-log',
-                'file_extension' => '.txt',
+                'file' => 'php-custom-log.txt',
             );
             $this->args = wp_parse_args( $args, $default_args );
             
@@ -23,7 +22,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
 
         protected function write_to_log( $message = '' ) {
             $time = date( 'm-d-y H:i' );
-            $file = $this->args['path'] . $this->args['filename'] . $this->args['file_extension'];
+            echo $file = $this->args['path'] . $this->args['file'];
 
             $log_message = "\n#$time\n";
 
