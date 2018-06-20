@@ -13,6 +13,8 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
                 'file_extension' => '.txt',
             );
             $this->args = wp_parse_args( $args, $default_args );
+            
+            add_action('admin_menu', array($this, 'add_log_page'));
         }
 
         public function log( $message = '' ) {
@@ -35,6 +37,20 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
             $write = fputs( $open, $log_message );
 
             fclose( $open );
+        }
+        
+        public function add_log_page() {
+            add_management_page('PHP Custom Logger', 'PHP Custom Logger', 'manage_options', 'php-custom-logger', array($this, 'admin_page'));
+        }
+        
+        public function admin_page() {
+            $html = '';
+            
+            $html .= site_url() . $this->args['filename'] . $this->args['file_extension'];
+            
+            $html .= $this->args['path'];
+            
+            echo $html;
         }
 
     }
