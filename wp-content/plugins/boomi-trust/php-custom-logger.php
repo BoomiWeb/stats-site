@@ -23,7 +23,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         }
 
         protected function write_to_log( $message = '' ) {
-            $file = $args['path'] . '/' . $args['file'];
+            $file = $this->args['path'] . '/' . $this->args['file'];
             //$file_url = $args['url'] . '/' . $args['file'];
             
             // in case uploads folder changes.
