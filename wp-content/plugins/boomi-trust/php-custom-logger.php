@@ -49,10 +49,13 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
             $html = '';
             $file = $this->args['path'] . '/' . $this->args['file'];
             $url = $this->args['url'] . '/' . $this->args['file'];
+            $contents = file_get_contents( $file ); // get the contents.
             
             $html .= '<a href="'.$url.'" target="_blank">'.$url.'</a>';
             
-            $html .= file_get_contents( $file ); // get the contents.
+            $html .= '<div class="php-logger-output">';
+                $html .= nl2br($contents);
+            $html .= '</div>';
             
             echo $html;
         }
