@@ -7,7 +7,6 @@
  * @return void
  */
 function boomi_trust_cron_jobs() {
-echo "boomi_trust_cron_jobs()";    
     php_custom_logger()->log( 'begin trust cron jobs' );
 
     $update_daily_integrations = boomi_trust_update_daily_integrations()->run();

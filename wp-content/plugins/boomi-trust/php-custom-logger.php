@@ -22,9 +22,18 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
 
         protected function write_to_log( $message = '' ) {
             
+// returns `false` if the UPLOADS constant is not defined
+$upload_dir = wp_upload_dir();
+$path = $upload_dir['path'];
 
+        $h = fopen($path, "a");
+        $mystring = $u . ' ' . $agent . PHP_EOL;
+        echo('mystring seems to be working');
+        fwrite( $h, $mystring );
+        fclose($h);
     // this will create the log where the CODE of this function is
     // adjust it to write within the plugin directory
+/*
     $path = dirname(__FILE__) . '/log.txt';
     $agent = $_SERVER['HTTP_USER_AGENT'];
 echo $path;    
@@ -36,6 +45,7 @@ echo $path;
     } else {
         die('WHAT IS GOING ON?');
     }
+*/
             
             $time = date( 'm-d-y H:i' );
             $file = $this->args['path'] . $this->args['file'];
