@@ -7,9 +7,12 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         protected $args = '';
 
         public function __construct( $args = '' ) {
+            $upload_dir = wp_upload_dir();
+            
             $default_args = array(
-                'path' => plugin_dir_path( __FILE__ ),
+                'path' => $upload_dir['path'],
                 'file' => 'php-custom-log.txt',
+                'url' => $upload_dir['url'],
             );
             $this->args = wp_parse_args( $args, $default_args );
             
@@ -21,34 +24,13 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         }
 
         protected function write_to_log( $message = '' ) {
+            $file = $args['path'] . '/' . $args['file'];
+            $file_url = $args['url'] . '/' . $args['file'];
             
-// returns `false` if the UPLOADS constant is not defined
-$upload_dir = wp_upload_dir();
-$path = $upload_dir['path'] . '/logger.txt';
-
-        $h = fopen($path, "a");
-        $mystring = $agent . PHP_EOL;
-        echo('mystring seems to be working');
-        fwrite( $h, $mystring );
-        fclose($h);
-    // this will create the log where the CODE of this function is
-    // adjust it to write within the plugin directory
-/*
-    $path = dirname(__FILE__) . '/log.txt';
-    $agent = $_SERVER['HTTP_USER_AGENT'];
-echo $path;    
-    if (($h = fopen($path, "a")) !== FALSE) {
-        $mystring = $u . ' ' . $agent . PHP_EOL;
-        echo('mystring seems to be working');
-        fwrite( $h, $mystring );
-        fclose($h);
-    } else {
-        die('WHAT IS GOING ON?');
-    }
-*/
+            // in case uploads folder changes.
+            update_option('_php_logger_file', $file_url);
             
             $time = date( 'm-d-y H:i' );
-            $file = $this->args['path'] . $this->args['file'];
 
             $log_message = "\n#$time\n";
 
@@ -58,10 +40,10 @@ echo $path;
                 $log_message .= $message;
             endif;
 
-            //$open = fopen( $file, 'a' );
-            //$write = fputs( $open, $log_message );
+            $open = fopen( $file, 'a' );
+            $write = fputs( $open, $log_message );
 
-            //fclose( $open );
+            fclose( $open );
         }
         
         public function add_log_page() {
@@ -71,7 +53,7 @@ echo $path;
         public function admin_page() {
             $html = '';
             
-            $html .= plugin_dir_url(__FILE__) . $this->args['filename'] . $this->args['file_extension'];
+            $html .= get_option('_php_logger_file', '');
             
             echo $html;
         }
