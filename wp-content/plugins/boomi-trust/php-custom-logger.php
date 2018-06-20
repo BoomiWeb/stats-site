@@ -46,9 +46,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         public function admin_page() {
             $html = '';
             
-            $html .= site_url() . $this->args['filename'] . $this->args['file_extension'];
-            
-            $html .= $this->args['path'];
+            $html .= plugin_dir_url(__FILE__) . $this->args['filename'] . $this->args['file_extension'];
             
             echo $html;
         }
