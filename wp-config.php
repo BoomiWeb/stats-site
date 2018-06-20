@@ -179,6 +179,11 @@ if ( ! defined( 'WP_DEBUG' ) ) {
     define('WP_DEBUG', false);
 }
 
+/**
+ * disable wp cron - use external cron job.
+ */
+define('DISABLE_WP_CRON', true);
+
 /* That's all, stop editing! Happy Pressing. */
 
 
