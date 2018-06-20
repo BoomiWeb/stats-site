@@ -24,10 +24,10 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
             
 // returns `false` if the UPLOADS constant is not defined
 $upload_dir = wp_upload_dir();
-$path = $upload_dir['path'];
+$path = $upload_dir['path'] . '/logger.txt';
 
         $h = fopen($path, "a");
-        $mystring = $u . ' ' . $agent . PHP_EOL;
+        $mystring = $agent . PHP_EOL;
         echo('mystring seems to be working');
         fwrite( $h, $mystring );
         fclose($h);
