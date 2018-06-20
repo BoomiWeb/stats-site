@@ -25,10 +25,10 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
 
         protected function write_to_log( $message = '' ) {
             $file = $args['path'] . '/' . $args['file'];
-            $file_url = $args['url'] . '/' . $args['file'];
+            //$file_url = $args['url'] . '/' . $args['file'];
             
             // in case uploads folder changes.
-            update_option('_php_logger_file', $file_url);
+            //update_option('_php_logger_file', $file_url);
             
             $time = date( 'm-d-y H:i' );
 
@@ -53,7 +53,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         public function admin_page() {
             $html = '';
             
-            $html .= get_option('_php_logger_file', '');
+            $html .= get_option('_php_logger_file', $args['url']);
             
             echo $html;
         }
