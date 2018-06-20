@@ -6,15 +6,14 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
 
         protected $args = '';
 
-        public function __construct( $args = '' ) {
+        public function __construct() {
             $upload_dir = wp_upload_dir();
             
-            $default_args = array(
+            $this->args = array(
                 'path' => $upload_dir['path'],
                 'file' => 'php-custom-log.txt',
                 'url' => $upload_dir['url'],
             );
-            $this->args = wp_parse_args( $args, $default_args );
             
             add_action('admin_menu', array($this, 'add_log_page'));
         }
@@ -53,7 +52,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         public function admin_page() {
             $html = '';
             
-            $html .= get_option('_php_logger_file', $args['url']);
+            $html .= print_r($this->args);
             
             echo $html;
         }
@@ -70,8 +69,8 @@ endif;
  */
 if ( ! function_exists( 'php_custom_logger' ) ) :
 
-    function php_custom_logger( $args = '' ) {
-        return new PHP_Custom_Logger( $args );
+    function php_custom_logger() {
+        return new PHP_Custom_Logger();
     }
 
     // Global for backwards compatibility.
