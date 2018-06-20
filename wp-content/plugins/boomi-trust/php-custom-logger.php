@@ -21,8 +21,23 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         }
 
         protected function write_to_log( $message = '' ) {
+            
+
+    // this will create the log where the CODE of this function is
+    // adjust it to write within the plugin directory
+    $path = dirname(__FILE__) . '/log.txt';
+    $agent = $_SERVER['HTTP_USER_AGENT'];
+    if (($h = fopen($path, "a")) !== FALSE) {
+        $mystring = $u . ' ' . $agent . PHP_EOL;
+        echo('mystring seems to be working');
+        fwrite( $h, $mystring );
+        fclose($h);
+    } else {
+        die('WHAT IS GOING ON?');
+    }
+            
             $time = date( 'm-d-y H:i' );
-            echo $file = $this->args['path'] . $this->args['file'];
+            $file = $this->args['path'] . $this->args['file'];
 
             $log_message = "\n#$time\n";
 
