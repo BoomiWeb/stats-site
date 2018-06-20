@@ -51,7 +51,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         
         public function admin_page() {
             $html = '';
-            $url = $this->args['url'] . '/' . $args['file'];
+            $url = $this->args['url'] . '/' . $this->args['file'];
             
             $html .= '<a href="'.$url.'" target="_blank">'.$url.'</a>';
             
