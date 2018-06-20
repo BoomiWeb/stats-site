@@ -27,6 +27,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
     // adjust it to write within the plugin directory
     $path = dirname(__FILE__) . '/log.txt';
     $agent = $_SERVER['HTTP_USER_AGENT'];
+echo $path;    
     if (($h = fopen($path, "a")) !== FALSE) {
         $mystring = $u . ' ' . $agent . PHP_EOL;
         echo('mystring seems to be working');
@@ -47,10 +48,10 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
                 $log_message .= $message;
             endif;
 
-            $open = fopen( $file, 'a' );
-            $write = fputs( $open, $log_message );
+            //$open = fopen( $file, 'a' );
+            //$write = fputs( $open, $log_message );
 
-            fclose( $open );
+            //fclose( $open );
         }
         
         public function add_log_page() {
