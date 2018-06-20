@@ -24,11 +24,7 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
 
         protected function write_to_log( $message = '' ) {
             $file = $this->args['path'] . '/' . $this->args['file'];
-            //$file_url = $args['url'] . '/' . $args['file'];
-            
-            // in case uploads folder changes.
-            //update_option('_php_logger_file', $file_url);
-            
+
             $time = date( 'm-d-y H:i' );
 
             $log_message = "\n#$time\n";
@@ -51,9 +47,12 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
         
         public function admin_page() {
             $html = '';
+            $file = $this->args['path'] . '/' . $this->args['file'];
             $url = $this->args['url'] . '/' . $this->args['file'];
             
             $html .= '<a href="'.$url.'" target="_blank">'.$url.'</a>';
+            
+            $html .= file_get_contents( $file ); // get the contents.
             
             echo $html;
         }
