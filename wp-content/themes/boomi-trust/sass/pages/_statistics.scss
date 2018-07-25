@@ -44,9 +44,12 @@
     }
     
     .phone-number {
-        font-size: 14px;
+        font-size: 1.5rem;
         
-        a {}
+        a {
+            display: inline-block;
+            margin-right: 5px;
+        }
     }
 }
 
