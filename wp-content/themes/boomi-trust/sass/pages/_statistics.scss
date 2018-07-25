@@ -31,6 +31,23 @@
     }
 }
 
+.support-info {
+    .report-text {
+        font-size: 1.75rem;
+        margin-bottom: 5px;
+        
+        span {
+            color: $dell-blue;    
+        }
+    }
+    
+    .phone-number {
+        font-size: 14px;
+        
+        a {}
+    }
+}
+
 .process-count {
     margin-top: 45px;
     

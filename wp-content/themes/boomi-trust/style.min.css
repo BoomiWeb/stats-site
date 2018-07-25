@@ -60,7 +60,8 @@ body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-seri
 .statistics .stat-wrap .stat-number{font-size:1.75em;background-color:#657792;color:#fff;padding-top:10px;padding-bottom:10px;text-align:center}
 .statistics .stat-wrap .stat-title{font-weight:bold;border-style:solid;border-width:1px 1px 0 1px;border-color:#657792;background:#f7f7f7;padding:10px 15px;font-size:1.25em}
 .statistics .stat-wrap .stat-description{border-style:solid;border-width:0 1px 1px 1px;border-color:#657792;background:#f7f7f7;padding:0 15px 10px}
-.process-count{margin-top:45px}.process-count .title{background-color:#657792;padding:15px;font-size:1.25em;color:#fff}
+.support-info .report-text{font-size:1.75rem;margin-bottom:5px}.support-info .report-text span{color:#0087cc}
+.support-info .phone-number{font-size:14px}.process-count{margin-top:45px}.process-count .title{background-color:#657792;padding:15px;font-size:1.25em;color:#fff}
 .process-count .header,.process-count .process-row{border-style:solid;border-color:gray}
 .process-count .header{background-color:#eee;border-width:0 1px 0 1px;padding:15px;font-size:1.15em;font-weight:bold}
 .process-count .header>div{padding-left:0}.process-count .process-row{border-width:0 1px 0 1px;padding:10px 15px}
