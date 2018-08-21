@@ -29,28 +29,25 @@ $release_dates = get_page_by_title('Release Date', OBJECT, 'release');
     				<div class="dates">
 
 						<div class="dates-wrap">
-<?php						
-// check if the repeater field has rows of data
-if( have_rows('dates', $release_control->ID) ):
-
- 	// loop through the rows of data
-    while ( have_rows('dates', $release_control->ID) ) : the_row();
-        
-        echo '<div class="col-xs-12">';
-        
-            if ('date' === the_sub_field('display')) :
-                the_sub_field('date');
-            else :
-                the_sub_field('text');
-            endif;
-        
-        echo '</div>';
-
-    endwhile;
-
-endif;
-?>
-						
+                            <?php						
+                            if( have_rows('dates', $release_control->ID) ):
+                            
+                                while ( have_rows('dates', $release_control->ID) ) : the_row();
+                                    
+                                    echo '<div class="col-xs-12">';
+                                    
+                                        if ('date' === get_sub_field('display')) :
+                                            echo get_sub_field('date');
+                                        else :
+                                            echo get_sub_field('text');
+                                        endif;
+                                    
+                                    echo '</div>';
+                            
+                                endwhile;
+                            
+                            endif;
+                            ?>						
 						</div>
     					
     				</div>
@@ -66,15 +63,25 @@ endif;
 					<div class="dates">
 
 						<div class="dates-wrap">
-						
-							<?php //foreach ($release_dates as $rd) : ?>
-							
-								<div class="col-xs-12">
-									<?php //echo date('F d, Y', strtotime($rd)); ?>
-								</div>
-							
-							<?php //endforeach; ?>
-						
+                            <?php						
+                            if( have_rows('dates', $release_dates->ID) ):
+                            
+                                while ( have_rows('dates', $release_dates->ID) ) : the_row();
+                                    
+                                    echo '<div class="col-xs-12">';
+                                    
+                                        if ('date' === the_sub_field('display')) :
+                                            the_sub_field('date');
+                                        else :
+                                            the_sub_field('text');
+                                        endif;
+                                    
+                                    echo '</div>';
+                            
+                                endwhile;
+                            
+                            endif;
+                            ?>    						
 						</div>
 						
 					</div>
