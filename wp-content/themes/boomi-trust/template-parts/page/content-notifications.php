@@ -36,7 +36,7 @@ $release_dates = get_page_by_title('Release Date', OBJECT, 'release');
                                     
                                     echo '<div class="col-xs-12">';
                                     
-                                        if ('date' === get_sub_field('display')) :
+                                        if ('Date' === get_sub_field('display')) :
                                             echo get_sub_field('date');
                                         else :
                                             echo get_sub_field('text');
@@ -70,10 +70,10 @@ $release_dates = get_page_by_title('Release Date', OBJECT, 'release');
                                     
                                     echo '<div class="col-xs-12">';
                                     
-                                        if ('date' === the_sub_field('display')) :
-                                            the_sub_field('date');
+                                        if ('Date' === get_sub_field('display')) :
+                                            echo get_sub_field('date');
                                         else :
-                                            the_sub_field('text');
+                                            echo get_sub_field('text');
                                         endif;
                                     
                                     echo '</div>';
@@ -81,7 +81,7 @@ $release_dates = get_page_by_title('Release Date', OBJECT, 'release');
                                 endwhile;
                             
                             endif;
-                            ?>    						
+                            ?>	   						
 						</div>
 						
 					</div>
