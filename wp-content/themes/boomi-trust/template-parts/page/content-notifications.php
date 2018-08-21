@@ -10,7 +10,7 @@
 
 <?php
 $release_control = get_page_by_title('Release Control Date', OBJECT, 'release');
-$release_ = get_page_by_title('Release Date', OBJECT, 'release');
+$release_dates = get_page_by_title('Release Date', OBJECT, 'release');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -49,13 +49,13 @@ else :
 endif;
 ?>						
 						
-							<?php foreach ($release_control_dates as $rcd) : ?>
+							<?php //foreach ($release_control_dates as $rcd) : ?>
 
 								<div class="col-xs-12">
 									<?php echo date('F d, Y', strtotime($rcd)); ?>
 								</div>
 							
-							<?php endforeach; ?>
+							<?php //endforeach; ?>
 						
 						</div>
     					
@@ -73,13 +73,13 @@ endif;
 
 						<div class="dates-wrap">
 						
-							<?php foreach ($release_dates as $rd) : ?>
+							<?php //foreach ($release_dates as $rd) : ?>
 							
 								<div class="col-xs-12">
 									<?php echo date('F d, Y', strtotime($rd)); ?>
 								</div>
 							
-							<?php endforeach; ?>
+							<?php //endforeach; ?>
 						
 						</div>
 						
