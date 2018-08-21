@@ -34,7 +34,7 @@ $release_dates = get_page_by_title('Release Date', OBJECT, 'release');
 if( have_rows('dates', $release_control->ID) ):
 
  	// loop through the rows of data
-    while ( have_rows('dates') ) : the_row();
+    while ( have_rows('dates', $release_control->ID) ) : the_row();
 
         // display a sub field value
         the_sub_field('display');
