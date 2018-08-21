@@ -37,6 +37,7 @@ if( have_rows('dates', $release_control->ID) ):
     while ( have_rows('dates') ) : the_row();
 
         // display a sub field value
+        the_sub_field('display');
         the_sub_field('date');
         the_sub_field('text');
 
