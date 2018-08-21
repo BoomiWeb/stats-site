@@ -32,7 +32,7 @@ function release_init() {
             'has_archive'       => true,
             'rewrite'           => true,
             'query_var'         => true,
-            'menu_icon'         => 'dashicons-testimonial',
+            'menu_icon'         => 'dashicons-calendar-alt',
             'show_in_rest'      => true,
             'rest_base'         => 'release',
             'rest_controller_class' => 'WP_REST_Posts_Controller',
