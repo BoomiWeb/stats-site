@@ -35,28 +35,21 @@ if( have_rows('dates', $release_control->ID) ):
 
  	// loop through the rows of data
     while ( have_rows('dates', $release_control->ID) ) : the_row();
-
-        // display a sub field value
-        the_sub_field('display');
-        the_sub_field('date');
-        the_sub_field('text');
+        
+        echo '<div class="col-xs-12">';
+        
+            if ('date' === the_sub_field('display')) :
+                the_sub_field('date');
+            else :
+                the_sub_field('text');
+            endif;
+        
+        echo '</div>';
 
     endwhile;
 
-else :
-
-    // no rows found
-
 endif;
-?>						
-						
-							<?php //foreach ($release_control_dates as $rcd) : ?>
-
-								<div class="col-xs-12">
-									<?php echo date('F d, Y', strtotime($rcd)); ?>
-								</div>
-							
-							<?php //endforeach; ?>
+?>
 						
 						</div>
     					
@@ -77,7 +70,7 @@ endif;
 							<?php //foreach ($release_dates as $rd) : ?>
 							
 								<div class="col-xs-12">
-									<?php echo date('F d, Y', strtotime($rd)); ?>
+									<?php //echo date('F d, Y', strtotime($rd)); ?>
 								</div>
 							
 							<?php //endforeach; ?>
