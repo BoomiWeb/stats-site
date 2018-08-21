@@ -28,7 +28,7 @@ function release_init() {
             'hierarchical'      => false,
             'show_ui'           => true,
             'show_in_nav_menus' => true,
-            'supports'          => array( 'editor' ),
+            'supports'          => array( 'title', 'editor' ),
             'has_archive'       => true,
             'rewrite'           => true,
             'query_var'         => true,
