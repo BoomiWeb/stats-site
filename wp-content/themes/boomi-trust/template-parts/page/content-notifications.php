@@ -9,8 +9,8 @@
 ?>
 
 <?php
-$release_control_dates = boomi_pc_get_rcd_dates();
-$release_dates = boomi_pc_get_rd();
+$release_control = get_page_by_title('Release Control Date', OBJECT, 'release');
+$release_ = get_page_by_title('Release Date', OBJECT, 'release');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,7 +21,7 @@ $release_dates = boomi_pc_get_rd();
 		
 		<div class="row release-dates-wrap">
 			
-			<?php if (!empty($release_control_dates)) : ?>
+			<?php if (!empty($release_control)) : ?>
 			
     			<div class="col-xs-12 col-sm-6 release-control-dates">
     				<div class="title">Release Control Date</div>
@@ -29,6 +29,25 @@ $release_dates = boomi_pc_get_rd();
     				<div class="dates">
 
 						<div class="dates-wrap">
+<?php						
+// check if the repeater field has rows of data
+if( have_rows('dates') ):
+
+ 	// loop through the rows of data
+    while ( have_rows('dates') ) : the_row();
+
+        // display a sub field value
+        the_sub_field('date');
+        the_sub_field('text');
+
+    endwhile;
+
+else :
+
+    // no rows found
+
+endif;
+?>						
 						
 							<?php foreach ($release_control_dates as $rcd) : ?>
 
