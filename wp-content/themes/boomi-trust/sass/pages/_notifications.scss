@@ -11,6 +11,16 @@
                 color: $white;
             }		
         }
+        
+    	.releases {
+        	.border-wrap {
+                border-color: $steel;
+            }
+    		
+    		.sub-head {
+        	    background-color: $steel;	
+    		}
+        }         
     }
     
 	.release-archive {
@@ -23,15 +33,16 @@
                 color: $white;
             }		
         }
-    }
-    
-    .sub-head {
-        text-align: center;
         
-        h3 {
-            margin: 0;
-            padding: 15px;
-        }
+    	.releases {
+        	.border-wrap {
+                border-color: $dell-gray;
+            }
+    		
+    		.sub-head {
+        	    background-color: $dell-gray;	
+    		}
+        }         
     }
     
 	.releases {
@@ -39,13 +50,17 @@
     		overflow: hidden;
             border-style: solid;
             border-width: 1px;
-            border-color: $steel; // not common
         }
-		
-		.sub-head {
-    	    background-color: $steel; // not common
-    	    color: $white; // not common	
-		}
+
+        .sub-head {
+            text-align: center;
+            color: $white;
+            
+            h3 {
+                margin: 0;
+                padding: 15px;
+            }
+        }
 		
 		.date {
 			padding: 10px;
