@@ -23,7 +23,7 @@ class Boomi_Stats_Releases {
                             
                             if (have_rows('upcoming_release_control_dates')) :
                                 $html .='<div class="col-xs-12 col-sm-6">';
-                                    $html .= '<div class="release-control-dates">';
+                                    $html .= '<div class="release-control-dates border-wrap">';
                                         $html .= '<div class="sub-head"><h3>Upcoming Release Control Dates</h3></div>';
                             
                                         while ( have_rows('upcoming_release_control_dates') ) : the_row();
@@ -35,7 +35,7 @@ class Boomi_Stats_Releases {
                             
                             if (have_rows('upcoming_release_dates')) :
                                 $html .='<div class="col-xs-12 col-sm-6 ">';
-                                    $html .= '<div class="release-dates">';
+                                    $html .= '<div class="release-dates border-wrap">';
                                         $html .= '<div class="sub-head"><h3>Upcoming Release Dates</h3></div>';
                             
                                         while ( have_rows('upcoming_release_dates') ) : the_row();
@@ -62,7 +62,7 @@ class Boomi_Stats_Releases {
                             
                             if (have_rows('completed_release_control_dates')) :
                                 $html .='<div class="col-xs-12 col-sm-6">';
-                                    $html.='<div class="completed-release-control-dates">';
+                                    $html.='<div class="completed-release-control-dates border-wrap">';
                                         $html .= '<div class="sub-head"><h3>Completed Release Control Dates</h3></div>';
                                 
                                         while ( have_rows('completed_release_control_dates') ) : the_row();
@@ -74,7 +74,7 @@ class Boomi_Stats_Releases {
                             
                             if (have_rows('completed_release_dates')) :
                                 $html .='<div class="col-xs-12 col-sm-6">';
-                                    $html.='<div class="completed-release-dates">';
+                                    $html.='<div class="completed-release-dates border-wrap">';
                                         $html .= '<div class="sub-head"><h3>Completed Release Dates</h3></div>';
                             
                                         while ( have_rows('completed_release_dates') ) : the_row();

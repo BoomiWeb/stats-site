@@ -29,10 +29,12 @@
     }
     
 	.releases {
-		overflow: hidden;
-		border-style: solid;
-		border-width: 1px;
-		border-color: $steel; // not common
+    	.border-wrap {
+    		overflow: hidden;
+            border-style: solid;
+            border-width: 1px;
+            border-color: $steel; // not common
+        }
 		
 		.sub-head {
     	    background-color: $steel; // not common
