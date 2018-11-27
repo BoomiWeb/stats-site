@@ -27,7 +27,7 @@ class Boomi_Stats_Releases {
                             
                                     while ( have_rows('upcoming_release_control_dates') ) : the_row();
                                         $html .= '<div class="row">';
-                                            $html.='<div class="col-xs-12">'.get_sub_field('date').'</div>';
+                                            $html.='<div class="col-xs-12 date">'.get_sub_field('date').'</div>';
                                         $html.='</div>';
                                     endwhile;
                                 
@@ -40,7 +40,7 @@ class Boomi_Stats_Releases {
                             
                                     while ( have_rows('upcoming_release_dates') ) : the_row();
                                         $html .= '<div class="row">';
-                                            $html.='<div class="col-xs-12">'.get_sub_field('date').'</div>';
+                                            $html.='<div class="col-xs-12 date">'.get_sub_field('date').'</div>';
                                         $html.='</div>';
                                     endwhile;
                                 
@@ -68,7 +68,7 @@ class Boomi_Stats_Releases {
                             
                                     while ( have_rows('completed_release_control_dates') ) : the_row();
                                         $html .= '<div class="row">';
-                                            $html.='<div class="col-xs-12">'.get_sub_field('date').'</div>';
+                                            $html.='<div class="col-xs-12 date">'.get_sub_field('date').'</div>';
                                         $html.='</div>';
                                     endwhile;
                                 
@@ -81,7 +81,7 @@ class Boomi_Stats_Releases {
                             
                                     while ( have_rows('completed_release_dates') ) : the_row();
                                         $html .= '<div class="row">';
-                                            $html.='<div class="col-xs-12">'.get_sub_field('date').'</div>';
+                                            $html.='<div class="col-xs-12 date">'.get_sub_field('date').'</div>';
                                         $html.='</div>';
                                     endwhile;
                                 

@@ -53,10 +53,10 @@ body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-seri
 .home .pickle-calendar .pickle-calendar-event.release-date{background:#003851}.home .pickle-calendar .pickle-calendar-event.release-control-date{background:#657792}
 .home .trust-pc-key .key-list{margin:0}.home .trust-pc-key .key-list .key{float:left;padding-right:40px}
 .home .trust-pc-key .key-list .key.rd{color:#003851}.home .trust-pc-key .key-list .key.rcd{color:#657792}
-.release-dates-wrap .title{background-color:#657792;padding:15px;font-size:1.25em;color:#fff}
-.release-dates-wrap .dates-wrap{overflow:hidden;border-style:solid;border-width:0 1px 1px 1px;border-color:#657792}
-.release-dates-wrap .dates-wrap div{padding:10px}.release-dates-wrap .dates-wrap div:nth-child(even){background-color:#f7f7f7}
-.release-dates-wrap .release-control-dates{margin-bottom:45px}.statistics .stat-wrap{padding:0 15px 15px}
+.boomi-stats-notifications h2{background-color:#657792;padding:15px;font-size:1.25em;color:#fff}
+.boomi-stats-notifications .release-control-dates{overflow:hidden;border-style:solid;border-width:0 1px 1px 1px;border-color:#657792}
+.boomi-stats-notifications .release-control-dates .date{padding:10px}.boomi-stats-notifications .release-control-dates .date:nth-child(even){background-color:#f7f7f7}
+.boomi-stats-notifications .upcoming-releases{margin-bottom:45px}.statistics .stat-wrap{padding:0 15px 15px}
 .statistics .stat-wrap .stat-number{font-size:1.75em;background-color:#657792;color:#fff;padding-top:10px;padding-bottom:10px;text-align:center}
 .statistics .stat-wrap .stat-title{font-weight:bold;border-style:solid;border-width:1px 1px 0 1px;border-color:#657792;background:#f7f7f7;padding:10px 15px;font-size:1.25em}
 .statistics .stat-wrap .stat-description{border-style:solid;border-width:0 1px 1px 1px;border-color:#657792;background:#f7f7f7;padding:0 15px 10px}
