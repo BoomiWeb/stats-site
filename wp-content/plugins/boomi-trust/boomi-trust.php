@@ -3,7 +3,7 @@
  * Plugin Name: Boomi Trust CMS
  * Plugin URI:
  * Description: Add ons for Boomi Trust.
- * Version: 0.2.0
+ * Version: 0.3.0
  * Author: Boomi
  * Author URI: https://boomi.com
  * License: GPL-2.0+
