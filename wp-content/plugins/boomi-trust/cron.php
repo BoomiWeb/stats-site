@@ -1,7 +1,13 @@
 <?php
+/**
+ * Cron jobs
+ *
+ * @package Boomi_Trust
+ * @since   0.1.0
+ */
 
 /**
- * boomi_trust_cron_jobs function.
+ * Boomi Trust cron jobs.
  *
  * @access public
  * @return void

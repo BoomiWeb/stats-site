@@ -1,7 +1,13 @@
 <?php
+/**
+ * General functions
+ *
+ * @package Boomi_Trust
+ * @since   0.1.0
+ */
 
 /**
- * boomi_trust_load_files function.
+ * Load files function.
  *
  * @access public
  * @return void
@@ -21,6 +27,13 @@ function boomi_trust_load_files() {
 }
 add_action( 'init', 'boomi_trust_load_files', 1 );
 
+/**
+ * Mime types function.
+ *
+ * @access public
+ * @param mixed $mimes array
+ * @return array
+ */
 function boomi_mime_types( $mimes ) {
     $mimes['svg'] = 'image/svg+xml';
 

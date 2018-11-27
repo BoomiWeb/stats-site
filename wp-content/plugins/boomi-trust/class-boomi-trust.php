@@ -3,7 +3,7 @@
  * Main Boomi Trust class
  *
  * @package Boomi_Trust
- * @since   0.2.0
+ * @since   0.1.0
  */
 
 /**
@@ -112,13 +112,13 @@ final class Boomi_Trust {
      * Add_cron_intervals function.
      *
      * @access public
-     * @param mixed $schedules
-     * @return void
+     * @param mixed $schedules array.
+     * @return array
      */
     public function add_cron_intervals( $schedules ) {
         $schedules['twohours'] = array(
             'interval' => 7200,
-            'display' => __( 'Every 2 Hours' ),
+            'display' => __( 'Every 2 Hours', 'boomi-trust' ),
         );
 
         return $schedules;
