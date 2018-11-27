@@ -12,12 +12,13 @@ class Boomi_Stats_Releases {
         $release_control = get_page_by_title('Release Control Date', OBJECT, 'release');
         $release_dates = get_page_by_title('Release Date', OBJECT, 'release'); 
 
-
         $html.='<article id="post-'.get_the_ID().'" '.get_post_class().'>';
         
         	$html.='<div class="entry-content">';
         		
-        		//the_content( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'boomi-trust' ) );
+        		$html .= '<div class="upcoming-releases-header">';
+        		    $html .= '<h2>Upcoming Releases</h2>';
+        		$html .= '</div>';
         		
         		$html.='<div class="row release-dates-wrap">';
         			
@@ -90,6 +91,10 @@ class Boomi_Stats_Releases {
         			endif;
         			
         		$html.='</div>';
+        		
+        		$html .= '<div class="release-archive-header">';
+        		    $html .= '<h2>Release Archive</h2>';
+        		$html .= '</div>';        		
         		
         	$html.='</div><!-- .entry-content -->';
         
