@@ -5,7 +5,7 @@
  * @package Boomi_Trust
  * @since   0.2.0
  */
- 
+
 /**
  * Notificationtype_init function.
  *

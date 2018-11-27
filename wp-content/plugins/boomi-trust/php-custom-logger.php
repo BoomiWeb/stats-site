@@ -8,14 +8,14 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
 
         public function __construct() {
             $upload_dir = wp_upload_dir();
-            
+
             $this->args = array(
                 'path' => $upload_dir['path'],
                 'file' => 'php-custom-log.txt',
                 'url' => $upload_dir['url'],
             );
-            
-            add_action('admin_menu', array($this, 'add_log_page'));
+
+            add_action( 'admin_menu', array( $this, 'add_log_page' ) );
         }
 
         public function log( $message = '' ) {
@@ -40,23 +40,23 @@ if ( ! class_exists( 'PHP_Custom_Logger' ) ) :
 
             fclose( $open );
         }
-        
+
         public function add_log_page() {
-            add_management_page('PHP Custom Logger', 'PHP Custom Logger', 'manage_options', 'php-custom-logger', array($this, 'admin_page'));
+            add_management_page( 'PHP Custom Logger', 'PHP Custom Logger', 'manage_options', 'php-custom-logger', array( $this, 'admin_page' ) );
         }
-        
+
         public function admin_page() {
             $html = '';
             $file = $this->args['path'] . '/' . $this->args['file'];
             $url = $this->args['url'] . '/' . $this->args['file'];
             $contents = file_get_contents( $file ); // get the contents.
-            
-            $html .= '<a href="'.$url.'" target="_blank">'.$url.'</a>';
-            
+
+            $html .= '<a href="' . $url . '" target="_blank">' . $url . '</a>';
+
             $html .= '<div class="php-logger-output">';
-                $html .= nl2br($contents);
+                $html .= nl2br( $contents );
             $html .= '</div>';
-            
+
             echo $html;
         }
 

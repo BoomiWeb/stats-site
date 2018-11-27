@@ -87,7 +87,7 @@ final class Boomi_Trust {
 
     /**
      * Boomi_trust_activate_plugin function.
-     * 
+     *
      * @access public
      * @return void
      */
@@ -100,7 +100,7 @@ final class Boomi_Trust {
 
     /**
      * Boomi_trust_deactivate_plugin function.
-     * 
+     *
      * @access public
      * @return void
      */
@@ -110,7 +110,7 @@ final class Boomi_Trust {
 
     /**
      * Add_cron_intervals function.
-     * 
+     *
      * @access public
      * @param mixed $schedules
      * @return void
