@@ -1,21 +1,4 @@
-.boomi-stats-notifications {
-
-    
-		
-	.release-control-dates {
-		overflow: hidden;
-		border-style: solid;
-		border-width: 0 1px 1px 1px;
-		border-color: $steel;
-		
-		.date {
-			padding: 10px;
-			&:nth-child(even) {
-				background-color: $row-bg;
-            }
-        }
-    }
-    
+.boomi-stats-notifications {    
 	.upcoming-releases {
 		margin-bottom: 45px;
 
@@ -34,4 +17,27 @@
 	.release-archive {
 
     }
+    
+    .sub-head {
+        text-align: center;
+    }
+    
+	.release-control-dates {
+		overflow: hidden;
+		border-style: solid;
+		border-width: 1px;
+		border-color: $steel;
+		
+		.sub-head {
+    	    background-color: $steel;
+    	    color: $white;	
+		}
+		
+		.date {
+			padding: 10px;
+			&:nth-child(even) {
+				background-color: $row-bg;
+            }
+        }
+    }    
 }
