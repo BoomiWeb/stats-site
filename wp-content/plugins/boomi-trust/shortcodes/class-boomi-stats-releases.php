@@ -97,3 +97,5 @@ class Boomi_Stats_Releases {
     }
     
 }
+
+new Boomi_Stats_Releases();
