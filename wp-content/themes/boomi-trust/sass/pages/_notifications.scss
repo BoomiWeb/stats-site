@@ -1,11 +1,6 @@
 .boomi-stats-notifications {
 
-    h2 {
-        background-color: $steel;
-        padding: 15px;
-        font-size: 1.25em;
-        color: $white;
-    }    
+    
 		
 	.release-control-dates {
 		overflow: hidden;
@@ -23,6 +18,17 @@
     
 	.upcoming-releases {
 		margin-bottom: 45px;
+
+        .upcoming-releases-header {
+            text-align: center;
+            
+            h2 {
+                background-color: $steel;
+                padding: 15px;
+                //font-size: 1.25em;
+                color: $white;
+            }		
+        }
     }
     
 	.release-archive {
