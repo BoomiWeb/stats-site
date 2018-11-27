@@ -22,13 +22,14 @@ class Boomi_Stats_Releases {
                         while ( have_rows('upcoming_releases') ) : the_row();
                             
                             if (have_rows('upcoming_release_control_dates')) :
-                                $html .='<div class="col-xs-12 col-sm-6 release-control-dates">';
-                                    $html .= '<h3>Upcoming Release Control Dates</h3>';
+                                $html .='<div class="col-xs-12 col-sm-6">';
+                                    $html .= '<div class="release-control-dates">';
+                                        $html .= '<h3>Upcoming Release Control Dates</h3>';
                             
-                                    while ( have_rows('upcoming_release_control_dates') ) : the_row();
-                                        $html.='<div class="date">'.get_sub_field('date').'</div>';
-                                    endwhile;
-                                
+                                        while ( have_rows('upcoming_release_control_dates') ) : the_row();
+                                            $html.='<div class="date">'.get_sub_field('date').'</div>';
+                                        endwhile;
+                                    $html.='</div>';
                                 $html.='</div>';
                             endif;
                             
