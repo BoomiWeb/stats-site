@@ -54,9 +54,9 @@ body,input,textarea,select{font-family:'Roboto',Helvetica,Arial,Lucida,sans-seri
 .home .trust-pc-key .key-list{margin:0}.home .trust-pc-key .key-list .key{float:left;padding-right:40px}
 .home .trust-pc-key .key-list .key.rd{color:#003851}.home .trust-pc-key .key-list .key.rcd{color:#657792}
 .boomi-stats-notifications .upcoming-releases{margin-bottom:45px}.boomi-stats-notifications .upcoming-releases .upcoming-releases-header{text-align:center}
-.boomi-stats-notifications .upcoming-releases .upcoming-releases-header h2{background-color:#657792;padding:15px;color:#fff}
-.boomi-stats-notifications .upcoming-releases .releases .border-wrap{border-color:#657792}
-.boomi-stats-notifications .upcoming-releases .releases .sub-head{background-color:#657792}
+.boomi-stats-notifications .upcoming-releases .upcoming-releases-header h2{background-color:#0087cc;padding:15px;color:#fff}
+.boomi-stats-notifications .upcoming-releases .releases .border-wrap{border-color:#0087cc}
+.boomi-stats-notifications .upcoming-releases .releases .sub-head{background-color:#0087cc}
 .boomi-stats-notifications .release-archive .release-archive-header{text-align:center}
 .boomi-stats-notifications .release-archive .release-archive-header h2{background-color:gray;padding:15px;color:#fff}
 .boomi-stats-notifications .release-archive .releases .border-wrap{border-color:gray}
