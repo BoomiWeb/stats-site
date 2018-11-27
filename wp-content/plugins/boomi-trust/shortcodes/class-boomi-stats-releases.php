@@ -117,7 +117,7 @@ class Boomi_Stats_Releases {
                     endif;
                 $html .= '</div>';
             $html .= '</div>';
-            $html.='<p>Dell Boomi reserves the right to adjust these dates as needed.</p>';
+            $html.='<div><p>Dell Boomi reserves the right to adjust these dates as needed.</p></div>';
         $html .= '</div>';
 
         echo $html;
