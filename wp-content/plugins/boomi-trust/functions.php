@@ -8,7 +8,6 @@
  */
 function boomi_trust_load_files() {
     $dirs = array(
-        'post-types',
         'metaboxes',
         'taxonomies',
         'shortcodes',
