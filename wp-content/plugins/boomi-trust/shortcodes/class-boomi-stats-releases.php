@@ -17,7 +17,7 @@ class Boomi_Stats_Releases {
         		    $html .= '<h2>Upcoming Releases</h2>';
         		$html .= '</div>';
     
-                $html.='<div class="row">';
+                $html.='<div class="row releases">';
                     if( have_rows('upcoming_releases') ):
                         while ( have_rows('upcoming_releases') ) : the_row();
                             
@@ -34,13 +34,14 @@ class Boomi_Stats_Releases {
                             endif;
                             
                             if (have_rows('upcoming_release_dates')) :
-                                $html .='<div class="col-xs-12 col-sm-6 release-dates">';
-                                    $html .= '<h3>Upcoming Release Dates</h3>';
+                                $html .='<div class="col-xs-12 col-sm-6 ">';
+                                    $html .= '<div class="release-dates">';
+                                        $html .= '<div class="sub-head"><h3>Upcoming Release Dates</h3></div>';
                             
-                                    while ( have_rows('upcoming_release_dates') ) : the_row();
-                                        $html.='<div class="cdate">'.get_sub_field('date').'</div>';
-                                    endwhile;
-                                
+                                        while ( have_rows('upcoming_release_dates') ) : the_row();
+                                            $html.='<div class="date">'.get_sub_field('date').'</div>';
+                                        endwhile;
+                                    $html.='</div>';
                                 $html.='</div>';
                             endif;
         
@@ -55,33 +56,31 @@ class Boomi_Stats_Releases {
         		    $html .= '<h2>Release Archive</h2>';
         		$html .= '</div>';
         		
-                $html.='<div class="row">';
+                $html.='<div class="row releases">';
                     if( have_rows('release_archive') ):
                         while ( have_rows('release_archive') ) : the_row();
                             
                             if (have_rows('completed_release_control_dates')) :
-                                $html .='<div class="col-xs-12 col-sm-6 completed-release-control-dates">';
-                                    $html .= '<h3>Completed Release Control Dates</h3>';
-                            
-                                    while ( have_rows('completed_release_control_dates') ) : the_row();
-                                        $html .= '<div class="row">';
-                                            $html.='<div class="col-xs-12 date">'.get_sub_field('date').'</div>';
-                                        $html.='</div>';
-                                    endwhile;
+                                $html .='<div class="col-xs-12 col-sm-6">';
+                                    $html.='<div class="completed-release-control-dates">';
+                                        $html .= '<div class="sub-head"><h3>Completed Release Control Dates</h3></div>';
                                 
+                                        while ( have_rows('completed_release_control_dates') ) : the_row();
+                                            $html.='<div class="date">'.get_sub_field('date').'</div>';
+                                        endwhile;
+                                    $html.='</div>';
                                 $html.='</div>';
                             endif;
                             
                             if (have_rows('completed_release_dates')) :
-                                $html .='<div class="col-xs-12 col-sm-6 completed-release-dates">';
-                                    $html .= '<h3>Completed Release Dates</h3>';
+                                $html .='<div class="col-xs-12 col-sm-6">';
+                                    $html.='<div class="completed-release-dates">';
+                                        $html .= '<div class="sub-head"><h3>Completed Release Dates</h3></div>';
                             
-                                    while ( have_rows('completed_release_dates') ) : the_row();
-                                        $html .= '<div class="row">';
-                                            $html.='<div class="col-xs-12 date">'.get_sub_field('date').'</div>';
-                                        $html.='</div>';
-                                    endwhile;
-                                
+                                        while ( have_rows('completed_release_dates') ) : the_row();
+                                            $html.='<div class="date">'.get_sub_field('date').'</div>';
+                                        endwhile;
+                                    $html.='</div>';
                                 $html.='</div>';
                             endif;
         
