@@ -3,16 +3,11 @@
     background-color: #007db8;
     
     .container {
-        //width: 1024px;
-        
         .navbar {
             margin: 0;
             padding-top: 16px;
             
             .navbar-header {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
                 width: 14%;
                 margin: 0.4rem 10px 0;
                 
@@ -25,10 +20,6 @@
                     width: 140px;
                     vertical-align: middle;
                     height: auto;
-                }
-                
-                .navbar-button {
-                    margin-left: auto;
                 }
             }
             

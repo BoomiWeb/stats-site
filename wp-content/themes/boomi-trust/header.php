@@ -24,12 +24,7 @@
 			<div class="container">
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="navbar-header">
-    					<div class="navbar-logo">
-        					<a href="https://status.boomi.com"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/boomi-logo-white.svg" height="" width="" alt="boomi-logo" /></a>
-    					</div>
-    					<div class="navbar-button">
-    						<?php get_template_part('template-parts/navigation/navbar', 'button'); ?>
-    					</div>
+        				<a href="https://status.boomi.com"><img src="<?php echo get_stylesheet_directory_uri(); ?>/inc/images/boomi-logo-white.svg" height="" width="" alt="boomi-logo" /></a>
 					</div>
 					<?php get_template_part('template-parts/navigation/primary', 'menu'); ?>
 				</nav>
