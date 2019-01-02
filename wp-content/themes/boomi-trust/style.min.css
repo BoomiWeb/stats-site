@@ -10,7 +10,7 @@ footer .footer-menu .menu .menu-item a{margin:4px 16px 4px 0;color:#fff}footer .
 }@media only screen and (min-width:1024px){.boomi-sales-back-to-top{height:60px;width:60px;right:30px;bottom:30px}
 }.primary-nav{height:10rem;background-color:#007db8}.primary-nav .container{width:1024px}
 .primary-nav .container .navbar{margin:0;padding-top:16px}.primary-nav .container .navbar .navbar-header{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:14%;margin:.4rem 10px 0}
-@media only screen and (max-device-width:768px){.primary-nav .container .navbar .navbar-header{width:100%}
+@media(max-width:768px){.primary-nav .container .navbar .navbar-header{width:100%}
 }.primary-nav .container .navbar .navbar-header img{max-width:140px;width:140px;vertical-align:middle;height:auto}
 .primary-nav .container .navbar .right-menu{margin-top:.5rem;color:#fff}.primary-nav .container .navbar .primary-menu{padding-bottom:10px;margin-top:.4rem;font-size:16px}
 .primary-nav .container .navbar .primary-menu .navbar-nav .menu-item a{margin-right:10px;padding:10px 0;color:#fff}
