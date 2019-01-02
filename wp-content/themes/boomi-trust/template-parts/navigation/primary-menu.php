@@ -1,4 +1,5 @@
 <div class="collapse navbar-collapse primary-menu">
+    <?php get_template_part('template-parts/navigation/navbar', 'button'); ?>
 	<?php
 	wp_nav_menu(array(
 		'theme_location' => 'primary',
