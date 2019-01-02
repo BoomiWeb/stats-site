@@ -13,7 +13,7 @@ footer .footer-menu .menu .menu-item a{margin:4px 16px 4px 0;color:#fff}footer .
 }.primary-nav .container .navbar .navbar-header img{max-width:140px;width:140px;vertical-align:middle;height:auto}
 .primary-nav .container .navbar .right-menu{margin-top:.5rem;color:#fff}.primary-nav .container .navbar .primary-menu{padding-bottom:10px;margin-top:.4rem;font-size:16px;margin-left:150px}
 @media(max-width:768px){.primary-nav .container .navbar .primary-menu{margin-left:0;border:0;-webkit-box-shadow:none;box-shadow:none}
-}@media(max-width:768px){.primary-nav .container .navbar .primary-menu .navbar-nav{width:100%}
+}@media(max-width:768px){.primary-nav .container .navbar .primary-menu .navbar-nav{width:100%;margin-left:0}
 }.primary-nav .container .navbar .primary-menu .navbar-nav .menu-item a{margin-right:10px;padding:10px 0;color:#fff}
 @media(max-width:768px){.primary-nav .container .navbar .primary-menu .navbar-nav .menu-item a{float:left;padding:0 0 10px 0}
 }.primary-nav .container .navbar .primary-menu .navbar-nav .menu-item.separator a:after{content:'|';margin-left:10px}
