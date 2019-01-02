@@ -36,6 +36,7 @@
                 
                 @media (max-width: 768px) {
                     margin-left: 0;
+                    border: 0;
                 }                
                 
                 .navbar-nav {
@@ -47,14 +48,15 @@
                             margin-right: 10px;
                             padding: 10px 0;
                             color: $white;
+                            
+                            @media (max-width: 768px) {
+                                float: left;
+                                padding: 0 0 10px 0;
+                            }
                         }    
                                            
                         &.separator {
-                            a {
-                                @media (max-width: 768px) {
-                                    float: left;
-                                }
-                                
+                            a { 
                                 &:after {
                                     content: '|';
                                     margin-left: 10px;    
