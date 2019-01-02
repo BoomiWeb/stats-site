@@ -10,11 +10,14 @@
             padding-top: 16px;
             
             .navbar-header {
+                display: flex;
+                flex-wrap: wrap;
                 width: 14%;
                 margin: 0.4rem 10px 0;
                 
                 img {
                     max-width: 140px;
+                    width: 140px;
                     vertical-align: middle;
                     height: auto;
                 }
