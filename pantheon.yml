@@ -5,4 +5,4 @@ api_version: 1
 protected_web_paths:
   - /wp-admin/load-scripts.php
   - /wp-admin/load-styles.php
-  - xmlrpc.php
+  - /xmlrpc.php
