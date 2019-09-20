@@ -24,7 +24,7 @@
 			<div class="container">
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="navbar-header">
-        				<a href="https://status.boomi.com"><img src="https://cdn.brandfolder.io/W49AM39J/as/pxzggw-bgotog-1vnhuw/boomi-website-logo.svg" height="" width="" alt="boomi-logo" /></a>
+        				<a href="https://status.boomi.com"><img src="https://cdn.brandfolder.io/2E9KWBX8/at/pxxs0g-f7e6u8-eyegt1/Boomi_Dell_Logo_Monochrome_White.svg" height="" width="" alt="boomi-logo" /></a>
 					</div>
 					<?php get_template_part('template-parts/navigation/primary', 'menu'); ?>
 				</nav>
