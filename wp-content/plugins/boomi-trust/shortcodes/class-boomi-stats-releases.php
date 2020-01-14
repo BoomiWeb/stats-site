@@ -120,7 +120,7 @@ class Boomi_Stats_Releases {
             
         $html .= '</div>';
 
-        echo $html;
+        return $html;
     }
 
 }
