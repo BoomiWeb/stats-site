@@ -3,8 +3,8 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <ul class="menu">
-                                <li class="menu-item"><a href="http://boomi.com/" target="_blank">Dell Boomi</a></li>
-                                <li class="menu-item"><a href="http://boomi.com/services/support/" target="_blank">Dell Boomi Support</a></li>
+                                <li class="menu-item"><a href="http://boomi.com/" target="_blank">Boomi</a></li>
+                                <li class="menu-item"><a href="http://boomi.com/services/support/" target="_blank">Boomi Support</a></li>
                                 <li class="menu-item twitter">
                                     <a href="https://twitter.com/boomi?ref_src=twsrc%5Etfw" 
                                     class="twitter-follow-button" 

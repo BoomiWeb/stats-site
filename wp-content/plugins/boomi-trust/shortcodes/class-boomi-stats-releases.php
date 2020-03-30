@@ -74,7 +74,7 @@ class Boomi_Stats_Releases {
             endwhile;
                     endif;
                 $html .= '</div>';
-                $html.='<div class="footer-notice"><p>Dell Boomi reserves the right to adjust these dates as needed.</p></div>';
+                $html.='<div class="footer-notice"><p>Boomi reserves the right to adjust these dates as needed.</p></div>';
             $html .= '</div>';
 
             $html .= '<div class="release-archive">';
