@@ -3,10 +3,10 @@
 Contributors: nielslange
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QL92KESGMVT4Q
 Tags: REST API, Endpoints, Security
-Version: 1.6
-Requires at least: 4.6
-Tested up to: 5.6
-Requires PHP: 5.6
+Version: 1.7
+Requires at least: 5.5
+Tested up to: 5.7
+Requires PHP: 7.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
@@ -26,6 +26,11 @@ With WordPress 4.7 the REST API is part of the core. At the moment everyone has 
 Simple activate the plugin and you're done.
 
 == Changelog ==
+
+= 1.7 (2021.05.01) =
+* [Add build tools](https://github.com/nielslange/smntcs-disable-rest-api-user-endpoints/issues/21)
+* [Add GitHub Actions](https://github.com/nielslange/smntcs-disable-rest-api-user-endpoints/issues/23)
+* [Test up to WordPress 5.7](https://github.com/nielslange/smntcs-disable-rest-api-user-endpoints/issues/25)
 
 = 1.6 (2021.01.08) =
 * Test up to WordPress 5.6
