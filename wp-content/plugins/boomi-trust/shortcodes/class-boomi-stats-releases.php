@@ -33,22 +33,31 @@ class Boomi_Stats_Releases {
         $atts = shortcode_atts( array(), $atts, 'boomi-stats-notifications' );
         $html = '';
         $upcoming_releases = get_field( 'upcoming_releases' );
-
+        $upcoming_releases_object = get_field_object('upcoming_releases');
+        $upcoming_releases_label = $upcoming_releases_object['label'];
+        
         $html .= '<div class="boomi-stats-notifications">';
             $html .= '<div class="upcoming-releases">';
                 $html .= '<div class="upcoming-releases-header">';
-                    $html .= '<h2>Upcoming Releases</h2>';
+                    $html .= '<h2>'.$upcoming_releases_label.'</h2>';
                 $html .= '</div>';
 
                 $html .= '<div class="row releases">';
         if ( have_rows( 'upcoming_releases' ) ) :
             while ( have_rows( 'upcoming_releases' ) ) :
                 the_row();
-
+                
+                $urcd_object = get_sub_field_object('upcoming_release_control_dates');
+                $urcd_label = $urcd_object['label'];
+                
+                $urd_object = get_sub_field_object('upcoming_release_dates');
+                $urd_label = $urd_object['label'];                
+                
                 if ( have_rows( 'upcoming_release_control_dates' ) ) :
+
                     $html .= '<div class="col-xs-12 col-sm-6">';
                         $html .= '<div class="release-control-dates border-wrap">';
-                            $html .= '<div class="sub-head"><h3>'.get_sub_field('upcoming_release_control_dates').'</h3></div>';
+                            $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
 
                     while ( have_rows( 'upcoming_release_control_dates' ) ) :
                         the_row();
@@ -61,7 +70,7 @@ class Boomi_Stats_Releases {
                 if ( have_rows( 'upcoming_release_dates' ) ) :
                     $html .= '<div class="col-xs-12 col-sm-6 ">';
                         $html .= '<div class="release-dates border-wrap">';
-                            $html .= '<div class="sub-head"><h3>Upcoming Release Dates</h3></div>';
+                            $html .= '<div class="sub-head"><h3>'.$urd_label.'</h3></div>';
 
                     while ( have_rows( 'upcoming_release_dates' ) ) :
                         the_row();
@@ -77,20 +86,30 @@ class Boomi_Stats_Releases {
                 $html.='<div class="footer-notice"><p>Boomi reserves the right to adjust these dates as needed.</p></div>';
             $html .= '</div>';
 
+            $release_archive = get_field( 'release_archive' );
+            $release_archive_object = get_field_object('release_archive');
+            $release_archive_label = $release_archive_object['label'];
+
             $html .= '<div class="release-archive">';
                 $html .= '<div class="release-archive-header">';
-                    $html .= '<h2>Release Archive</h2>';
+                    $html .= '<h2>'.$release_archive_label.'</h2>';
                 $html .= '</div>';
 
                 $html .= '<div class="row releases">';
         if ( have_rows( 'release_archive' ) ) :
             while ( have_rows( 'release_archive' ) ) :
                 the_row();
+                
+                $crcd_object = get_sub_field_object('completed_release_control_dates');
+                $crcd_label = $crcd_object['label'];
+                
+                $crd_object = get_sub_field_object('completed_release_dates');
+                $crd_label = $crd_object['label'];                 
 
                 if ( have_rows( 'completed_release_control_dates' ) ) :
                     $html .= '<div class="col-xs-12 col-sm-6">';
                         $html .= '<div class="completed-release-control-dates border-wrap">';
-                            $html .= '<div class="sub-head"><h3>Completed Release Control Dates</h3></div>';
+                            $html .= '<div class="sub-head"><h3>'.$crcd_label.'</h3></div>';
 
                     while ( have_rows( 'completed_release_control_dates' ) ) :
                         the_row();
@@ -103,7 +122,7 @@ class Boomi_Stats_Releases {
                 if ( have_rows( 'completed_release_dates' ) ) :
                     $html .= '<div class="col-xs-12 col-sm-6">';
                         $html .= '<div class="completed-release-dates border-wrap">';
-                            $html .= '<div class="sub-head"><h3>Completed Release Dates</h3></div>';
+                            $html .= '<div class="sub-head"><h3>'.$crd_label.'</h3></div>';
 
                     while ( have_rows( 'completed_release_dates' ) ) :
                         the_row();
