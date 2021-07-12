@@ -48,7 +48,7 @@ class Boomi_Stats_Releases {
                 if ( have_rows( 'upcoming_release_control_dates' ) ) :
                     $html .= '<div class="col-xs-12 col-sm-6">';
                         $html .= '<div class="release-control-dates border-wrap">';
-                            $html .= '<div class="sub-head"><h3>Upcoming Release Control Dates</h3></div>';
+                            $html .= '<div class="sub-head"><h3>'.get_field('upcoming_release_control_dates').'</h3></div>';
 
                     while ( have_rows( 'upcoming_release_control_dates' ) ) :
                         the_row();
