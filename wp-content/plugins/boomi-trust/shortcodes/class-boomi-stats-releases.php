@@ -127,7 +127,6 @@ class Boomi_Stats_Releases {
                     while ( have_rows( 'completed_release_dates' ) ) :
                         the_row();
                             $html .= '<div class="date">' . get_sub_field( 'date' ) .' '. get_sub_field( 'details' ) . '</div>';
-                            
                             endwhile;
                         $html .= '</div>';
                                 $html .= '</div>';
