@@ -61,7 +61,7 @@ class Boomi_Stats_Releases {
 
                     while ( have_rows( 'upcoming_release_control_dates' ) ) :
                         the_row();
-                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ''. get_sub_field( 'details' ) . '</div>';
+                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
                             endwhile;
                         $html .= '</div>';
                                 $html .= '</div>';
@@ -74,7 +74,7 @@ class Boomi_Stats_Releases {
 
                     while ( have_rows( 'upcoming_release_dates' ) ) :
                         the_row();
-                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ''. get_sub_field( 'details' ) . '</div>';
+                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
                             endwhile;
                         $html .= '</div>';
                                 $html .= '</div>';
@@ -113,7 +113,7 @@ class Boomi_Stats_Releases {
 
                     while ( have_rows( 'completed_release_control_dates' ) ) :
                         the_row();
-                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ''. get_sub_field( 'details' ) . '</div>';
+                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
                             endwhile;
                         $html .= '</div>';
                                 $html .= '</div>';
