@@ -6,3 +6,5 @@ protected_web_paths:
   #- /wp-admin/load-scripts.php
   #- /wp-admin/load-styles.php
   - /xmlrpc.php
+
+enforce_https: full+subdomains 
