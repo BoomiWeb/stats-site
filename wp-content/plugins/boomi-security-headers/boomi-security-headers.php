@@ -31,7 +31,7 @@ define( 'BOOMI_SECURITY_HEADERS_VERSION', '1.0.0' );
 function boomi_add_header_hsts() {
     //Content-Security-Policy
     //Strict-Transport-Security    
-    header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains;' );
+    // header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains;' );
     
     //X-Frame-Options
     header( 'X-Frame-Options: DENY' );
@@ -56,7 +56,7 @@ function shapeSpace_add_headers() {
 	if (is_admin()) {
         //Content-Security-Policy
         //Strict-Transport-Security    
-        header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains;' );
+        // header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains;' );
         
         //X-Frame-Options
         header( 'X-Frame-Options: DENY' );
