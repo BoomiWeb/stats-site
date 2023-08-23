@@ -23,9 +23,7 @@ if ( ! is_admin() ) {
 if (!function_exists('boomi_add_header_hsts')) {
     function boomi_add_header_hsts() {
         // X-Frame-Options.
-        if ( ! is_user_logged_in() ) :
-            header( 'X-Frame-Options: sameorigin' );
-        endif;
+        header( 'X-Frame-Options: DENY' );
 
         // X-XSS-Protection.
         header( 'X-XSS-Protection: 1; mode=block' );
