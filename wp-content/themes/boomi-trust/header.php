@@ -11,22 +11,22 @@
 
 <head>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="pingback" href="<?php bloginfo("pingback_url"); ?>" />
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	
+
 	<div class="wrapper">
-	
+
 		<div class="container-fluid primary-nav">
 			<div class="container">
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="navbar-header">
-        				<a href="https://status.boomi.com"><img src="https://cdn.brandfolder.io/W49AM39J/at/ftrh2g48fqct923rn9t37fj/boomi-logo-hp-white.svg" height="" width="" alt="boomi-logo" /></a>
+        				<a href="https://status.boomi.com"><img src="https://stats.boomi.com/wp-content/uploads/Boomi-Logo-White-Footer.svg" height="" width="" alt="boomi-logo" /></a>
 					</div>
-					<?php get_template_part('template-parts/navigation/primary', 'menu'); ?>
+					<?php get_template_part("template-parts/navigation/primary", "menu"); ?>
 				</nav>
 			</div><!-- .container -->
 		</div><!-- .navigation -->
