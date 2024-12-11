@@ -65,21 +65,6 @@ function boomi_trust_theme_setup() {
 	add_image_size('boomi-trust-navbar-logo', 163, 100, true);
 
 	/**
-	 * include bootstrap nav walker
-	 */
-	include_once(get_template_directory().'/inc/wp_bootstrap_navwalker.php');
-
-	/**
-	 * include bootstrap mobile nav walker
-	 */
-	include_once(get_template_directory().'/inc/mobile_nav_walker.php');
-
-	/**
-	 * include our customizer functions
-	 */
-	include_once(get_template_directory().'/inc/customizer.php');
-
-	/**
 	 * include theme meta page
 	 * allows users to hook and filter into the default meta tags in the header
 	 */
@@ -89,11 +74,6 @@ function boomi_trust_theme_setup() {
 	register_nav_menus( array(
 		'primary' => __('Primary Menu','boomi-trust'),
 	) );
-
-	/**
-	 * This theme styles the visual editor to resemble the theme style
-	 */
-	add_editor_style('inc/css/editor-style.css');
 
 }
 add_action('after_setup_theme','boomi_trust_theme_setup');
@@ -105,7 +85,6 @@ add_action('after_setup_theme','boomi_trust_theme_setup');
  */
 function boomi_trust_theme_scripts() {
 	wp_enqueue_style('roboto-google-font', 'https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-	wp_enqueue_style('bootstrap-style', get_template_directory_uri().'/inc/css/bootstrap.css', array(), '4.6.3');
 	wp_enqueue_style('boomi-trust-theme-style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts','boomi_trust_theme_scripts');
