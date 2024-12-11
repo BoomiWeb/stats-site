@@ -9,7 +9,6 @@ namespace Crontrol;
  * Class Request
  */
 class Request {
-
 	/**
 	 * Description.
 	 *
@@ -71,6 +70,20 @@ class Request {
 	 *
 	 * @var string
 	 */
+	public $url = '';
+
+	/**
+	 * Description.
+	 *
+	 * @var string
+	 */
+	public $method = '';
+
+	/**
+	 * Description.
+	 *
+	 * @var string
+	 */
 	public $original_hookname = '';
 
 	/**
@@ -104,5 +117,4 @@ class Request {
 
 		return $this;
 	}
-
 }
