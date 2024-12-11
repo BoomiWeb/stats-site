@@ -11,7 +11,7 @@ const plumber = require('gulp-plumber');
 const paths = {
   styles: {
     src: './sass/**/*.scss',
-    dest: './assets/css'
+    dest: './'
   },
   scripts: {
     src: './js/**/*.js',

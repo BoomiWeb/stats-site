@@ -1,0 +1,7 @@
+@use "variables";
+
+@each $heading, $size in variables.$headingSize {
+    #{$heading} {
+      font-size: $size;
+    }
+}

@@ -1,8 +1,10 @@
+@use "variables";
+
 footer {
 	border-top: none;
 	background: #007db8;
 	margin-top: 30px;
-	color: $white;
+	color: variables.$white;
 	font-size: 14px;
 	padding: 0.8rem;
 	
@@ -19,7 +21,7 @@ footer {
                 
             	a {
                 	margin: 4px 16px 4px 0;
-                    color: $white;
+                    color: variables.$white;
             	}
         	}
     	}

@@ -60,3 +60,4 @@ Thumbs.db
 /wp-content/plugins/boomi-trust/node_modules
 /wp-content/plugins/boomi-trust/vendor
 /boomi-stats.code-workspace
+/wp-content/db.php

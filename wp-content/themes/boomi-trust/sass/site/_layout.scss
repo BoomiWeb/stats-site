@@ -1,0 +1,54 @@
+@use "variables";
+
+.container {
+    max-width: variables.$container-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(variables.$gutters / 2);
+    padding-right: calc(variables.$gutters / 2);
+  
+    &--big {
+      max-width: variables.$container-big;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(variables.$row-gutters / 2);
+    margin-right: calc(variables.$row-gutters / 2);
+}
+  
+.col {
+    padding-left: calc(variables.$row-gutters / 2);
+    padding-right: calc(variables.$row-gutters / 2);
+    flex: 1 1 0%;
+}
+
+@mixin media($breakpoint) {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+}
+  
+// Declare the mixin outside the loop
+@mixin col-responsive($breakpoint, $size) {
+    @include media($breakpoint) {
+      flex: 0 0 calc(100% * $size / 12);
+      max-width: calc(100% * $size / 12);
+    }
+}
+  
+// Loop through breakpoints and sizes to generate classes
+@for $i from 1 through 12 {
+    .col-#{$i} {
+      flex: 0 0 calc(100% * $i / 12);
+      max-width: calc(100% * $i / 12);
+    }
+  
+    @each $breakpoint, $value in variables.$breakpoints {
+      .col-#{$breakpoint}-#{$i} {
+        @include col-responsive($breakpoint, $i);
+      }
+    }
+}

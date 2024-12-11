@@ -1,32 +1,10 @@
+@use "../components/variables";
+
 body, input, textarea, select {
     font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif;
 }   
-.no-padding {
-	padding: 0;
-}	
-.banner-image {
-	position: relative;
-	width: 100%;
-	height: auto;
-}	
-.row.content { 
-	padding: 10px 0;
-}
-	
-.container-fluid {
-	padding: 0;
-}
-
-.row-eq-height {
-    display: flex;
-    flex-wrap: wrap;
-}
-.row-eq-height > [class*='col-'] {
-    display: flex;
-    flex-direction: column;    
-}
 
 .heading-title {
-    color: $navy;
+    color: variables.$navy;
     margin-bottom: 15px;
 }

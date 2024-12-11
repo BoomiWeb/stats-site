@@ -1,3 +1,5 @@
+@use "../components/variables";
+
 .boomi-stats-notifications {    
 	.upcoming-releases {
 		margin-bottom: 45px;
@@ -6,19 +8,19 @@
             text-align: center;
             
             h2 {
-                background-color: $dell-blue;
+                background-color: variables.$dell-blue;
                 padding: 15px;
-                color: $white;
+                color: variables.$white;
             }		
         }
         
     	.releases {
         	.border-wrap {
-                border-color: $dell-blue;
+                border-color: variables.$dell-blue;
             }
     		
     		.sub-head {
-        	    background-color: $dell-blue;	
+        	    background-color: variables.$dell-blue;	
     		}
         }         
     }
@@ -28,19 +30,19 @@
             text-align: center;
             
             h2 {
-                background-color: $dell-gray;
+                background-color: variables.$dell-gray;
                 padding: 15px;
-                color: $white;
+                color: variables.$white;
             }		
         }
         
     	.releases {
         	.border-wrap {
-                border-color: $dell-gray;
+                border-color: variables.$dell-gray;
             }
     		
     		.sub-head {
-        	    background-color: $dell-gray;	
+        	    background-color: variables.$dell-gray;	
     		}
         }         
     }
@@ -54,7 +56,7 @@
 
         .sub-head {
             text-align: center;
-            color: $white;
+            color: variables.$white;
             
             h3 {
                 margin: 0;
@@ -65,7 +67,7 @@
 		.date {
 			padding: 10px;
 			&:nth-child(even) {
-				background-color: $row-bg;
+				background-color: variables.$row-bg;
             }
         }
     }
