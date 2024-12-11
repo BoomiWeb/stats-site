@@ -8,9 +8,10 @@
     "require": {},
     "require-dev": {
         "squizlabs/php_codesniffer": "3.*",
-        "wp-coding-standards/wpcs": "^0.14.0",
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.3",
-        "wimg/php-compatibility": "^8.0"
+        "wp-coding-standards/wpcs": "^3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "phpcompatibility/php-compatibility": "*",
+        "phpstan/phpstan": "^1.8"
     },
     "license": "MIT",
     "authors": [
@@ -22,5 +23,11 @@
     "scripts": {
         "phpcs": "phpcs -s -p --standard=./phpcs.ruleset.xml",
         "phpcbf": "phpcbf -p --standard=./phpcs.ruleset.xml"
-    }    
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
+        }
+    }
 }

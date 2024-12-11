@@ -104,41 +104,11 @@ add_action('after_setup_theme','boomi_trust_theme_setup');
  * @since boomi-trust 1.0.0
  */
 function boomi_trust_theme_scripts() {
-	global $wp_scripts;
-
-	// enqueue our scripts for bootstrap, slider and theme
-	wp_enqueue_script('jquery');
-	wp_enqueue_script('bootstrap-script', get_template_directory_uri().'/inc/js/bootstrap.js', array('jquery'), '3.3.7', true);
-	wp_enqueue_script('jquery-actual-script', get_template_directory_uri().'/inc/js/jquery.actual.js', array('jquery'), '1.0.16', true);
-	wp_enqueue_script('boomi-trust-theme-script', get_template_directory_uri().'/inc/js/theme.js', array('jquery'), '1.0.2', true);
-
-	if ( is_singular() ) :
-		wp_enqueue_script( 'comment-reply' );
-	endif;
-
-	/**
-	 * Load our IE specific scripts for a range of older versions:
-	 * <!--[if lt IE 9]> ... <![endif]-->
-	 * <!--[if lte IE 8]> ... <![endif]-->
-	*/
-	// HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries //
-	wp_register_script('html5shiv-script', get_template_directory_uri().'/inc/js/html5shiv.js', array(), '3.7.3-pre');
-	wp_register_script('respond-script', get_template_directory_uri().'/inc/js/respond.js', array(), '1.4.2');
-
-	$wp_scripts->add_data('html5shiv-script', 'conditional', 'lt IE 9');
-	$wp_scripts->add_data('respond-script', 'conditional', 'lt IE 9');
-
-	// enqueue font awesome and our main stylesheet
 	wp_enqueue_style('roboto-google-font', 'https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 	wp_enqueue_style('bootstrap-style', get_template_directory_uri().'/inc/css/bootstrap.css', array(), '4.6.3');
 	wp_enqueue_style('boomi-trust-theme-style', get_stylesheet_uri());
 }
 add_action('wp_enqueue_scripts','boomi_trust_theme_scripts');
-
-function boomi_font_awesome() {
-    echo '<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>';
-}
-add_action('wp_head', 'boomi_font_awesome');
 
 /**
  * Display an optional post thumbnail.
@@ -330,89 +300,6 @@ function boomi_trust_header_markup() {
 }
 
 /**
- * boomi_trust_mobile_navigation_setup function.
- *
- * checks if we have an active mobile menu
- * if active mobile, sets it, if not, default to primary
- *
- * @access public
- * @return void
- */
-function boomi_trust_mobile_navigation_setup() {
-	$html=null;
-
-	if (has_nav_menu('mobile')) :
-		$location='mobile';
-	else :
-		$location='primary';
-	endif;
-
-	$location=apply_filters('boomi_trust_mobile_navigation_setup_location', $location);
-
-	if ($location=='primary' && !has_nav_menu($location))
-		return false;
-
-	$html.='<div id="boomi-trust-mobile-nav" class="collapse boomi-trust-menu hidden-sm hidden-md hidden-lg">';
-
-		$html.=wp_nav_menu(array(
-			'theme_location' => $location,
-			'container' => 'div',
-			'container_class' => 'panel-group navbar-nav',
-			'container_id' => 'accordion',
-			'echo' => false,
-			'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			'walker' => new koksijdeMobileNavWalker()
-		));
-
-	$html.='</div><!-- .boomi-trust-theme-mobile-menu -->';
-
-	echo apply_filters('boomi_trust_mobile_navigation', $html);
-}
-
-/**
- * boomi_trust_secondary_navigation_setup function.
- *
- * if our secondary menu is set, this shows it
- *
- * @access public
- * @return void
- */
-function boomi_trust_secondary_navigation_setup() {
-	$html=null;
-
-	if (!has_nav_menu('secondary'))
-		return false;
-
-	$html.='<div class="collapse navbar-collapse secondary-menu">';
-		$html.=wp_nav_menu(array(
-			'theme_location' => 'secondary',
-			'container' => false,
-			'menu_class' => 'nav navbar-nav pull-right secondary',
-			'echo' => false,
-			'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			'walker' => new wp_bootstrap_navwalker()
-		));
-	$html.='</div> <!-- .secondary-menu -->';
-
-	echo apply_filters('boomi_trust_secondary_navigation', $html);
-}
-
-/**
- * boomi_trust_back_to_top function.
- *
- * @access public
- * @return void
- */
-function boomi_trust_back_to_top() {
-	$html=null;
-
-	$html.='<a href="#0" class="boomi-trust-back-to-top"></a>';
-
-	echo apply_filters('boomi_trust_back_to_top', $html);
-}
-add_action('wp_footer', 'boomi_trust_back_to_top');
-
-/**
  * boomi_trust_wp_parse_args function.
  *
  * Similar to wp_parse_args() just a bit extended to work with multidimensional arrays
@@ -486,34 +373,6 @@ function boomi_trust_theme_get_image_id_from_url($image_url) {
 	$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url ));
 
 	return $attachment[0];
-}
-
-/**
- * boomi_trust_array_recursive_diff function.
- *
- * @access public
- * @param mixed $aArray1
- * @param mixed $aArray2
- * @return void
- */
-function boomi_trust_array_recursive_diff($aArray1, $aArray2) {
-  $aReturn = array();
-
-  foreach ($aArray1 as $mKey => $mValue) {
-    if (array_key_exists($mKey, $aArray2)) {
-      if (is_array($mValue)) {
-        $aRecursiveDiff = koksijde_array_recursive_diff($mValue, $aArray2[$mKey]);
-        if (count($aRecursiveDiff)) { $aReturn[$mKey] = $aRecursiveDiff; }
-      } else {
-        if ($mValue != $aArray2[$mKey]) {
-          $aReturn[$mKey] = $mValue;
-        }
-      }
-    } else {
-      $aReturn[$mKey] = $mValue;
-    }
-  }
-  return $aReturn;
 }
 
 /**
