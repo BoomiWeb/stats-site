@@ -91,7 +91,7 @@ class Boomi_Stats_Releases {
 
             //-- Infrastructure Releases --//
             $infrastructure_releases_object = get_field_object('infrastructure_releases');
-            $infrastructure_releases_label = $infrastructure_releases_object['label'];
+            $infrastructure_releases_label = isset($infrastructure_releases_object['label']) ? $infrastructure_releases_object['label'] : '';
 
             $html .= '<div class="infrastructure-releases container">';
                 $html .= '<div class="infrastructure-releases-header header-row row">';
