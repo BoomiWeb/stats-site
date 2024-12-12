@@ -20,13 +20,12 @@
 
 	<div class="wrapper">
 
-		<div class="container-fluid primary-nav">
+		<div class="header-container">
 			<div class="container">
-				<nav class="navbar navbar-default" role="navigation">
-					<div class="navbar-header">
-        				<a href="https://status.boomi.com"><img src="https://stats.boomi.com/wp-content/uploads/Boomi-Logo-White-Footer.svg" height="" width="" alt="boomi-logo" /></a>
+				<div class="row">
+					<div class="logo">
+						<a href="https://status.boomi.com"><img src="https://stats.boomi.com/wp-content/uploads/Boomi-Logo-White-Footer.svg" height="" width="" alt="boomi-logo" /></a>
 					</div>
-					<?php get_template_part("template-parts/navigation/primary", "menu"); ?>
-				</nav>
-			</div><!-- .container -->
-		</div><!-- .navigation -->
+				</div>
+			</div>
+		</div>

@@ -1,0 +1,21 @@
+@use "variables";
+
+.header-container {
+    background-color: variables.$dell-blue;
+    height: 6rem;
+
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        img {
+            max-width: 140px;
+            width: 140px;
+            height: auto;
+        }
+    }
+}
