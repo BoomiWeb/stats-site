@@ -2,11 +2,11 @@
 
 footer {
 	border-top: none;
-	background: #007db8;
-	margin-top: 30px;
+	background: variables.$dell-blue;
+	margin-top: 2rem;
 	color: variables.$white;
 	font-size: 14px;
-	padding: 0.8rem;
+	padding: 0.8rem 0;
 	
 	.footer-menu {
     	.menu {
@@ -22,6 +22,7 @@ footer {
             	a {
                 	margin: 4px 16px 4px 0;
                     color: variables.$white;
+					text-decoration: none;
             	}
         	}
     	}

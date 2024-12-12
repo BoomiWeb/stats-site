@@ -1,7 +1,7 @@
 			<footer>	
     			<div class="container footer-menu">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-12">
                             <ul class="menu">
                                 <li class="menu-item"><a href="http://boomi.com/" target="_blank">Boomi</a></li>
                                 <li class="menu-item"><a href="http://boomi.com/services/support/" target="_blank">Boomi Support</a></li>

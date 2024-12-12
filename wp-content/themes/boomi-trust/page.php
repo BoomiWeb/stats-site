@@ -14,18 +14,12 @@
     			<?php the_title('<h1>', '</h1>'); ?>
 			</div>
 		</div>
-
-		<div class="row">
-			<div class="col-12 col-md-6">
+	</div>
 	
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part('template-parts/page/content', ''); ?>
-				<?php endwhile; else: ?>
-					<p><?php _e('Sorry, this page does not exist.', 'boomi-trust'); ?></p>
-				<?php endif; ?>
-				
-			</div>
-		</div>
-	</div><!-- .container -->
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<?php get_template_part('template-parts/page/content', ''); ?>
+	<?php endwhile; else: ?>
+		<p><?php _e('Sorry, this page does not exist.', 'boomi-trust'); ?></p>
+	<?php endif; ?>
 
 <?php get_footer(); ?>
