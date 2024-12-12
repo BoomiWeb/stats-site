@@ -85,7 +85,7 @@ add_action('after_setup_theme','boomi_trust_theme_setup');
  */
 function boomi_trust_theme_scripts() {
 	wp_enqueue_style('roboto-google-font', 'https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-	wp_enqueue_style('boomi-trust-theme-style', get_stylesheet_uri());
+	wp_enqueue_style('boomi-stats-theme-style', get_template_directory_uri().'/assets/css/style.css', array(), '2.0.0', 'all');
 }
 add_action('wp_enqueue_scripts','boomi_trust_theme_scripts');
 
