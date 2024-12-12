@@ -15,8 +15,8 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(variables.$row-gutters / 2);
-    margin-right: calc(variables.$row-gutters / 2);
+    margin-left: calc(variables.$row-gutters / 2) * -1;
+    margin-right: calc(variables.$row-gutters / 2) * -1;
 }
   
 .col {
