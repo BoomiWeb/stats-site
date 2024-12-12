@@ -1,58 +1,86 @@
 @use "../components/variables";
 
 .boomi-stats-notifications {    
-	.upcoming-releases {
-		margin-bottom: 2rem;
+    .header-row {
+        text-align: center;
+        margin-bottom: 1rem;
+        
+        h2 {
+            background-color: variables.$dell-blue;
+            padding: 15px;
+            margin: 0;
+            color: variables.$white;
+        }		
+    }
 
-        .upcoming-releases-header {
-            text-align: center;
-            margin-bottom: 1rem;
-            
-            h2 {
-                background-color: variables.$dell-blue;
-                padding: 15px;
-                margin: 0;
-                color: variables.$white;
-            }		
+    .data-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 100%;
+        
+        .border-wrap {
+            border-color: variables.$dell-blue;
         }
         
-    	.upcoming-releases-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            width: 100%;
-            
+        .sub-head {
+            background-color: variables.$dell-blue;	
+        }
+    } 
+
+    .border-wrap {
+        overflow: hidden;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .sub-head {
+        text-align: center;
+        color: variables.$white;
+        
+        h3 {
+            margin: 0;
+            padding: 15px;
+        }
+    }
+    
+    .date {
+        padding: 10px;
+        &:nth-child(even) {
+            background-color: variables.$row-bg;
+        }
+    }    
+
+	.upcoming-releases,
+    .infrastructure-releases,
+    .release-archive {
+		margin-bottom: 2rem;        
+    }
+
+	.infrastructure-releases {          
+        h2 {
+            background-color: variables.$aqua;
+        }		
+        
+        .data-container {
         	.border-wrap {
-                border-color: variables.$dell-blue;
+                border-color: variables.$aqua;
             }
     		
     		.sub-head {
-        	    background-color: variables.$dell-blue;	
+        	    background-color: variables.$aqua;	
     		}
         }         
-    }
+    }    
     
 	.release-archive {
-        .release-archive-header {
-            text-align: center;
-            margin-bottom: 1rem;
-            
+        .release-archive-header {            
             h2 {
                 background-color: variables.$dell-gray;
-                padding: 15px;
-                margin: 0;
-                color: variables.$white;
             }		
         }
         
-        .release-archive-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            width: 100%;
-        }
-
-    	.releases {
+        .data-container {
         	.border-wrap {
                 border-color: variables.$dell-gray;
             }
@@ -61,31 +89,6 @@
         	    background-color: variables.$dell-gray;	
     		}
         }         
-    }
-    
-	.releases {
-    	.border-wrap {
-    		overflow: hidden;
-            border-style: solid;
-            border-width: 1px;
-        }
-
-        .sub-head {
-            text-align: center;
-            color: variables.$white;
-            
-            h3 {
-                margin: 0;
-                padding: 15px;
-            }
-        }
-		
-		.date {
-			padding: 10px;
-			&:nth-child(even) {
-				background-color: variables.$row-bg;
-            }
-        }
     }
     
     .footer-notice {
