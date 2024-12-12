@@ -39,52 +39,50 @@ class Boomi_Stats_Releases {
         $html .= '<div class="boomi-stats-notifications">';
             $html .= '<div class="upcoming-releases container">';
                 $html .= '<div class="upcoming-releases-header header-row row">';
-                    $html .= '<div class="col-12">';
+                    $html .= '<div class="col">';
                         $html .= '<h2>'.$upcoming_releases_label.'</h2>';
                     $html .= '</div>';
                 $html .= '</div>';
                 
-                $html .= '<div class="row releases">';
-                    if ( have_rows( 'upcoming_releases' ) ) :
-                        $html .= '<div class="upcoming-releases-container data-container">';
-                            while ( have_rows( 'upcoming_releases' ) ) : the_row();
-                    
-                                $urcd_object = get_sub_field_object('upcoming_release_control_dates');
-                                $urcd_label = $urcd_object['label'];
-                                
-                                $urd_object = get_sub_field_object('upcoming_release_dates');
-                                $urd_label = $urd_object['label'];                
-                    
-                                if ( have_rows( 'upcoming_release_control_dates' ) ) :
+                if ( have_rows( 'upcoming_releases' ) ) :
+                    $html .= '<div class="upcoming-releases-container data-container row">';
+                        while ( have_rows( 'upcoming_releases' ) ) : the_row();
+                
+                            $urcd_object = get_sub_field_object('upcoming_release_control_dates');
+                            $urcd_label = $urcd_object['label'];
+                            
+                            $urd_object = get_sub_field_object('upcoming_release_dates');
+                            $urd_label = $urd_object['label'];                
+                
+                            if ( have_rows( 'upcoming_release_control_dates' ) ) :
 
-                                    $html .= '<div class="upcoming-release-control-dates">';
-                                        $html .= '<div class="release-control-dates border-wrap">';
-                                            $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
-                                            
-                                            while ( have_rows( 'upcoming_release_control_dates' ) ) : the_row();
-                                                $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
-                                            endwhile;
+                                $html .= '<div class="upcoming-release-control-dates col col-md-6">';
+                                    $html .= '<div class="release-control-dates border-wrap">';
+                                        $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
+                                        
+                                        while ( have_rows( 'upcoming_release_control_dates' ) ) : the_row();
+                                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
+                                        endwhile;
 
-                                        $html .= '</div>';
                                     $html .= '</div>';
-                                endif;
+                                $html .= '</div>';
+                            endif;
 
-                                if ( have_rows( 'upcoming_release_dates' ) ) :
-                                    $html .= '<div class="upcoming-release-dates">';
-                                        $html .= '<div class="release-dates border-wrap">';
-                                            $html .= '<div class="sub-head"><h3>'.$urd_label.'</h3></div>';
+                            if ( have_rows( 'upcoming_release_dates' ) ) :
+                                $html .= '<div class="upcoming-release-dates col col-md-6">';
+                                    $html .= '<div class="release-dates border-wrap">';
+                                        $html .= '<div class="sub-head"><h3>'.$urd_label.'</h3></div>';
 
-                                            while ( have_rows( 'upcoming_release_dates' ) ) : the_row();
-                                                $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
-                                            endwhile;
+                                        while ( have_rows( 'upcoming_release_dates' ) ) : the_row();
+                                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
+                                        endwhile;
 
-                                        $html .= '</div>';
                                     $html .= '</div>';
-                                endif;
-                            endwhile;
-                        $html .= '</div>';
-                    endif;
-                $html .= '</div>';
+                                $html .= '</div>';
+                            endif;
+                        endwhile;
+                    $html .= '</div>';
+                endif;
                 
                 $html.='<div class="footer-notice row"><div class="col-12"><p>Boomi reserves the right to adjust these dates as needed.</p></div></div>';
             $html .= '</div>';
@@ -95,51 +93,49 @@ class Boomi_Stats_Releases {
 
             $html .= '<div class="infrastructure-releases container">';
                 $html .= '<div class="infrastructure-releases-header header-row row">';
-                    $html .= '<div class="col-12">';
+                    $html .= '<div class="col">';
                         $html .= '<h2>'.$infrastructure_releases_label.'</h2>';
                     $html .= '</div>';
                 $html .= '</div>';
                 
-                $html .= '<div class="row">';
-                    if ( have_rows( 'infrastructure_releases' ) ) :
-                        $html .= '<div class="infrastructure-releases-container data-container">';
-                            while ( have_rows( 'infrastructure_releases' ) ) : the_row();
-                                $urcd_object = get_sub_field_object('release_month');
-                                $urcd_label = $urcd_object['label'];
-                                
-                                $urd_object = get_sub_field_object('change_type');
-                                $urd_label = $urd_object['label'];                
-                    
-                                if ( have_rows( 'release_month' ) ) :
+                if ( have_rows( 'infrastructure_releases' ) ) :
+                    $html .= '<div class="infrastructure-releases-container data-container row">';
+                        while ( have_rows( 'infrastructure_releases' ) ) : the_row();
+                            $urcd_object = get_sub_field_object('release_month');
+                            $urcd_label = $urcd_object['label'];
+                            
+                            $urd_object = get_sub_field_object('change_type');
+                            $urd_label = $urd_object['label'];                
+                
+                            if ( have_rows( 'release_month' ) ) :
 
-                                    $html .= '<div class="release-month-container">';
-                                        $html .= '<div class="release-month border-wrap">';
-                                            $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
-                                            
-                                            while ( have_rows( 'release_month' ) ) : the_row();
-                                                $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
-                                            endwhile;
+                                $html .= '<div class="release-month-container col col-md-6">';
+                                    $html .= '<div class="release-month border-wrap">';
+                                        $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
+                                        
+                                        while ( have_rows( 'release_month' ) ) : the_row();
+                                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
+                                        endwhile;
 
-                                        $html .= '</div>';
                                     $html .= '</div>';
-                                endif;
+                                $html .= '</div>';
+                            endif;
 
-                                if ( have_rows( 'change_type' ) ) :
-                                    $html .= '<div class="change-type-container">';
-                                        $html .= '<div class="change-type border-wrap">';
-                                            $html .= '<div class="sub-head"><h3>'.$urd_label.'</h3></div>';
+                            if ( have_rows( 'change_type' ) ) :
+                                $html .= '<div class="change-type-container col col-md-6">';
+                                    $html .= '<div class="change-type border-wrap">';
+                                        $html .= '<div class="sub-head"><h3>'.$urd_label.'</h3></div>';
 
-                                            while ( have_rows( 'change_type' ) ) : the_row();
-                                                $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
-                                            endwhile;
+                                        while ( have_rows( 'change_type' ) ) : the_row();
+                                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
+                                        endwhile;
 
-                                        $html .= '</div>';
                                     $html .= '</div>';
-                                endif;
-                            endwhile;
-                        $html .= '</div>';
-                    endif;
-                $html .= '</div>';
+                                $html .= '</div>';
+                            endif;
+                        endwhile;
+                    $html .= '</div>';
+                endif;
             $html .= '</div>';            
 
             $release_archive = get_field( 'release_archive' );
@@ -148,50 +144,48 @@ class Boomi_Stats_Releases {
 
             $html .= '<div class="release-archive container">';
                 $html .= '<div class="release-archive-header header-row row">';
-                    $html .= '<div class="col-12">';
+                    $html .= '<div class="col">';
                         $html .= '<h2>'.$release_archive_label.'</h2>';
                     $html .= '</div>';
                 $html .= '</div>';              
 
-                $html .= '<div class="row releases">';
-                    if ( have_rows( 'release_archive' ) ) :
-                        $html .= '<div class="release-archive-container data-container">';
-                        
-                            while ( have_rows( 'release_archive' ) ) : the_row();
-                                $crcd_object = get_sub_field_object('completed_release_control_dates');
-                                $crcd_label = $crcd_object['label'];
-                
-                                $crd_object = get_sub_field_object('completed_release_dates');
-                                $crd_label = $crd_object['label'];                 
+                if ( have_rows( 'release_archive' ) ) :
+                    $html .= '<div class="release-archive-container data-container row">';
+                    
+                        while ( have_rows( 'release_archive' ) ) : the_row();
+                            $crcd_object = get_sub_field_object('completed_release_control_dates');
+                            $crcd_label = $crcd_object['label'];
+            
+                            $crd_object = get_sub_field_object('completed_release_dates');
+                            $crd_label = $crd_object['label'];                 
 
-                                if ( have_rows( 'completed_release_control_dates' ) ) :
-                                    $html .= '<div class="completed-release-control-dates-container">';
-                                        $html .= '<div class="completed-release-control-dates border-wrap">';
-                                            $html .= '<div class="sub-head"><h3>'.$crcd_label.'</h3></div>';
+                            if ( have_rows( 'completed_release_control_dates' ) ) :
+                                $html .= '<div class="completed-release-control-dates-container col col-md-6">';
+                                    $html .= '<div class="completed-release-control-dates border-wrap">';
+                                        $html .= '<div class="sub-head"><h3>'.$crcd_label.'</h3></div>';
 
-                                            while ( have_rows( 'completed_release_control_dates' ) ) : the_row();
-                                                $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
-                                            endwhile;
-                                        $html .= '</div>';
+                                        while ( have_rows( 'completed_release_control_dates' ) ) : the_row();
+                                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
+                                        endwhile;
                                     $html .= '</div>';
-                                endif;
+                                $html .= '</div>';
+                            endif;
 
-                                if ( have_rows( 'completed_release_dates' ) ) :
-                                    $html .= '<div class="completed-release-dates-container">';
-                                        $html .= '<div class="completed-release-dates border-wrap">';
-                                            $html .= '<div class="sub-head"><h3>'.$crd_label.'</h3></div>';
+                            if ( have_rows( 'completed_release_dates' ) ) :
+                                $html .= '<div class="completed-release-dates-container col col-md-6">';
+                                    $html .= '<div class="completed-release-dates border-wrap">';
+                                        $html .= '<div class="sub-head"><h3>'.$crd_label.'</h3></div>';
 
-                                            while ( have_rows( 'completed_release_dates' ) ) : the_row();
-                                                $html .= '<div class="date">' . get_sub_field( 'date' ) .' '. get_sub_field( 'details' ) . '</div>';
-                                            endwhile;
-                                        $html .= '</div>';
+                                        while ( have_rows( 'completed_release_dates' ) ) : the_row();
+                                            $html .= '<div class="date">' . get_sub_field( 'date' ) .' '. get_sub_field( 'details' ) . '</div>';
+                                        endwhile;
                                     $html .= '</div>';
-                                endif;
-                            endwhile;
+                                $html .= '</div>';
+                            endif;
+                        endwhile;
 
-                        $html .= '</div>';
-                    endif;
-                $html .= '</div>';
+                    $html .= '</div>';
+                endif;
             $html .= '</div>';
             
         $html .= '</div>';

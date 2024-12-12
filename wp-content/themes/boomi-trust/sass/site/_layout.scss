@@ -13,42 +13,54 @@
 }
 
 .row {
+    // display: flex;
+    // flex-wrap: wrap;
+    // margin-left: calc(variables.$row-gutters / 2) * -1;
+    // margin-right: calc(variables.$row-gutters / 2) * -1;
+    // gap: calc(variables.$row-gutters / 2);
+
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(variables.$row-gutters / 2) * -1;
-    margin-right: calc(variables.$row-gutters / 2) * -1;
+    gap: variables.$row-gutters;
+    margin-left: calc(variables.$row-gutters / -2); // Negative margins to counteract the gap on edges
+    margin-right: calc(variables.$row-gutters / -2);
 }
   
 .col {
-    padding-left: calc(variables.$row-gutters / 2);
-    padding-right: calc(variables.$row-gutters / 2);
-    flex: 1 1 0%;
+    // padding-left: calc(variables.$row-gutters / 2);
+    // padding-right: calc(variables.$row-gutters / 2);
+    // flex: 1 1 100%;
+    width: 100%;
 }
 
 @mixin media($breakpoint) {
-    @media (min-width: $breakpoint) {
+  @media (min-width: $breakpoint) {
       @content;
-    }
+  }
 }
-  
+
 // Declare the mixin outside the loop
-@mixin col-responsive($breakpoint, $size) {
-    @include media($breakpoint) {
-      flex: 0 0 calc(100% * $size / 12);
-      max-width: calc(100% * $size / 12);
-    }
+@mixin col-responsive($breakpoint, $size, $gap) {
+  @include media($breakpoint) {
+      // flex: 0 0 calc((100% * $size / 12) - #{$gap});
+      // max-width: calc((100% * $size / 12) - #{$gap});
+      width: calc((100% * $size / 12) - #{calc($gap / 2)});
+  }
 }
-  
+
 // Loop through breakpoints and sizes to generate classes
 @for $i from 1 through 12 {
-    .col-#{$i} {
-      flex: 0 0 calc(100% * $i / 12);
-      max-width: calc(100% * $i / 12);
-    }
-  
-    @each $breakpoint, $value in variables.$breakpoints {
+  // Default columns without breakpoints
+  .col-#{$i} {
+      // flex: 0 0 calc((100% * $i / 12) - variables.$row-gutters);
+      // max-width: calc((100% * $i / 12) - variables.$row-gutters);
+      width: calc((100% * $i / 12) - variables.$row-gutters);
+  }
+
+  // Columns for each breakpoint
+  @each $breakpoint, $value in variables.$breakpoints {
       .col-#{$breakpoint}-#{$i} {
-        @include col-responsive($breakpoint, $i);
+          @include col-responsive($value, $i, variables.$row-gutters);
       }
-    }
+  }
 }
