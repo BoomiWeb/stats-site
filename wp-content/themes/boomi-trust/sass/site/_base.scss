@@ -1,10 +1,20 @@
 @use "../site/variables";
 
-body, input, textarea, select {
-    font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif;
+body {
+    font-family: variables.$font-family-base;
+    font-size: 16px;
+    line-height: 1.5;
+    color: variables.$body-color;
+    background-color: variables.$body-bg;
     margin: 0;
 }
 
-.heading-title {
-    color: variables.$navy;
+h1, h2, h3, h4, h5, h6 {
+    font-family: variables.$font-family-hgroup;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.secondary-text, blockquote, figcaption {
+    font-family: variables.$font-family-secondary;
 }

@@ -28,35 +28,49 @@ $breakpoints: (
   "xxl": 1400px // Desktop Devices
 );
 
+// Regular ( Open Sans ) font family
+$font-family-base: "Noto Sans", sans-serif !default;
+$font-family-secondary: "Noto Sans", sans-serif !default;
+$font-family-hgroup: "Poppins", sans-serif !default;
+
 // Colors
-$black: #000;
-$carbon: #444;
-$granite: #aaa;
-$quartz: #eee;
-$purple: #6E2585;
-$midnight: #16467A; 
-$green: #6EA204;
-$yellow: #F2AF00;
-$orange: #EE6411;
+$primary-100: #1f1f1f !default;
+$primary-200: #072b55 !default;
+$primary-300: #152a40 !default;
 
-// new palette
-$dell-blue: #0087CC;
-$aqua: #22C5BE;
-$light-gray: #e3e3e3;
-$dell-gray: #808080;
-$steel: #657792;
-$navy: #003851;
-$white: #fff;
-$row-bg: #F7F7F7;
+$secondary-100: #4b4fe2 !default;
+$secondary-200: #3236c8 !default;
 
+$tertiary-100: #009058 !default;
+$tertiary-200: #0ec38b !default;
+$tertiary-300: #a9dfda !default;
+$tertiary-400: #cff3e8 !default;
 
-@mixin linearGradient($top, $bottom) {
-    background: $top; /* Old browsers */
-    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-}
+// Start with assigning color names to specific hex values.
+$color-100: #ff7c66 !default;
+$color-200: #a03291 !default;
+$color-300: #006cd6 !default;
+$color-400: #e5f3fd !default;
+$color-500: #4d7689 !default;
+$color-600: #262626 !default;
+$color-700: #ffe5e0 !default;
+$color-800: #02293b !default;
+$color-900: #181caf !default;
+$color-1000: #0085f0 !default;
+$white: #ffffff !default;
+$black: #000000 !default;
+$gray: #707070 !default;
+$gray-100: #cccccc !default;
+$gray-200: #f5f5f5 !default;
+$gray-300: #e5e5e5 !default;
+$gray-400: #9caabb !default;
+
+// Body color
+$body-bg: $white !default;
+$body-color: $primary-100 !default;
+
+// Legacy color support`
+$dell-blue: $primary-200;
+$row-bg: $gray-300;
+$aqua: $tertiary-100;
+$dell-gray: $gray-400;
