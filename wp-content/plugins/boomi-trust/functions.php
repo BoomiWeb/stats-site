@@ -43,11 +43,11 @@ add_filter( 'upload_mimes', 'boomi_mime_types' );
 
 
 function boomi_trust_has_schedule_section() {
-    if ( have_rows( 'infrastructure_releases' ) ) {
-        while ( have_rows( 'infrastructure_releases' ) ) { 
-            the_row();
+    $fields = get_fields();
 
-            if ( have_rows( 'release_month' ) || have_rows( 'change_type' ) ) {
+    if ( isset( $fields['infrastructure_releases'] ) ) {
+        if (isset($fields['infrastructure_releases']['release_month']) || isset($fields['infrastructure_releases']['change_type'])) {
+            if (!empty($fields['infrastructure_releases']['release_month']) || !empty($fields['infrastructure_releases']['change_type'])) {
                 return true;
             }
         }
