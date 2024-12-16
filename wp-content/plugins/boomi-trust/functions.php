@@ -40,3 +40,18 @@ function boomi_mime_types( $mimes ) {
     return $mimes;
 }
 add_filter( 'upload_mimes', 'boomi_mime_types' );
+
+
+function boomi_trust_has_schedule_section() {
+    if ( have_rows( 'infrastructure_releases' ) ) {
+        while ( have_rows( 'infrastructure_releases' ) ) { 
+            the_row();
+
+            if ( have_rows( 'release_month' ) || have_rows( 'change_type' ) ) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}

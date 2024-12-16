@@ -91,53 +91,58 @@ class Boomi_Stats_Releases {
             $infrastructure_releases_object = get_field_object('infrastructure_releases');
             $infrastructure_releases_label = isset($infrastructure_releases_object['label']) ? $infrastructure_releases_object['label'] : '';
 
-            $html .= '<div class="infrastructure-releases container">';
-                $html .= '<div class="infrastructure-releases-header header-row row">';
-                    $html .= '<div class="col">';
-                        $html .= '<h2>'.$infrastructure_releases_label.'</h2>';
+            if (boomi_trust_has_schedule_section()) :
+
+                $html .= '<div class="infrastructure-releases container">';
+                    $html .= '<div class="infrastructure-releases-header header-row row">';
+                        $html .= '<div class="col">';
+                            $html .= '<h2>'.$infrastructure_releases_label.'</h2>';
+                        $html .= '</div>';
                     $html .= '</div>';
-                $html .= '</div>';
-                
-                if ( have_rows( 'infrastructure_releases' ) ) :
-                    $html .= '<div class="infrastructure-releases-container data-container row">';
-                        while ( have_rows( 'infrastructure_releases' ) ) : the_row();
-                            $urcd_object = get_sub_field_object('release_month');
-                            $urcd_label = $urcd_object['label'];
-                            
-                            $urd_object = get_sub_field_object('change_type');
-                            $urd_label = $urd_object['label'];                
-                
-                            if ( have_rows( 'release_month' ) ) :
+                    
+                    if ( have_rows( 'infrastructure_releases' ) ) :
+                        $html .= '<div class="infrastructure-releases-container data-container row">';
+                            while ( have_rows( 'infrastructure_releases' ) ) : the_row();
+                                $urcd_object = get_sub_field_object('release_month');
+                                $urcd_label = $urcd_object['label'];
+                                
+                                $urd_object = get_sub_field_object('change_type');
+                                $urd_label = $urd_object['label'];                
+                    
+                                if ( have_rows( 'release_month' ) ) :
 
-                                $html .= '<div class="release-month-container col col-md-6">';
-                                    $html .= '<div class="release-month border-wrap">';
-                                        $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
-                                        
-                                        while ( have_rows( 'release_month' ) ) : the_row();
-                                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
-                                        endwhile;
+                                    $html .= '<div class="release-month-container col col-md-6">';
+                                        $html .= '<div class="release-month border-wrap">';
+                                            $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
+                                            
+                                            while ( have_rows( 'release_month' ) ) : the_row();
+                                                $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
+                                            endwhile;
 
+                                        $html .= '</div>';
                                     $html .= '</div>';
-                                $html .= '</div>';
-                            endif;
+                                endif;
 
-                            if ( have_rows( 'change_type' ) ) :
-                                $html .= '<div class="change-type-container col col-md-6">';
-                                    $html .= '<div class="change-type border-wrap">';
-                                        $html .= '<div class="sub-head"><h3>'.$urd_label.'</h3></div>';
+                                if ( have_rows( 'change_type' ) ) :
+                                    $html .= '<div class="change-type-container col col-md-6">';
+                                        $html .= '<div class="change-type border-wrap">';
+                                            $html .= '<div class="sub-head"><h3>'.$urd_label.'</h3></div>';
 
-                                        while ( have_rows( 'change_type' ) ) : the_row();
-                                            $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
-                                        endwhile;
+                                            while ( have_rows( 'change_type' ) ) : the_row();
+                                                $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
+                                            endwhile;
 
+                                        $html .= '</div>';
                                     $html .= '</div>';
-                                $html .= '</div>';
-                            endif;
-                        endwhile;
-                    $html .= '</div>';
-                endif;
-            $html .= '</div>';            
+                                endif;
+                            endwhile;
+                        $html .= '</div>';
+                    endif;
+                $html .= '</div>';            
 
+            endif;
+
+            
             $release_archive = get_field( 'release_archive' );
             $release_archive_object = get_field_object('release_archive');
             $release_archive_label = $release_archive_object['label'];
