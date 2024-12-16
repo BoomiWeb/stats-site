@@ -91,8 +91,8 @@ class Boomi_Stats_Releases {
             $infrastructure_releases_object = get_field_object('infrastructure_releases');
             $infrastructure_releases_label = isset($infrastructure_releases_object['label']) ? $infrastructure_releases_object['label'] : '';
 
-            if (boomi_trust_has_schedule_section()) :
-
+            // if (boomi_trust_has_schedule_section()) :
+// echo "a";
                 $html .= '<div class="infrastructure-releases container">';
                     $html .= '<div class="infrastructure-releases-header header-row row">';
                         $html .= '<div class="col">';
@@ -101,6 +101,7 @@ class Boomi_Stats_Releases {
                     $html .= '</div>';
                     
                     if ( have_rows( 'infrastructure_releases' ) ) :
+// echo "b";                        
                         $html .= '<div class="infrastructure-releases-container data-container row">';
                             while ( have_rows( 'infrastructure_releases' ) ) : the_row();
                                 $urcd_object = get_sub_field_object('release_month');
@@ -110,7 +111,7 @@ class Boomi_Stats_Releases {
                                 $urd_label = $urd_object['label'];                
                     
                                 if ( have_rows( 'release_month' ) ) :
-
+// echo "b";
                                     $html .= '<div class="release-month-container col col-md-6">';
                                         $html .= '<div class="release-month border-wrap">';
                                             $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
@@ -140,7 +141,7 @@ class Boomi_Stats_Releases {
                     endif;
                 $html .= '</div>';            
 
-            endif;
+            // endif;
 
             
             $release_archive = get_field( 'release_archive' );
