@@ -42,14 +42,12 @@ function boomi_mime_types( $mimes ) {
 add_filter( 'upload_mimes', 'boomi_mime_types' );
 
 
-function boomi_trust_has_schedule_section() {
+function boomi_trust_has_infrastructure_section() {
     $fields = get_fields();
 
     if ( isset( $fields['infrastructure_releases'] ) ) {
-        if (isset($fields['infrastructure_releases']['release_month']) || isset($fields['infrastructure_releases']['change_type'])) {
-            if (!empty($fields['infrastructure_releases']['release_month']) || !empty($fields['infrastructure_releases']['change_type'])) {
-                return true;
-            }
+        if (isset($fields['infrastructure_releases']['release_month']) && !empty($fields['infrastructure_releases']['release_month'])) {
+            return true;
         }
     }
 

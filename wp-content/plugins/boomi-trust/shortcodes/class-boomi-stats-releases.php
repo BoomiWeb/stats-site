@@ -91,7 +91,7 @@ class Boomi_Stats_Releases {
             $infrastructure_releases_object = get_field_object('infrastructure_releases');
             $infrastructure_releases_label = isset($infrastructure_releases_object['label']) ? $infrastructure_releases_object['label'] : '';
 
-            if (boomi_trust_has_schedule_section()) :
+            if (boomi_trust_has_infrastructure_section()) :
 
                 $html .= '<div class="infrastructure-releases container">';
                     $html .= '<div class="infrastructure-releases-header header-row row">';
@@ -105,31 +105,15 @@ class Boomi_Stats_Releases {
                         $html .= '<div class="infrastructure-releases-container data-container row">';
                             while ( have_rows( 'infrastructure_releases' ) ) : the_row();
                                 $urcd_object = get_sub_field_object('release_month');
-                                $urcd_label = $urcd_object['label'];
-                                
-                                $urd_object = get_sub_field_object('change_type');
-                                $urd_label = $urd_object['label'];                
+                                $urcd_label = $urcd_object['label'];             
                     
                                 if ( have_rows( 'release_month' ) ) :
 
-                                    $html .= '<div class="release-month-container col col-md-6">';
+                                    $html .= '<div class="release-month-container col">';
                                         $html .= '<div class="release-month border-wrap">';
                                             $html .= '<div class="sub-head"><h3>'.$urcd_label.'</h3></div>';
                                             
                                             while ( have_rows( 'release_month' ) ) : the_row();
-                                                $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
-                                            endwhile;
-
-                                        $html .= '</div>';
-                                    $html .= '</div>';
-                                endif;
-
-                                if ( have_rows( 'change_type' ) ) :
-                                    $html .= '<div class="change-type-container col col-md-6">';
-                                        $html .= '<div class="change-type border-wrap">';
-                                            $html .= '<div class="sub-head"><h3>'.$urd_label.'</h3></div>';
-
-                                            while ( have_rows( 'change_type' ) ) : the_row();
                                                 $html .= '<div class="date">' . get_sub_field( 'date' ) . ' '. get_sub_field( 'details' ) . '</div>';
                                             endwhile;
 
@@ -142,7 +126,6 @@ class Boomi_Stats_Releases {
                 $html .= '</div>';            
 
             endif;
-
             
             $release_archive = get_field( 'release_archive' );
             $release_archive_object = get_field_object('release_archive');

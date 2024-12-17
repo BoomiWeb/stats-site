@@ -37,6 +37,7 @@
                     "max": 0,
                     "layout": "table",
                     "button_label": "Add Row",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_5bfd64ce06810",
@@ -78,8 +79,7 @@
                             "maxlength": "",
                             "parent_repeater": "field_5bfd64ce0680f"
                         }
-                    ],
-                    "rows_per_page": 20
+                    ]
                 },
                 {
                     "key": "field_5bfd64ce06811",
@@ -100,6 +100,7 @@
                     "max": 0,
                     "layout": "table",
                     "button_label": "Add Row",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_5bfd64ce06812",
@@ -141,8 +142,7 @@
                             "maxlength": "",
                             "parent_repeater": "field_5bfd64ce06811"
                         }
-                    ],
-                    "rows_per_page": 20
+                    ]
                 }
             ]
         },
@@ -229,72 +229,6 @@
                             "parent_repeater": "field_675a2eee2005f"
                         }
                     ]
-                },
-                {
-                    "key": "field_675a2eee20062",
-                    "label": "Change Type",
-                    "name": "change_type",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "table",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_675a2eee20063",
-                            "label": "Date",
-                            "name": "date",
-                            "aria-label": "",
-                            "type": "date_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "display_format": "m\/d\/Y",
-                            "return_format": "F j, Y (l)",
-                            "first_day": 1,
-                            "allow_in_bindings": 1,
-                            "parent_repeater": "field_675a2eee20062"
-                        },
-                        {
-                            "key": "field_675a2eee20064",
-                            "label": "Details",
-                            "name": "details",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 1,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "parent_repeater": "field_675a2eee20062"
-                        }
-                    ]
                 }
             ]
         },
@@ -333,6 +267,7 @@
                     "max": 0,
                     "layout": "table",
                     "button_label": "Add Row",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_5bfd64343a6bf",
@@ -374,8 +309,7 @@
                             "maxlength": "",
                             "parent_repeater": "field_5bfd641f3a6be"
                         }
-                    ],
-                    "rows_per_page": 20
+                    ]
                 },
                 {
                     "key": "field_5bfd649df6b79",
@@ -396,6 +330,7 @@
                     "max": 0,
                     "layout": "table",
                     "button_label": "Add Row",
+                    "rows_per_page": 20,
                     "sub_fields": [
                         {
                             "key": "field_5bfd649df6b7a",
@@ -437,8 +372,7 @@
                             "maxlength": "",
                             "parent_repeater": "field_5bfd649df6b79"
                         }
-                    ],
-                    "rows_per_page": 20
+                    ]
                 }
             ]
         }
@@ -461,5 +395,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733963646
+    "modified": 1734455798
 }
