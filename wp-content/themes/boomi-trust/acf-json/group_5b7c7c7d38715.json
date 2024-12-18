@@ -16,14 +16,14 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5bfd64ce0680f",
-                    "label": "Upcoming Runtime Release Dates",
-                    "name": "upcoming_release_control_dates",
+                    "key": "field_6761d0d254828",
+                    "label": "Section Title",
+                    "name": "section_title",
                     "aria-label": "",
-                    "type": "repeater",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -32,36 +32,33 @@
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
+                    "default_value": "Upcoming Releases",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6761d322d93dd",
+                    "label": "Upcoming Release Dates",
+                    "name": "upcoming_release_dates",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5bfd64ce06810",
-                            "label": "Date",
-                            "name": "date",
-                            "aria-label": "",
-                            "type": "date_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "display_format": "m\/d\/Y",
-                            "return_format": "F j, Y (l)",
-                            "first_day": 1,
-                            "parent_repeater": "field_5bfd64ce0680f"
-                        },
-                        {
-                            "key": "field_6123c92668a7a",
-                            "label": "Details",
-                            "name": "details",
+                            "key": "field_6761d33cd93de",
+                            "label": "Title",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -72,59 +69,99 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "default_value": "Upcoming Runtime Release Dates",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "parent_repeater": "field_5bfd64ce0680f"
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5bfd64ce0680f",
+                            "label": "Upcoming Runtime Release Dates",
+                            "name": "upcoming_release_control_dates",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Date",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_5bfd64ce06810",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "aria-label": "",
+                                    "type": "date_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "m\/d\/Y",
+                                    "return_format": "F j, Y (l)",
+                                    "first_day": 1,
+                                    "parent_repeater": "field_5bfd64ce0680f"
+                                },
+                                {
+                                    "key": "field_6123c92668a7a",
+                                    "label": "Details",
+                                    "name": "details",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_5bfd64ce0680f"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "key": "field_5bfd64ce06811",
-                    "label": "Upcoming Boomi Platform Release Dates",
-                    "name": "upcoming_release_dates",
+                    "key": "field_6761d373bd7d0",
+                    "label": "Upcoming Platform Release Dates",
+                    "name": "upcoming_platform_release_dates",
                     "aria-label": "",
-                    "type": "repeater",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
+                    "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5bfd64ce06812",
-                            "label": "Date",
-                            "name": "date",
-                            "aria-label": "",
-                            "type": "date_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "display_format": "m\/d\/Y",
-                            "return_format": "F j, Y (l)",
-                            "first_day": 1,
-                            "parent_repeater": "field_5bfd64ce06811"
-                        },
-                        {
-                            "key": "field_6123c93068a7b",
-                            "label": "Details",
-                            "name": "details",
+                            "key": "field_6761d386bd7d1",
+                            "label": "Title",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -135,12 +172,76 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "default_value": "Upcoming Boomi Platform Release Dates",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "parent_repeater": "field_5bfd64ce06811"
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5bfd64ce06811",
+                            "label": "Upcoming Boomi Platform Release Dates",
+                            "name": "upcoming_release_dates",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Date",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_5bfd64ce06812",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "aria-label": "",
+                                    "type": "date_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "m\/d\/Y",
+                                    "return_format": "F j, Y (l)",
+                                    "first_day": 1,
+                                    "parent_repeater": "field_5bfd64ce06811"
+                                },
+                                {
+                                    "key": "field_6123c93068a7b",
+                                    "label": "Details",
+                                    "name": "details",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_5bfd64ce06811"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -160,14 +261,14 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_675a2eee2005f",
-                    "label": "Release Month",
-                    "name": "release_month",
+                    "key": "field_6761b3520fcb0",
+                    "label": "Section Title",
+                    "name": "section_title",
                     "aria-label": "",
-                    "type": "repeater",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -176,18 +277,33 @@
                         "class": "",
                         "id": ""
                     },
-                    "layout": "table",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
+                    "default_value": "Release Month",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6761d6e4aad0f",
+                    "label": "Releases",
+                    "name": "releases",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_675a2eee20060",
-                            "label": "Date",
-                            "name": "date",
+                            "key": "field_6761d6f1aad10",
+                            "label": "Title",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -198,20 +314,19 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "default_value": "Infrastructure Releases",
                             "maxlength": "",
                             "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
-                            "append": "",
-                            "parent_repeater": "field_675a2eee2005f"
+                            "append": ""
                         },
                         {
-                            "key": "field_675a2eee20061",
-                            "label": "Details",
-                            "name": "details",
+                            "key": "field_675a2eee2005f",
+                            "label": "Release Month",
+                            "name": "release_month",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -220,13 +335,59 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "maxlength": "",
-                            "allow_in_bindings": 1,
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "parent_repeater": "field_675a2eee2005f"
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Month",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_675a2eee20060",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 0,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_675a2eee2005f"
+                                },
+                                {
+                                    "key": "field_675a2eee20061",
+                                    "label": "Details",
+                                    "name": "details",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "allow_in_bindings": 1,
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_675a2eee2005f"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -246,14 +407,14 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_5bfd641f3a6be",
-                    "label": "Completed Runtime Releases",
-                    "name": "completed_release_control_dates",
+                    "key": "field_6761d0ef54829",
+                    "label": "Section Title",
+                    "name": "section_title",
                     "aria-label": "",
-                    "type": "repeater",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -262,36 +423,33 @@
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
+                    "default_value": "Release Archive",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_6762d77f4918a",
+                    "label": "Completed Runtime Releases",
+                    "name": "completed_runtime_releases",
+                    "aria-label": "",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5bfd64343a6bf",
-                            "label": "Date",
-                            "name": "date",
-                            "aria-label": "",
-                            "type": "date_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "display_format": "m\/d\/Y",
-                            "return_format": "F j, Y (l)",
-                            "first_day": 1,
-                            "parent_repeater": "field_5bfd641f3a6be"
-                        },
-                        {
-                            "key": "field_6123c907b2a47",
-                            "label": "Details",
-                            "name": "details",
+                            "key": "field_6762d7914918b",
+                            "label": "Title",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -302,59 +460,99 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "default_value": "Completed Runtime Releases",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "parent_repeater": "field_5bfd641f3a6be"
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5bfd641f3a6be",
+                            "label": "Completed Runtime Releases",
+                            "name": "completed_release_control_dates",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Date",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_5bfd64343a6bf",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "aria-label": "",
+                                    "type": "date_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "m\/d\/Y",
+                                    "return_format": "F j, Y (l)",
+                                    "first_day": 1,
+                                    "parent_repeater": "field_5bfd641f3a6be"
+                                },
+                                {
+                                    "key": "field_6123c907b2a47",
+                                    "label": "Details",
+                                    "name": "details",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_5bfd641f3a6be"
+                                }
+                            ]
                         }
                     ]
                 },
                 {
-                    "key": "field_5bfd649df6b79",
-                    "label": "Completed Boomi Platform Releases",
-                    "name": "completed_release_dates",
+                    "key": "field_6762d7cad2915",
+                    "label": "Completed Platform Releases",
+                    "name": "completed_platform_releases",
                     "aria-label": "",
-                    "type": "repeater",
+                    "type": "group",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "Add Row",
-                    "rows_per_page": 20,
+                    "layout": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5bfd649df6b7a",
-                            "label": "Date",
-                            "name": "date",
-                            "aria-label": "",
-                            "type": "date_picker",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "display_format": "m\/d\/Y",
-                            "return_format": "F j, Y (l)",
-                            "first_day": 1,
-                            "parent_repeater": "field_5bfd649df6b79"
-                        },
-                        {
-                            "key": "field_611fd78d5a806",
-                            "label": "details",
-                            "name": "details",
+                            "key": "field_6762d7e8d2916",
+                            "label": "Title",
+                            "name": "title",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -365,12 +563,76 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
+                            "default_value": "Completed Runtime Releases",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
                             "placeholder": "",
                             "prepend": "",
-                            "append": "",
-                            "maxlength": "",
-                            "parent_repeater": "field_5bfd649df6b79"
+                            "append": ""
+                        },
+                        {
+                            "key": "field_5bfd649df6b79",
+                            "label": "Completed Boomi Platform Releases",
+                            "name": "completed_release_dates",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "pagination": 0,
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Date",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_5bfd649df6b7a",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "aria-label": "",
+                                    "type": "date_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "m\/d\/Y",
+                                    "return_format": "F j, Y (l)",
+                                    "first_day": 1,
+                                    "parent_repeater": "field_5bfd649df6b79"
+                                },
+                                {
+                                    "key": "field_611fd78d5a806",
+                                    "label": "details",
+                                    "name": "details",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "parent_repeater": "field_5bfd649df6b79"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -395,5 +657,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734455798
+    "modified": 1734531360
 }

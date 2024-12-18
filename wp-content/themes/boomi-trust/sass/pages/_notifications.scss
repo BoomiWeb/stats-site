@@ -68,12 +68,10 @@
         }         
     }    
     
-	.release-archive {
-        .release-archive-header {            
-            h2 {
-                background-color: variables.$dell-gray;
-            }		
-        }
+	.release-archive {         
+        h2 {
+            background-color: variables.$dell-gray;
+        }		
         
         .data-container {
         	.border-wrap {

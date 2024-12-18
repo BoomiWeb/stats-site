@@ -45,10 +45,8 @@ add_filter( 'upload_mimes', 'boomi_mime_types' );
 function boomi_trust_has_infrastructure_section() {
     $fields = get_fields();
 
-    if ( isset( $fields['infrastructure_releases'] ) ) {
-        if (isset($fields['infrastructure_releases']['release_month']) && !empty($fields['infrastructure_releases']['release_month'])) {
-            return true;
-        }
+    if (isset($fields['infrastructure_releases']['releases']['release_month']) && !empty($fields['infrastructure_releases']['releases']['release_month'])) {
+        return true;
     }
 
     return false;
