@@ -7,7 +7,7 @@
                 </div>             
     
                 <?php if ( have_rows( 'releases' ) ) : ?>
-                    <div class="release-month-container col">
+                    <div class="release-month-container col col-md-6">
                         <div class="release-month border-wrap">
                         <?php while ( have_rows( 'releases' ) ) : the_row(); ?>
                             <div class="sub-head"><h3><?php the_sub_field('title'); ?></h3></div>
