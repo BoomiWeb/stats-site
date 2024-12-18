@@ -563,7 +563,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Completed Runtime Releases",
+                            "default_value": "Completed Boomi Platform Releases",
                             "maxlength": "",
                             "allow_in_bindings": 0,
                             "placeholder": "",
@@ -657,5 +657,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734531360
+    "modified": 1734532111
 }
