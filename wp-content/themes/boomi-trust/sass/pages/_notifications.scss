@@ -1,9 +1,18 @@
 @use "../site/variables";
 
-.boomi-stats-notifications {    
+.boomi-stats-notifications {   
+    section {
+        // margin-bottom: 2rem;
+        margin-bottom: variables.$row-gutters * 2;
+    } 
+
+    p {
+        margin: 0;
+    }
+
     .header-row {
         text-align: center;
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
         
         h2 {
             background-color: variables.$dell-blue;
@@ -45,12 +54,6 @@
             background-color: variables.$row-bg;
         }
     }    
-
-	.upcoming-releases,
-    .infrastructure-releases,
-    .release-archive {
-		margin-bottom: 2rem;        
-    }
 
 	.infrastructure-releases {          
         h2 {
