@@ -277,7 +277,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "Release Month",
+                    "default_value": "Infrastructure Releases",
                     "maxlength": "",
                     "allow_in_bindings": 0,
                     "placeholder": "",
@@ -314,7 +314,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "Infrastructure Releases",
+                            "default_value": "Release Month",
                             "maxlength": "",
                             "allow_in_bindings": 0,
                             "placeholder": "",
@@ -657,5 +657,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734532111
+    "modified": 1734532550
 }
