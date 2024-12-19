@@ -7,5 +7,5 @@
     }
     ?>
 
-<?php include_once dirname( __FILE__ ) . '/release-archive.php'; ?>
+    <?php include_once dirname( __FILE__ ) . '/release-archive.php'; ?>
 </div>

@@ -38,6 +38,4 @@
             <?php endwhile; ?>
         </div>
     <?php endif; ?>
-    
-    <div class="footer-notice row"><div class="col-12"><p>Boomi reserves the right to adjust these dates as needed.</p></div></div>
 </section>
