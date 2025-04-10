@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout repository
+      uses: actions/checkout@v2
     
-    # Add the safe directory configuration step
+    # Add the safe directory configuration directly using 'run'
     - name: Mark repository as safe
       run: git config --global --add safe.directory /github/workspace
     
