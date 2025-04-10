@@ -1,6 +1,7 @@
 name: Pantheon WordPress Upstream Sync
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 2 * * 1-5"
 
